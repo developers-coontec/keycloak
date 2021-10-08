@@ -60,6 +60,9 @@ import org.keycloak.common.ClientConnection;
 import org.keycloak.common.Profile;
 import org.keycloak.common.VerificationException;
 import org.keycloak.common.util.PemUtils;
+import org.keycloak.credential.CredentialProvider;
+import org.keycloak.credential.PasswordCredentialProvider;
+import org.keycloak.credential.PasswordCredentialProviderFactory;
 import org.keycloak.email.EmailTemplateProvider;
 import org.keycloak.events.EventQuery;
 import org.keycloak.events.EventStoreProvider;
@@ -82,10 +85,13 @@ import org.keycloak.models.ModelDuplicateException;
 import org.keycloak.models.ModelException;
 import org.keycloak.models.RealmModel;
 import org.keycloak.models.RequiredActionProviderModel;
+import org.keycloak.models.UserCredentialModel;
 import org.keycloak.models.UserModel;
+import org.keycloak.models.UserProvider;
 import org.keycloak.models.UserSessionModel;
 import org.keycloak.models.cache.CacheRealmProvider;
 import org.keycloak.models.cache.UserCache;
+import org.keycloak.models.credential.PasswordUserCredentialModel;
 import org.keycloak.models.utils.KeycloakModelUtils;
 import org.keycloak.models.utils.ModelToRepresentation;
 import org.keycloak.models.utils.RepresentationToModel;
@@ -104,6 +110,7 @@ import org.keycloak.representations.idm.PartialImportRepresentation;
 import org.keycloak.representations.idm.RealmEventsConfigRepresentation;
 import org.keycloak.representations.idm.RealmRepresentation;
 import org.keycloak.representations.idm.TestLdapConnectionRepresentation;
+import org.keycloak.representations.idm.UserPasswordRepresentation;
 import org.keycloak.services.ErrorResponse;
 import org.keycloak.services.managers.AuthenticationManager;
 import org.keycloak.services.managers.LDAPServerCapabilitiesManager;
@@ -409,7 +416,7 @@ public class RealmAdminResource {
         if (Config.getAdminRealm().equals(realm.getName()) && (rep.getRealm() != null && !rep.getRealm().equals(Config.getAdminRealm()))) {
             return ErrorResponse.error("Can't rename master realm", Status.BAD_REQUEST);
         }
-        
+
         ReservedCharValidator.validate(rep.getRealm());
         ReservedCharValidator.validateLocales(rep.getSupportedLocales());
 
@@ -445,12 +452,12 @@ public class RealmAdminResource {
             session.getContext().getUri();
 
             adminEvent.operation(OperationType.UPDATE).representation(StripSecretsUtils.strip(rep)).success();
-            
+
             if (rep.isDuplicateEmailsAllowed() != null && rep.isDuplicateEmailsAllowed() != wasDuplicateEmailsAllowed) {
                 UserCache cache = session.getProvider(UserCache.class);
                 if (cache != null) cache.clear();
             }
-            
+
             return Response.noContent().build();
         } catch (ModelDuplicateException e) {
             return ErrorResponse.exists("Realm with same name exists");
@@ -1223,5 +1230,22 @@ public class RealmAdminResource {
         ClientProfilesResource resource = new ClientProfilesResource(realm, auth);
         ResteasyProviderFactory.getInstance().injectProperties(resource);
         return resource;
+    }
+
+
+    @POST
+    @Path("password/validate")
+    @NoCache
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public boolean validatePassword(UserPasswordRepresentation userPasswordRepresentation){
+        RealmModel realm = session.getContext().getRealm();
+        UserProvider userProvider = session.getProvider(UserProvider.class);
+        UserModel userModel = userProvider.getUserByEmail(userPasswordRepresentation.getEmail(), realm);
+        PasswordUserCredentialModel passwordUserCredentialModel = UserCredentialModel
+            .password(userPasswordRepresentation.getPassword(), true);
+        PasswordCredentialProvider passwordProvider = (PasswordCredentialProvider) session.getProvider(
+            CredentialProvider.class, PasswordCredentialProviderFactory.PROVIDER_ID);
+        return passwordProvider.isValid(realm, userModel, passwordUserCredentialModel);
     }
 }

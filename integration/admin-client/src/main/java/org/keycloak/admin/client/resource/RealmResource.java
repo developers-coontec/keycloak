@@ -46,6 +46,7 @@ import javax.ws.rs.core.Response;
 
 import java.util.List;
 import java.util.Map;
+import org.keycloak.representations.idm.UserPasswordRepresentation;
 
 /**
  * @author rodrigo.sasaki@icarros.com.br
@@ -288,4 +289,10 @@ public interface RealmResource {
 
     @Path("client-policies/profiles")
     ClientPoliciesProfilesResource clientPoliciesProfilesResource();
+
+    @POST
+    @Path("password/validate")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    boolean validatePassword(UserPasswordRepresentation userPasswordRepresentation);
 }

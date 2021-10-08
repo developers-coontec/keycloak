@@ -68,13 +68,13 @@ public interface UserResource {
     List<GroupRepresentation> groups(@QueryParam("search") String search,
                                      @QueryParam("first") Integer firstResult,
                                      @QueryParam("max") Integer maxResults);
-    
+
     @Path("groups")
     @GET
     List<GroupRepresentation> groups(@QueryParam("first") Integer firstResult,
                                      @QueryParam("max") Integer maxResults,
                                      @QueryParam("briefRepresentation") @DefaultValue("true") boolean briefRepresentation);
-    
+
     @Path("groups")
     @GET
     List<GroupRepresentation> groups(@QueryParam("search") String search,
@@ -261,6 +261,10 @@ public interface UserResource {
     @PUT
     @Path("send-verify-email")
     void sendVerifyEmail(@QueryParam("client_id") String clientId);
+
+    @PUT
+    @Path("send-verify-email")
+    void sendVerifyEmail(@QueryParam("client_id") String clientId, @QueryParam("redirect_uri") String redirectUri);
 
     @GET
     @Path("sessions")
