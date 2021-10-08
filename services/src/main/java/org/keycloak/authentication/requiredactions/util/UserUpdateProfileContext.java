@@ -17,6 +17,8 @@
 
 package org.keycloak.authentication.requiredactions.util;
 
+import static org.keycloak.utils.IdentityProviderUtils.splitNames;
+
 import org.keycloak.models.RealmModel;
 import org.keycloak.models.UserModel;
 
@@ -81,6 +83,27 @@ public class UserUpdateProfileContext implements UpdateProfileContext {
     @Override
     public void setLastName(String lastName) {
         user.setLastName(lastName);
+    }
+
+    @Override
+    public String getName() {
+        return user.getLastName() + user.getFirstName();
+    }
+
+    @Override
+    public void setName(String name) {
+        if (name != null && !name.isEmpty()) {
+            List<String> splittedName = splitNames(name);
+            if (splittedName.size() > 0) {
+                setFirstName(splittedName.get(0));
+                if (splittedName.size() > 1) {
+                    setLastName(splittedName.get(1));
+                }
+            }
+        } else {
+            setLastName(null);
+            setFirstName(null);
+        }
     }
 
     @Override

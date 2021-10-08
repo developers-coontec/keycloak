@@ -17,6 +17,7 @@
 
 package org.keycloak.models;
 
+import java.util.List;
 import org.keycloak.OAuth2Constants;
 import org.keycloak.crypto.Algorithm;
 
@@ -75,6 +76,42 @@ public final class Constants {
     public static final String VERIFY_EMAIL_KEY = "VERIFY_EMAIL_KEY";
     public static final String VERIFY_EMAIL_CODE = "VERIFY_EMAIL_CODE";
     public static final String EXECUTION = "execution";
+    public static final String FIELD_NAME = "name";
+    public static final String FIELD_EMAIL = "email";
+    public static final String FIELD_FIRST_NAME = "firstName";
+    public static final String FIELD_LAST_NAME = "lastName";
+    public static final String FIELD_REFERRAL_CODE = "referralCode";
+    public static final String FIELD_REFERRED_BY_CODE = "referredByCode";
+    public static final String FIELD_MOBILE_PHONE_NUMBER = "mobilePhoneNumber";
+    public static final String FIELD_PROFILE_IMAGE_URL = "profileImageUrl";
+    public static final String FIELD_PROFILE_THUMBNAIL_IMAGE_URL = "profileThumbnailImageUrl";
+    public static final String FIELD_BIRTH_DATE = "birthDate";
+    public static final String FIELD_LOCALE = "locale";
+    public static final String FIELD_GENDER_CODE = "genderCode";
+    public static final String FIELD_COMPANY = "company";
+    public static final String FIELD_SERVICE_AGREEMENT = "serviceAgreement";
+    public static final String FIELD_PRIVACY_AGREEMENT = "privacyAgreement";
+    public static final String FIELD_MARKETING_AGREEMENT = "marketingAgreement";
+
+    public static final List<String> SUPPORTED_ATTRIBUTE_LIST = Arrays.asList(
+        FIELD_NAME,
+        FIELD_EMAIL,
+        FIELD_FIRST_NAME,
+        FIELD_LAST_NAME,
+        FIELD_REFERRAL_CODE,
+        FIELD_REFERRED_BY_CODE,
+        FIELD_MOBILE_PHONE_NUMBER,
+        FIELD_PROFILE_IMAGE_URL,
+        FIELD_PROFILE_THUMBNAIL_IMAGE_URL,
+        FIELD_BIRTH_DATE,
+        FIELD_LOCALE,
+        FIELD_GENDER_CODE,
+        FIELD_COMPANY,
+        FIELD_SERVICE_AGREEMENT,
+        FIELD_PRIVACY_AGREEMENT,
+        FIELD_MARKETING_AGREEMENT
+    );
+
     public static final String CLIENT_ID = "client_id";
     public static final String TAB_ID = "tab_id";
     public static final String KEY = "key";

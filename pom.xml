@@ -228,6 +228,23 @@
         <url>https://github.com/keycloak/keycloak/tree/master/</url>
     </scm>
 
+    <repositories>
+<!--        <repository>-->
+<!--            <id>mvn-repo1</id>-->
+<!--            <name>Maven Repository</name>-->
+<!--            <url>https://mvnrepository.com/artifact/</url>-->
+<!--        </repository>-->
+<!--        <repository>-->
+<!--            <id>mvn-repo2</id>-->
+<!--            <name>Maven Repository 2</name>-->
+<!--            <url>http://central.maven.org/maven2</url>-->
+<!--        </repository>-->
+        <repository>
+            <id>mvn-repo3</id>
+            <name>Maven Repository 3</name>
+            <url>https://repository.jboss.org/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
     <distributionManagement>
         <repository>
             <id>jboss-releases-repository</id>

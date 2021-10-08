@@ -102,6 +102,20 @@ public class FreeMarkerEmailTemplateProvider implements EmailTemplateProvider {
         }
     }
 
+    protected void addCommonAttributes(Map<String, Object> attributes, String buttonLink) {
+        attributes.put("homeUrl", "https://app.survey.com");
+        attributes.put("dashboardUrl", "https://app.survey.com/dashboard");
+        String name = "";
+        if (user.getLastName() != null && !user.getLastName().isEmpty()) {
+            name += user.getLastName();
+        }
+        if (user.getFirstName() != null && !user.getFirstName().isEmpty()) {
+            name += user.getFirstName();
+        }
+        attributes.put("name", name);
+        attributes.put("mainButtonUrl", buttonLink);
+    }
+
     @Override
     public void sendEvent(Event event) throws EmailException {
         Map<String, Object> attributes = new HashMap<>();
@@ -118,6 +132,7 @@ public class FreeMarkerEmailTemplateProvider implements EmailTemplateProvider {
         addLinkInfoIntoAttributes(link, expirationInMinutes, attributes);
 
         attributes.put("realmName", getRealmName());
+        addCommonAttributes(attributes, link);
 
         send("passwordResetSubject", "password-reset.ftl", attributes);
     }
@@ -172,13 +187,14 @@ public class FreeMarkerEmailTemplateProvider implements EmailTemplateProvider {
         addLinkInfoIntoAttributes(link, expirationInMinutes, attributes);
 
         attributes.put("realmName", getRealmName());
+        addCommonAttributes(attributes, link);
 
         send("emailVerificationSubject", "email-verification.ftl", attributes);
     }
 
     /**
      * Add link info into template attributes.
-     * 
+     *
      * @param link to add
      * @param expirationInMinutes to add
      * @param attributes to add link info into

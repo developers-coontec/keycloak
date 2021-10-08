@@ -1,0 +1,20 @@
+.survey-content-verify-email {
+  width: 400px;
+}
+
+.survey-content-verify-email .survey-content-footer{
+  justify-content: flex-end;
+}
+
+.survey-content-verify-email .survey-content-subtitle{
+  display: inline-block;
+}
+
+@media (max-width: 450px) {
+  .survey-content-reset-password .survey-content-footer .survey-content-footer-left{
+    width: calc(50% - 10px) !important;
+  }
+  .survey-content-reset-password .survey-content-footer .survey-content-footer-right{
+    width: calc(50% - 10px) !important;
+  }
+}

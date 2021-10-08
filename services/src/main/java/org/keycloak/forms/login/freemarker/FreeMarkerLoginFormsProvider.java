@@ -16,9 +16,11 @@
  */
 package org.keycloak.forms.login.freemarker;
 
+import javax.ws.rs.core.MultivaluedHashMap;
 import org.jboss.logging.Logger;
 import org.keycloak.OAuth2Constants;
 import org.keycloak.authentication.AuthenticationFlowContext;
+import org.keycloak.authentication.authenticators.broker.util.SerializedBrokeredIdentityContext;
 import org.keycloak.authentication.authenticators.browser.OTPFormAuthenticator;
 import org.keycloak.authentication.requiredactions.util.UpdateProfileContext;
 import org.keycloak.authentication.requiredactions.util.UserUpdateProfileContext;
@@ -53,7 +55,9 @@ import org.keycloak.models.utils.FormMessage;
 import org.keycloak.services.Urls;
 import org.keycloak.services.messages.Messages;
 import org.keycloak.services.resources.LoginActionsService;
+import org.keycloak.services.validation.Validation;
 import org.keycloak.sessions.AuthenticationSessionModel;
+import org.keycloak.social.naver.NaverIdentityProviderFactory;
 import org.keycloak.theme.FreeMarkerException;
 import org.keycloak.theme.FreeMarkerUtil;
 import org.keycloak.theme.Theme;
@@ -81,7 +85,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Properties;
 
+import static org.keycloak.authentication.AuthenticationProcessor.CURRENT_REFERRED_BY_CODE;
 import static org.keycloak.models.UserModel.RequiredAction.UPDATE_PASSWORD;
+import static org.keycloak.utils.IdentityProviderUtils.maskEmail;
 
 /**
  * @author <a href="mailto:sthorger@redhat.com">Stian Thorgersen</a>
@@ -159,6 +165,7 @@ public class FreeMarkerLoginFormsProvider implements LoginFormsProvider {
             case VERIFY_EMAIL:
                 actionMessage = Messages.VERIFY_EMAIL;
                 page = LoginFormsPages.LOGIN_VERIFY_EMAIL;
+                this.attributes.put("email", user.getEmail());
                 break;
             case VERIFY_PROFILE:
                 UpdateProfileContext verifyProfile = new UserUpdateProfileContext(realm, user);
@@ -211,6 +218,46 @@ public class FreeMarkerLoginFormsProvider implements LoginFormsProvider {
             case LOGIN_UPDATE_PROFILE:
                 UpdateProfileContext userCtx = (UpdateProfileContext) attributes.get(LoginFormsProvider.UPDATE_PROFILE_CONTEXT_ATTR);
                 attributes.put("user", new ProfileBean(userCtx, formData));
+                String messageKey = null;
+                String identityProviderId = null;
+                if (userCtx instanceof SerializedBrokeredIdentityContext) {
+                    identityProviderId = ((SerializedBrokeredIdentityContext) userCtx)
+                        .getIdentityProviderId();
+                }
+                if (identityProviderId != null && !identityProviderId.isEmpty()) {
+                    messageKey = "login-social-" + identityProviderId;
+                }
+                if (messageKey != null) {
+                    attributes.put("socialName", getMessage(messageKey));
+                    attributes.put("identityProviderId", identityProviderId);
+                }
+                if (identityProviderId != null) {
+                    attributes.put("identityProviderId", identityProviderId);
+                }
+                String name = "";
+                if (userCtx.getLastName() != null && !userCtx.getLastName().isEmpty()) {
+                    name += userCtx.getLastName();
+                }
+                if (userCtx.getFirstName() != null && !userCtx.getFirstName().isEmpty()) {
+                    name += userCtx.getFirstName();
+                }
+                String userEmail = userCtx.getEmail();
+                if (NaverIdentityProviderFactory.PROVIDER_ID.equals(identityProviderId) && !userEmail.contains("naver.com")){
+                    attributes.put(Validation.FIELD_NAVER_ID_REQUIRED, "true");
+                } else {
+                    attributes.put(Validation.FIELD_NAVER_ID_REQUIRED, "false");
+                }
+                attributes.put(Constants.FIELD_NAME, name);
+                String mobilePhoneNumber = userCtx.getFirstAttribute(Constants.FIELD_MOBILE_PHONE_NUMBER);
+                if (mobilePhoneNumber != null && !mobilePhoneNumber.isEmpty()) {
+                    attributes.put(Constants.FIELD_MOBILE_PHONE_NUMBER, mobilePhoneNumber);
+                }
+                if (this.authenticationSession != null && this.authenticationSession.getClientNote(CURRENT_REFERRED_BY_CODE) != null){
+                    if (formData == null){
+                        formData = new MultivaluedHashMap<>();
+                    }
+                    attributes.put(Constants.FIELD_REFERRED_BY_CODE, this.authenticationSession.getClientNote(CURRENT_REFERRED_BY_CODE));
+                }
                 break;
             case LOGIN_IDP_LINK_CONFIRM:
             case LOGIN_IDP_LINK_EMAIL:
@@ -226,10 +273,25 @@ public class FreeMarkerLoginFormsProvider implements LoginFormsProvider {
                 attributes.put("idpAlias", idpAlias);
                 attributes.put("idpDisplayName", displayName);
                 break;
+            case LOGIN_FIND_EMAIL:
+                attributes.put("mobilePhoneNumber", formData.getFirst(Constants.FIELD_MOBILE_PHONE_NUMBER));
+                attributes.put("name", formData.getFirst(Constants.FIELD_NAME));
+                break;
+            case LOGIN_DISPLAY_EMAIL:
+                if (user != null) {
+                    attributes.put("email", maskEmail(user.getEmail()));
+                }
+                break;
             case LOGIN_TOTP:
                 attributes.put("otpLogin", new TotpLoginBean(session, realm, user, (String) this.attributes.get(OTPFormAuthenticator.SELECTED_OTP_CREDENTIAL_ID)));
                 break;
             case REGISTER:
+                if (this.authenticationSession != null && this.authenticationSession.getClientNote(CURRENT_REFERRED_BY_CODE) != null){
+                    if (formData == null){
+                        formData = new MultivaluedHashMap<>();
+                    }
+                    formData.add(Constants.FIELD_REFERRED_BY_CODE, this.authenticationSession.getClientNote(CURRENT_REFERRED_BY_CODE));
+                }
                 attributes.put("register", new RegisterBean(formData));
                 break;
             case OAUTH_GRANT:
@@ -253,7 +315,7 @@ public class FreeMarkerLoginFormsProvider implements LoginFormsProvider {
 
         return processTemplate(theme, Templates.getTemplate(page), locale);
     }
-    
+
     @Override
     public Response createForm(String form) {
         Theme theme;
@@ -279,9 +341,9 @@ public class FreeMarkerLoginFormsProvider implements LoginFormsProvider {
 
     /**
      * Prepare base uri builder for later use
-     * 
+     *
      * @param resetRequestUriParams - for some reason Resteasy 2.3.7 doesn't like query params and form params with the same name and will null out the code form param, so we have to reset them for some pages
-     * @return base uri builder  
+     * @return base uri builder
      */
     protected UriBuilder prepareBaseUriBuilder(boolean resetRequestUriParams) {
         String requestURI = uriInfo.getBaseUri().getPath();
@@ -301,7 +363,7 @@ public class FreeMarkerLoginFormsProvider implements LoginFormsProvider {
 
     /**
      * Get Theme used for page rendering.
-     * 
+     *
      * @return theme for page rendering, never null
      * @throws IOException in case of Theme loading problem
      */
@@ -311,7 +373,7 @@ public class FreeMarkerLoginFormsProvider implements LoginFormsProvider {
 
     /**
      * Load message bundle and place it into <code>msg</code> template attribute. Also load Theme properties and place them into <code>properties</code> template attribute.
-     * 
+     *
      * @param theme actual Theme to load bundle from
      * @param locale to load bundle for
      * @return message bundle for other use
@@ -337,7 +399,7 @@ public class FreeMarkerLoginFormsProvider implements LoginFormsProvider {
 
     /**
      * Handle messages to be shown on the page - set them to template attributes
-     * 
+     *
      * @param locale to be used for message text loading
      * @param messagesBundle to be used for message text loading
      * @see #messageType
@@ -400,13 +462,13 @@ public class FreeMarkerLoginFormsProvider implements LoginFormsProvider {
 
     /**
      * Create common attributes used in all templates.
-     * 
-     * @param theme actual Theme used (provided by <code>getTheme()</code>) 
+     *
+     * @param theme actual Theme used (provided by <code>getTheme()</code>)
      * @param locale actual locale
      * @param messagesBundle actual message bundle (provided by <code>handleThemeResources()</code>)
      * @param baseUriBuilder actual base uri builder (provided by <code>prepareBaseUriBuilder()</code>)
      * @param page in case if common page is rendered, is null if called from <code>createForm()</code>
-     * 
+     *
      */
     protected void createCommonAttributes(Theme theme, Locale locale, Properties messagesBundle, UriBuilder baseUriBuilder, LoginFormsPages page) {
         URI baseUri = baseUriBuilder.build();
@@ -474,7 +536,7 @@ public class FreeMarkerLoginFormsProvider implements LoginFormsProvider {
 
     /**
      * Process FreeMarker template and prepare Response. Some fields are used for rendering also.
-     * 
+     *
      * @param theme to be used (provided by <code>getTheme()</code>)
      * @param templateName name of the template to be rendered
      * @param locale to be used
@@ -531,6 +593,17 @@ public class FreeMarkerLoginFormsProvider implements LoginFormsProvider {
     @Override
     public Response createInfoPage() {
         return createResponse(LoginFormsPages.INFO);
+    }
+
+
+    @Override
+    public Response createFindEmail() {
+        return createResponse(LoginFormsPages.LOGIN_FIND_EMAIL);
+    }
+
+    @Override
+    public Response createLoginDisplayEmailPage() {
+        return createResponse(LoginFormsPages.LOGIN_DISPLAY_EMAIL);
     }
 
     @Override

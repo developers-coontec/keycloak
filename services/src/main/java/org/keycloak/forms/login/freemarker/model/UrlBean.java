@@ -87,6 +87,10 @@ public class UrlBean {
         return Urls.loginResetCredentials(baseURI, realm).toString();
     }
 
+    public String getLoginFindEmailUrl() {
+        return Urls.loginFindEmail(baseURI, realm).toString();
+    }
+
     public String getLoginUsernameReminderUrl() {
         return Urls.loginUsernameReminder(baseURI, realm).toString();
     }
@@ -123,5 +127,9 @@ public class UrlBean {
     public String getResourcesCommonPath() {
         URI uri = Urls.themeRoot(baseURI);
         return uri.getPath() + "/common/keycloak";
+    }
+
+    public String getHomeUrl() {
+        return Urls.getSurveyHomeUrl(baseURI, actionuri);
     }
 }

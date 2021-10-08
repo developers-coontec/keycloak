@@ -331,6 +331,11 @@ public class DefaultAttributes extends HashMap<String, List<String>> implements 
             return true;
         }
 
+        if (Constants.SUPPORTED_ATTRIBUTE_LIST.contains(name)) {
+            return true;
+        }
+
+
         // checks whether the attribute is a core attribute
         return isRootAttribute(name);
     }

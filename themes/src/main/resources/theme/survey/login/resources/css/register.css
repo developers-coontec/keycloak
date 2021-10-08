@@ -1,0 +1,220 @@
+
+.survey-content-register {
+
+}
+
+.survey-content-register .register-login-text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 19px;
+  font-size: 15px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 5;
+  letter-spacing: -0.45px;
+  text-align: left;
+  color: #656d80;
+}
+
+.survey-content-register .register-login {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 20px;
+  height: 14px;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.88;
+  letter-spacing: normal;
+  color: #ff593b;
+}
+.survey-content-register .register-login span{
+  border-bottom: solid 1px #ff7057;
+}
+
+.survey-content-register .register-login:hover {
+  cursor: pointer;
+}
+
+.register-content-label-password-description {
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.survey-content-register .register-agreement {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 0;
+  width: 100%;
+  height: 43px;
+  border-radius: 3px;
+  border: solid 1px #000000;
+  background-color: #191a1a;
+}
+
+@media (max-width:450px){
+  .survey-content-register .register-agreement-checkbox {
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 5px 10px 10px;
+    width: 22px;
+    height: 22px;
+    border-radius: 2px;
+    background-color: #ff593b;
+  }
+  .survey-content-register .register-agreement-checkbox-small {
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 5px 10px 10px;
+    width: 19px;
+    height: 19px;
+    border-radius: 2px;
+    background-color: #ff593b;
+  }
+}
+
+@media (min-width:450px) {
+  .survey-content-register .register-agreement-checkbox {
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 10px;
+    width: 22px;
+    height: 22px;
+    border-radius: 2px;
+    background-color: #ff593b;
+  }
+  .survey-content-register .register-agreement-checkbox-small {
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 10px;
+    width: 19px;
+    height: 19px;
+    border-radius: 2px;
+    background-color: #ff593b;
+  }
+}
+
+.all-agreement-checkbox-checked-svg {
+  display: inline-block;
+  vertical-align: top;
+  margin: 2px 2px;
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  background: url("../img/checkbox-selected-icon.svg") no-repeat center center;
+}
+
+.small-agreement-checkbox-checked-svg {
+  display: inline-block;
+  vertical-align: top;
+  margin: 2px 2px;
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  background: url("../img/checkbox-selected-icon.svg") no-repeat center center;
+}
+
+
+@media (max-width:450px){
+  .register-agreement-text {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 15px;
+    margin-left: 1px;
+    height: 14px;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.88;
+    letter-spacing: normal;
+    color: #ffffff;
+  }
+  .register-agreement-text-small {
+    display: inline-block;
+    vertical-align: top;
+    border-bottom: 1px solid #ffffff;
+    margin-top: 15px;
+    margin-left: 1px;
+    padding-bottom: 2px;
+    height: 14px;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.88;
+    letter-spacing: normal;
+    color: #ffffff;
+  }
+}
+@media (min-width:450px) {
+  .register-agreement-text {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 15px;
+    margin-left: 1px;
+    height: 14px;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.88;
+    letter-spacing: normal;
+    color: #ffffff;
+  }
+  .register-agreement-text-small {
+    display: inline-block;
+    vertical-align: top;
+    border-bottom: 1px solid #ffffff;
+    margin-top: 15px;
+    margin-left: 1px;
+    padding-bottom: 2px;
+    height: 14px;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.88;
+    letter-spacing: normal;
+    color: #ffffff;
+  }
+}
+
+.all-agreement-dropdown {
+  margin-top: 17px;
+  margin-right: 20px;
+  position: relative;
+  float: right;
+}
+
+
+.register-agreement-select-options {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  margin-bottom: 0;
+  width: 100%;
+  background-color: #191a1a;
+}
+
+.register-agreement-select-section-row {
+  width: 100%;
+}
+
+.survey-content-register .register-validation-agreement {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: normal;
+  color: #a0141b;
+}

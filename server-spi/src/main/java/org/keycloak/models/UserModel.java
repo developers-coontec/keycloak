@@ -32,7 +32,7 @@ import java.util.stream.Stream;
  * @author <a href="mailto:bill@burkecentral.com">Bill Burke</a>
  * @version $Revision: 1 $
  */
-public interface UserModel extends RoleMapperModel {
+public interface UserModel extends RoleMapperModel, IUser {
     String USERNAME = "username";
     String FIRST_NAME = "firstName";
     String LAST_NAME = "lastName";
@@ -118,7 +118,7 @@ public interface UserModel extends RoleMapperModel {
      * Get timestamp of user creation. May be null for old users created before this feature introduction.
      */
     Long getCreatedTimestamp();
-    
+
     void setCreatedTimestamp(Long timestamp);
 
     boolean isEnabled();
@@ -278,7 +278,7 @@ public interface UserModel extends RoleMapperModel {
     default long getGroupsCount() {
         return getGroupsCountByNameContaining(null);
     }
-    
+
     default long getGroupsCountByNameContaining(String search) {
         if (search == null) {
             return getGroupsStream().count();

@@ -16,6 +16,7 @@
  */
 package org.keycloak.social.google;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import org.keycloak.OAuth2Constants;
 import org.keycloak.broker.oidc.OIDCIdentityProvider;
 import org.keycloak.broker.oidc.OIDCIdentityProviderConfig;
@@ -73,6 +74,18 @@ public class GoogleIdentityProvider extends OIDCIdentityProvider implements Soci
     }
 
     @Override
+    protected BrokeredIdentityContext extractIdentityFromProfile(EventBuilder event, JsonNode profile) {
+        BrokeredIdentityContext user = super.extractIdentityFromProfile(event, profile);
+
+        String username = getJsonProperty(profile, "username");
+
+        String firstName = getJsonProperty(profile, "first_name");
+        String lastName = getJsonProperty(profile, "last_name");
+
+        return user;
+    }
+
+    @Override
     protected boolean supportsExternalExchange() {
         return true;
     }
@@ -100,11 +113,11 @@ public class GoogleIdentityProvider extends OIDCIdentityProvider implements Soci
         if (hostedDomain != null) {
             uriBuilder.queryParam(OIDC_PARAMETER_HOSTED_DOMAINS, hostedDomain);
         }
-        
+
         if (googleConfig.isOfflineAccess()) {
             uriBuilder.queryParam(OIDC_PARAMETER_ACCESS_TYPE, ACCESS_TYPE_OFFLINE);
         }
-        
+
         return uriBuilder;
     }
 

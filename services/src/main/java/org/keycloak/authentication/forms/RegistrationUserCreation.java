@@ -17,6 +17,11 @@
 
 package org.keycloak.authentication.forms;
 
+import static org.keycloak.authentication.forms.RegistrationProfile.populateFormFields;
+import static org.keycloak.authentication.forms.RegistrationProfile.populateLastNameFirstNameUsingName;
+
+import java.util.ArrayList;
+import org.jboss.resteasy.spi.HttpRequest;
 import org.keycloak.Config;
 import org.keycloak.authentication.FormAction;
 import org.keycloak.authentication.FormActionFactory;
@@ -27,6 +32,8 @@ import org.keycloak.events.Errors;
 import org.keycloak.events.EventType;
 import org.keycloak.forms.login.LoginFormsProvider;
 import org.keycloak.models.AuthenticationExecutionModel;
+import org.keycloak.models.Constants;
+import org.keycloak.models.IUser;
 import org.keycloak.models.KeycloakSession;
 import org.keycloak.models.KeycloakSessionFactory;
 import org.keycloak.models.RealmModel;
@@ -66,6 +73,10 @@ public class RegistrationUserCreation implements FormAction, FormActionFactory {
     public void validate(ValidationContext context) {
         MultivaluedMap<String, String> formData = context.getHttpRequest().getDecodedFormParameters();
         context.getEvent().detail(Details.REGISTER_METHOD, "form");
+        List<FormMessage> errors = new ArrayList<>();
+
+        populateLastNameFirstNameUsingName(formData);
+        Validation.validateProfileForm(formData, errors, true);
 
         KeycloakSession session = context.getSession();
         UserProfileProvider profileProvider = session.getProvider(UserProfileProvider.class);
@@ -73,13 +84,13 @@ public class RegistrationUserCreation implements FormAction, FormActionFactory {
         String email = profile.getAttributes().getFirstValue(UserModel.EMAIL);
 
         String username = profile.getAttributes().getFirstValue(UserModel.USERNAME);
-        String firstName = profile.getAttributes().getFirstValue(UserModel.FIRST_NAME);
-        String lastName = profile.getAttributes().getFirstValue(UserModel.LAST_NAME);
+//        String firstName = profile.getAttributes().getFirstValue(UserModel.FIRST_NAME);
+//        String lastName = profile.getAttributes().getFirstValue(UserModel.LAST_NAME);
         context.getEvent().detail(Details.EMAIL, email);
 
         context.getEvent().detail(Details.USERNAME, username);
-        context.getEvent().detail(Details.FIRST_NAME, firstName);
-        context.getEvent().detail(Details.LAST_NAME, lastName);
+//        context.getEvent().detail(Details.FIRST_NAME, firstName);
+//        context.getEvent().detail(Details.LAST_NAME, lastName);
 
         if (context.getRealm().isRegistrationEmailAsUsername()) {
             context.getEvent().detail(Details.USERNAME, email);
@@ -88,7 +99,7 @@ public class RegistrationUserCreation implements FormAction, FormActionFactory {
         try {
             profile.validate();
         } catch (ValidationException pve) {
-            List<FormMessage> errors = Validation.getFormErrorsFromValidation(pve.getErrors());
+            errors.addAll(Validation.getFormErrorsFromValidation(pve.getErrors()));
 
             if (pve.hasError(Messages.EMAIL_EXISTS)) {
                 context.error(Errors.EMAIL_IN_USE);
@@ -131,6 +142,7 @@ public class RegistrationUserCreation implements FormAction, FormActionFactory {
         KeycloakSession session = context.getSession();
 
         UserProfileProvider profileProvider = session.getProvider(UserProfileProvider.class);
+        populateFormFields(context.getHttpRequest(), formData);
         UserProfile profile = profileProvider.create(UserProfileContext.REGISTRATION_USER_CREATION, formData);
         UserModel user = profile.create();
 

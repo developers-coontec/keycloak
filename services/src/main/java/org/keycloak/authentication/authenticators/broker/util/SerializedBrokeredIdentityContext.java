@@ -53,6 +53,7 @@ public class SerializedBrokeredIdentityContext implements UpdateProfileContext {
     private String brokerUserId;
     private String code;
     private String token;
+    private String name;
 
     @JsonIgnore
     private boolean emailAsUsername;
@@ -177,6 +178,16 @@ public class SerializedBrokeredIdentityContext implements UpdateProfileContext {
 
     public void setContextData(Map<String, ContextDataEntry> contextData) {
         this.contextData = contextData;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
     }
 
     @JsonIgnore

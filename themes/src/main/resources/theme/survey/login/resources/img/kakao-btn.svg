@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18">
+    <defs>
+        <filter id="9uie7lbuna" width="109%" height="104.5%" x="-4.5%" y="-2.3%" filterUnits="objectBoundingBox">
+            <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="4.5"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.810065144 0 0 0 0 0.828672678 0 0 0 0 0.895521966 0 0 0 1 0"/>
+        </filter>
+        <filter id="yoj9i9mlzc" width="102%" height="112.5%" x="-1%" y="-5%" filterUnits="objectBoundingBox">
+            <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation=".5"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.24 0"/>
+            <feOffset in="SourceAlpha" result="shadowOffsetOuter2"/>
+            <feGaussianBlur in="shadowOffsetOuter2" result="shadowBlurOuter2" stdDeviation=".5"/>
+            <feColorMatrix in="shadowBlurOuter2" result="shadowMatrixOuter2" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="shadowMatrixOuter2"/>
+            </feMerge>
+        </filter>
+        <rect id="74fvdmhwjd" width="200" height="40" x="0" y="0" rx="2"/>
+        <path id="f8koen472b" d="M0 0H300V598H0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <path fill="#F9FAFD" d="M0 70H1920V1080H0z" transform="translate(-871 -231)"/>
+            <g>
+                <g transform="translate(-871 -231) translate(810 80)">
+                    <use fill="#000" filter="url(#9uie7lbuna)" xlink:href="#f8koen472b"/>
+                    <use fill="#FFF" xlink:href="#f8koen472b"/>
+                </g>
+                <g>
+                    <g transform="translate(-871 -231) translate(810 80) translate(50 140)">
+                        <use fill="#000" filter="url(#yoj9i9mlzc)" xlink:href="#74fvdmhwjd"/>
+                        <use fill="#FAE100" xlink:href="#74fvdmhwjd"/>
+                    </g>
+                    <g fill="#1E1E1E">
+                        <path d="M9 0C4.03 0 0 3.183 0 7.11c0 2.357 1.454 4.443 3.69 5.736l-1.06 3.958c-.101.38.322.682.647.462l4.598-3.103c.368.036.744.058 1.125.058 4.971 0 9-3.184 9-7.11C18 3.182 13.971 0 9 0" transform="translate(-871 -231) translate(810 80) translate(50 140) translate(11 11)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

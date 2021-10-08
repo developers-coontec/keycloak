@@ -1,0 +1,137 @@
+
+.survey-content-login {
+}
+
+@media (max-width: 450px) {
+  .survey-content-login .survey-content-footer .survey-content-footer-left{
+    width: 100% !important;
+  }
+  .survey-content-login .survey-content-footer .survey-content-footer-right{
+    width: 100% !important;
+    margin-top: 20px;
+  }
+}
+
+.survey-login-social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.survey-login-social-link-text {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 3px;
+  margin-left: 20px;
+  width: auto;
+  height: 14px;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000000;
+}
+
+.survey-login-social-link-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+}
+
+.survey-login-social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  width: 220px;
+  height: 40px;
+  padding: 11px;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.24), 0 0 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.survey-login-social-link-img{
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  display: inline-block;
+}
+
+.survey-login-social-link-naver {
+  vertical-align: top;
+  margin-left: 0;
+  margin-top: 10px;
+  background-color: #ffffff;
+}
+
+.survey-login-social-link-naver-svg {
+  background: url("../img/naver-btn.svg") no-repeat center center;
+}
+
+.survey-login-social-link-kakao {
+  vertical-align: top;
+  margin-left: 0;
+  margin-top: 10px;
+  background-color: #fae100;
+}
+
+.survey-login-social-link-kakao-svg {
+  background: url("../img/kakao-btn.svg") no-repeat center center;
+
+}
+
+.survey-login-social-link-google {
+  vertical-align: top;
+  margin-left: 0;
+  background-color: #ffffff;
+}
+
+.survey-login-social-link-google-svg {
+  background: url("../img/google-btn.svg") no-repeat center center;
+}
+
+.survey-login-social-link-facebook {
+  vertical-align: top;
+  margin-left: 0;
+  margin-top: 10px;
+  background-color: #ffffff;
+}
+
+.survey-login-social-link-facebook-svg {
+  background: url("../img/facebook-btn.svg") no-repeat center center;
+}
+
+
+.survey-login-forgot-password {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.survey-login-forgot-id {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.survey-login-register {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #ff7057;
+}
+.survey-login-register span {
+  border-bottom: solid 1px #ff7057;
+}
+.survey-login-register:hover{
+  cursor: pointer;
+}

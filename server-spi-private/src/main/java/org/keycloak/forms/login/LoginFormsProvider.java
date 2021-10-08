@@ -92,6 +92,10 @@ public interface LoginFormsProvider extends Provider {
 
     Response createOAuth2DeviceVerifyUserCodePage();
 
+    Response createFindEmail();
+
+    Response createLoginDisplayEmailPage();
+
     Response createCode();
 
     Response createX509ConfirmPage();
@@ -106,15 +110,15 @@ public interface LoginFormsProvider extends Provider {
 
     /**
      * Set one global error message.
-     * 
+     *
      * @param message key of message
      * @param parameters to be formatted into message
      */
     LoginFormsProvider setError(String message, Object ... parameters);
-    
+
     /**
      * Set multiple error messages.
-     * 
+     *
      * @param messages to be set
      */
     LoginFormsProvider setErrors(List<FormMessage> messages);

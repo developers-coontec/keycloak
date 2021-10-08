@@ -21,6 +21,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import org.keycloak.models.IUser;
 
 /**
  * Abstraction, which allows to display updateProfile page in various contexts (Required action of already existing user, or first identity provider
@@ -28,7 +29,7 @@ import java.util.stream.Stream;
  *
  * @author <a href="mailto:mposolda@redhat.com">Marek Posolda</a>
  */
-public interface UpdateProfileContext {
+public interface UpdateProfileContext extends IUser {
 
     boolean isEditUsernameAllowed();
 
@@ -47,6 +48,10 @@ public interface UpdateProfileContext {
     String getLastName();
 
     void setLastName(String lastName);
+
+    String getName();
+
+    void setName(String name);
 
     Map<String, List<String>> getAttributes();
 
