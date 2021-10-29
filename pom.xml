@@ -249,7 +249,7 @@
         <repository>
             <id>jboss-releases-repository</id>
             <name>JBoss Releases Repository</name>
-            <url>http://maven.survey.com:8081/repository/maven-releases/</url>
+            <url>http://maven.survey.com:8282/repository/maven-releases/</url>
         </repository>
     </distributionManagement>
 
