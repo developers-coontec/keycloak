@@ -13,7 +13,7 @@
             <meta name="${meta?split('==')[0]}" content="${meta?split('==')[1]}"/>
           </#list>
       </#if>
-    <title>${msg("survey-page-title")}</title>
+    <title>${msg("survey_page-title")}</title>
     <link rel="icon" href="${url.resourcesPath}/img/favicon.ico"/>
       <#if properties.styles?has_content>
           <#list properties.styles?split(' ') as style>
@@ -32,12 +32,12 @@
       </#if>
     <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <!-- Google Tag Manager -->
     <script>
       console.log('window.location.host:' + window.location.host, navigator.userAgent);
-      if (window.location.host === "app.survey.com" ||
-          window.location.host === "auth.survey.com") {
+      if (window.location.host === "app.meback.ai" ||
+          window.location.host === "auth.meback.ai") {
 
         // (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         //       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -55,7 +55,6 @@
         // gtag('js', new Date());
         //
         // gtag('config', 'G-FQ0HPGWL4V');
-
 
         // (function(h,o,t,j,a,r){
         //   h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -77,14 +76,12 @@
 
       function getSurveyHomeUrl() {
         var url = window.location.href;
-        if (url.includes("authtest.survey.com")) {
-          return "https://test.survey.com";
-        } else if (url.includes("authdemo.survey.com")) {
-          return "https://demo.survey.com";
-        } else if (url.includes("auth2.survey.com")) {
-          return "https://app2.survey.com";
-        } else if (url.includes("auth.survey.com")) {
-          return "https://app.survey.com";
+        if (url.includes("authtest.meback.ai")) {
+          return "https://test.meback.ai";
+        } else if (url.includes("authdemo.meback.ai")) {
+          return "https://demo.meback.ai";
+        } else if (url.includes("auth.meback.ai")) {
+          return "https://app.meback.ai";
         } else {
           return "http://localhost:8080";
         }
@@ -131,17 +128,17 @@
 
       function displayAgreementRequiredErrorMessage() {
         console.log('displayAgreementRequiredErrorMessage');
-        // document.getElementById('register-validation-accept-agreement').classList.remove("survey-content-hide");
+        // document.getElementById('register-validation-accept-agreement').classList.remove("survey_content_hide");
         document.getElementById('register-validation-accept-agreement').classList.remove(
-            "survey-content-hide");
-        // document.getElementById('register-button').classList.add("survey-content-disabled");
+            "survey_content_hide");
+        // document.getElementById('register-button').classList.add("survey_content_disabled");
       }
 
       function hideAgreementRequiredErrorMessage() {
         console.log('hideAgreementRequiredErrorMessage');
         document.getElementById('register-validation-accept-agreement').classList.add(
-            "survey-content-hide");
-        // document.getElementById('register-button').classList.remove("survey-content-disabled");
+            "survey_content_hide");
+        // document.getElementById('register-button').classList.remove("survey_content_disabled");
       }
 
       function getElementValueById(elementId) {
@@ -172,14 +169,14 @@
           }
         }
         if (isValueTrue(localServiceAgreement) && isValueTrue(localPrivacyAgreement)) {
-          document.getElementById('register-agreement-section').classList.remove("survey-error");
+          document.getElementById('register-agreement-section').classList.remove("survey_error");
           document.getElementById('register-agreement-option-section').classList.remove(
-              "survey-error");
+              "survey_error");
           // hideAgreementRequiredErrorMessage();
         } else {
-          document.getElementById('register-agreement-section').classList.add("survey-error");
+          document.getElementById('register-agreement-section').classList.add("survey_error");
           document.getElementById('register-agreement-option-section').classList.add(
-              "survey-error");
+              "survey_error");
           // displayAgreementRequiredErrorMessage();
         }
       }
@@ -223,34 +220,35 @@
             lowerCaseAlphabetExists, upperCaseAlphabetExists, specialCharacterExists,
             lengthGreaterThanSeven);
 
-        var passwordStrengthGroupElement = document.getElementById('survey-password-strength-group');
-        if (passwordStrengthGroupElement){
+        var passwordStrengthGroupElement = document.getElementById(
+            'survey_password-strength-group');
+        if (passwordStrengthGroupElement) {
           if (!inputPassword || inputPassword.length < 1) {
-            passwordStrengthGroupElement.classList.add("survey-content-hide");
+            passwordStrengthGroupElement.classList.add("survey_content_hide");
           } else {
-            passwordStrengthGroupElement.classList.remove("survey-content-hide");
+            passwordStrengthGroupElement.classList.remove("survey_content_hide");
           }
         }
-        var spanElement = document.getElementById('survey-password-strength-value-span');
+        var spanElement = document.getElementById('survey_password-strength-value-span');
         if (spanElement) {
           if (validCount >= 3 && lengthGreaterThanSeven === true) {
-            spanElement.classList.remove("survey-content-weak");
-            spanElement.classList.remove("survey-content-normal");
-            spanElement.classList.remove("survey-content-strong");
-            spanElement.classList.add("survey-content-strong");
-            spanElement.innerHTML = "${msg("survey-password-strength-strong")}";
+            spanElement.classList.remove("survey_content_weak");
+            spanElement.classList.remove("survey_content_normal");
+            spanElement.classList.remove("survey_content_strong");
+            spanElement.classList.add("survey_content_strong");
+            spanElement.innerHTML = "${msg("survey_password-strength-strong")}";
           } else if (validCount === 2 && lengthGreaterThanSeven === true) {
-            spanElement.classList.remove("survey-content-weak");
-            spanElement.classList.remove("survey-content-normal");
-            spanElement.classList.remove("survey-content-strong");
-            spanElement.classList.add("survey-content-normal");
-            spanElement.innerHTML = "${msg("survey-password-strength-normal")}";
+            spanElement.classList.remove("survey_content_weak");
+            spanElement.classList.remove("survey_content_normal");
+            spanElement.classList.remove("survey_content_strong");
+            spanElement.classList.add("survey_content_normal");
+            spanElement.innerHTML = "${msg("survey_password-strength-normal")}";
           } else {
-            spanElement.classList.remove("survey-content-weak");
-            spanElement.classList.remove("survey-content-normal");
-            spanElement.classList.remove("survey-content-strong");
-            spanElement.classList.add("survey-content-weak");
-            spanElement.innerHTML = "${msg("survey-password-strength-weak")}";
+            spanElement.classList.remove("survey_content_weak");
+            spanElement.classList.remove("survey_content_normal");
+            spanElement.classList.remove("survey_content_strong");
+            spanElement.classList.add("survey_content_weak");
+            spanElement.innerHTML = "${msg("survey_password-strength-weak")}";
           }
         }
         return validCount;
@@ -259,13 +257,13 @@
       function allAgreementChecked() {
         console.log('allAgreementChecked');
         document.getElementById('allAgreement').value = true;
-        document.getElementById('all-agreement-checkbox').classList.remove("survey-content-hide");
+        document.getElementById('all-agreement-checkbox').classList.remove("survey_content_hide");
       }
 
       function allAgreementUnchecked() {
         console.log('allAgreementUnchecked');
         document.getElementById('allAgreement').value = false;
-        document.getElementById('all-agreement-checkbox').classList.add("survey-content-hide");
+        document.getElementById('all-agreement-checkbox').classList.add("survey_content_hide");
       }
 
       function onAllAgreementClick(inputValue) {
@@ -298,7 +296,7 @@
               "dropdown-clicked");
           document.getElementById('div-all-agreement-dropdown').classList.add("dropdown-default");
           document.getElementById('register-agreement-option-section').classList.add(
-              "survey-content-hide");
+              "survey_content_hide");
           document.getElementById('register-button').classList.remove("margin-top-155");
         } else {
           document.getElementById('all-agreement-dropdown').value = true;
@@ -306,7 +304,7 @@
               "dropdown-default");
           document.getElementById('div-all-agreement-dropdown').classList.add("dropdown-clicked");
           document.getElementById('register-agreement-option-section').classList.remove(
-              "survey-content-hide");
+              "survey_content_hide");
           document.getElementById('register-button').classList.add("margin-top-155");
         }
         // console.log(document.getElementById('all-agreement-dropdown'));
@@ -322,11 +320,11 @@
         if (isValueTrue(checkedValue)) {
           document.getElementById('serviceAgreement').value = false;
           document.getElementById('service-agreement-checkbox').classList.add(
-              "survey-content-hide");
+              "survey_content_hide");
         } else {
           document.getElementById('serviceAgreement').value = true;
           document.getElementById('service-agreement-checkbox').classList.remove(
-              "survey-content-hide");
+              "survey_content_hide");
         }
         // console.log(document.getElementById('service-agreement-checkbox'));
         isAgreementRequired(updateAllAgreement, inputValidateAllFields);
@@ -342,11 +340,11 @@
         if (isValueTrue(checkedValue)) {
           document.getElementById('privacyAgreement').value = false;
           document.getElementById('privacy-agreement-checkbox').classList.add(
-              "survey-content-hide");
+              "survey_content_hide");
         } else {
           document.getElementById('privacyAgreement').value = true;
           document.getElementById('privacy-agreement-checkbox').classList.remove(
-              "survey-content-hide");
+              "survey_content_hide");
         }
         // console.log(document.getElementById('privacy-agreement-checkbox'));
         isAgreementRequired(updateAllAgreement, inputValidateAllFields);
@@ -362,11 +360,11 @@
         if (isValueTrue(checkedValue)) {
           document.getElementById('marketingAgreement').value = false;
           document.getElementById('marketing-agreement-checkbox').classList.add(
-              "survey-content-hide");
+              "survey_content_hide");
         } else {
           document.getElementById('marketingAgreement').value = true;
           document.getElementById('marketing-agreement-checkbox').classList.remove(
-              "survey-content-hide");
+              "survey_content_hide");
         }
         // console.log(document.getElementById('marketing-agreement-checkbox'));
         isAgreementRequired(updateAllAgreement, inputValidateAllFields);
@@ -380,7 +378,7 @@
       function createSpanElement(text) {
         const span = document.createElement('span');
         span.textContent = text;
-        span.className = 'survey-error-text';
+        span.className = 'survey_error-text';
         return span;
       }
 
@@ -391,19 +389,19 @@
         const companyErrorSpan = createSpanElement('첫 단어에 공백이 포함될 수 없습니다.');
         const refCodeErrorSpan = createSpanElement('첫 단어에 공백이 포함될 수 없습니다.');
         let isValid1 = false;
-        if ($('#email')[0]){
+        if ($('#email')[0]) {
           isValid1 = REGEX_EMAIL.test($('#email')[0].value);  // email
         }
         let isValid2 = false;
-        if ($('#password')[0]){
+        if ($('#password')[0]) {
           isValid2 = !!$('#password')[0].value; // pwd
         }
         let isValid3 = false;
-        if ($('#name')[0]){
+        if ($('#name')[0]) {
           isValid3 = REGEX_NAME.test($('#name')[0].value); // name
         }
         let isValid4 = false;
-        if ($('#mobilePhoneNumber')[0]){
+        if ($('#mobilePhoneNumber')[0]) {
           isValid4 = REGEX_PHONE_NUMBER.test($('#mobilePhoneNumber')[0].value); // phone
         }
         let isValid5 = true;  // company
@@ -414,16 +412,17 @@
 
         function checkValid() {
           const registerButton = $('#register-button')[0];
-          console.log('registerButton checkValid',isValid1,isValid2,isValid3,isValid4,isValid5,isValid6,isValid7,isValid8,isValid9);
+          console.log('registerButton checkValid', isValid1, isValid2, isValid3, isValid4, isValid5,
+              isValid6, isValid7, isValid8, isValid9);
           if (isValid1 && isValid2 && isValid3 && isValid4 && isValid5 && isValid5 && isValid6
               && isValid7 && isValid8 && isValid9) {
-            registerButton?.classList.remove('survey-content-disabled');
+            registerButton?.classList.remove('survey_content_disabled');
 
             // console.error(isValid1, isValid2, isValid3, isValid4, isValid5, isValid5, isValid6
             //     , isValid7, isValid8, isValid9);
             return true;
           } else {
-            registerButton?.classList.add('survey-content-disabled');
+            registerButton?.classList.add('survey_content_disabled');
             // console.warn(isValid1, isValid2, isValid3, isValid4, isValid5, isValid5, isValid6
             //     , isValid7, isValid8, isValid9);
             return false;
@@ -467,7 +466,7 @@
             }
             isValid1 = REGEX_EMAIL.test(inputValue);
           } else {
-            inputElement.className = 'survey-error';
+            inputElement.className = 'survey_error';
             if (inputElement.nextElementSibling === null) {
               inputElement.parentNode.appendChild(emailErrorSpan);
             }
@@ -491,7 +490,7 @@
               inputElement.value = inputValue;
             }
           } else {
-            inputElement.className = 'survey-error';
+            inputElement.className = 'survey_error';
             if (inputElement.nextElementSibling === null) {
               inputElement.parentNode.appendChild(emailErrorSpan);
             }
@@ -511,7 +510,7 @@
             }
             isValid2 = validatePassword(inputElement) >= 3;
           } else {
-            inputElement.className = 'survey-error';
+            inputElement.className = 'survey_error';
             if (inputElement.nextElementSibling === null) {
             }
             isValid2 = false;
@@ -530,7 +529,7 @@
             }
             isValid3 = REGEX_NAME.test(inputValue);
           } else {
-            inputElement.className = 'survey-error';
+            inputElement.className = 'survey_error';
             if (inputElement.nextElementSibling === null) {
               inputElement.parentNode.appendChild(nameErrorSpan);
             }
@@ -550,7 +549,7 @@
             }
             isValid4 = REGEX_PHONE_NUMBER.test(inputValue);
           } else {
-            inputElement.className = 'survey-error';
+            inputElement.className = 'survey_error';
             if (inputElement.nextElementSibling === null) {
               inputElement.parentNode.appendChild(phoneNumberErrorSpan);
             }
@@ -570,7 +569,7 @@
             }
             isValid5 = true
           } else {
-            inputElement.className = 'survey-error';
+            inputElement.className = 'survey_error';
             if (inputElement.nextElementSibling === null) {
               inputElement.parentNode.appendChild(companyErrorSpan);
             }
@@ -590,7 +589,7 @@
             }
             isValid6 = true
           } else {
-            inputElement.className = 'survey-error';
+            inputElement.className = 'survey_error';
             if (inputElement.nextElementSibling === null) {
               inputElement.parentNode.appendChild(refCodeErrorSpan);
             }
@@ -674,31 +673,43 @@
     //   "pluginKey": "f6c60dea-3acd-447a-82b8-f07f48c45ca5"
     // });
   </script>
-  <div class="survey-main">
-    <div class="survey-header">
-      <div class="survey-header-img" onclick="goToUrl('${url.homeUrl}')">
+  <div class="survey_main">
+    <div class="survey_content_left">
+    </div>
+    <div class="survey_content_right">
+      <div class="survey_content_top">
+        <div class="survey_content_top_img" onclick="goToUrl('${url.homeUrl}')">
 
+        </div>
       </div>
-    </div>
-    <div class="survey-content-wrapper">
-        <#if displayMessage && message?has_content && (message.type != 'warning' || !isAppInitiatedAction??)>
-          <div class="alert alert-${message.type}">
-              <#if message.type = 'success'><span
-                class="${properties.kcFeedbackSuccessIcon!}"></span></#if>
-              <#if message.type = 'warning'><span
-                class="${properties.kcFeedbackWarningIcon!}"></span></#if>
-              <#if message.type = 'error'><span
-                class="${properties.kcFeedbackErrorIcon!}"></span></#if>
-              <#if message.type = 'info'><span
-                class="${properties.kcFeedbackInfoIcon!}"></span></#if>
-            <span class="kc-feedback-text">${kcSanitize(message.summary)?no_esc}</span>
-          </div>
-        </#if>
-        <#nested "form">
-    </div>
-    <div class="survey-footer">
-      <div class="survey-footer-copyright">
-        <span>${msg("survey-footer-copypright")}</span>
+      <div class="survey_content_body">
+          <#if displayMessage && message?has_content && (message.type != 'warning' || !isAppInitiatedAction??)>
+            <div class="alert alert-${message.type}">
+                <#if message.type = 'success'><span
+                  class="${properties.kcFeedbackSuccessIcon!}"></span></#if>
+                <#if message.type = 'warning'><span
+                  class="${properties.kcFeedbackWarningIcon!}"></span></#if>
+                <#if message.type = 'error'><span
+                  class="${properties.kcFeedbackErrorIcon!}"></span></#if>
+                <#if message.type = 'info'><span
+                  class="${properties.kcFeedbackInfoIcon!}"></span></#if>
+              <span class="kc-feedback-text">${kcSanitize(message.summary)?no_esc}</span>
+            </div>
+          </#if>
+          <#nested "form">
+      </div>
+      <div class="survey_content_bottom">
+        <div class="survey_content_bottom_copyright">
+          <span>${msg("survey_footer_copypright")}</span>
+        </div>
+        <div class="survey_content_bottom_terms_use"
+             onclick="openNewWindows('https://www.meback.ai/policy/service.html', 800, 800)">
+          <span>${msg("survey_footer_terms_use")}</span>
+        </div>
+        <div class="survey_content_bottom_privacy_policy"
+             onclick="openNewWindows('https://www.meback.ai/policy/privacy.html', 800, 800)">
+          <span>${msg("survey_footer_privacy_policy")}</span>
+        </div>
       </div>
     </div>
   </div>

@@ -251,7 +251,7 @@
       <a href="${homeUrl}" class="email-header-logo" target="_blank">
         <img class="logo logo-margin"
              style="margin-left: 30px; margin-top: 12px; width: 107px; height: 15px; object-fit: contain;"
-             src="https://survey-resource.s3.ap-northeast-2.amazonaws.com/email/images/survey-logo%402x.png" />
+             src="https://survey_email.s3.ap-northeast-2.amazonaws.com/logo%402x.png" />
       </a>
       <a href="${dashboardUrl}" target="_blank1">
         <div class="email-header-link-button" style="position: relative; padding: 5px 8px; margin-right: 30px; float: right; text-align: center; height: 18px; border-radius: 2px; border: solid 1px #cacaca; background-color: #ffffff;">

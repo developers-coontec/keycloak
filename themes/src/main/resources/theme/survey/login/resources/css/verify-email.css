@@ -1,20 +1,20 @@
-.survey-content-verify-email {
+.survey_content_verify-email {
   width: 400px;
 }
 
-.survey-content-verify-email .survey-content-footer{
+.survey_content_verify-email .survey_content_bottom{
   justify-content: flex-end;
 }
 
-.survey-content-verify-email .survey-content-subtitle{
+.survey_content_verify-email .survey_content_subtitle{
   display: inline-block;
 }
 
 @media (max-width: 450px) {
-  .survey-content-reset-password .survey-content-footer .survey-content-footer-left{
+  .survey_content_reset-password .survey_content_bottom .survey_content_bottom-left{
     width: calc(50% - 10px) !important;
   }
-  .survey-content-reset-password .survey-content-footer .survey-content-footer-right{
+  .survey_content_reset-password .survey_content_bottom .survey_content_bottom-right{
     width: calc(50% - 10px) !important;
   }
 }

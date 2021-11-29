@@ -8,9 +8,9 @@
 
     function emailOnChange(value) {
       if (buttonEnabled(value)) {
-        document.getElementById('submitDiv').classList.remove("survey-content-disabled");
+        document.getElementById('submitDiv').classList.remove("survey_content_disabled");
       } else {
-        document.getElementById('submitDiv').classList.add("survey-content-disabled");
+        document.getElementById('submitDiv').classList.add("survey_content_disabled");
       }
     }
 
@@ -31,36 +31,36 @@
     }
   </script>
   <form id="kc-reset-password-form" action="${url.loginAction}" method="post">
-    <div class="survey-content survey-content-reset-password">
-      <div class="survey-content-title">
+    <div class="survey_content survey_content_reset-password">
+      <div class="survey_content_title">
           ${msg("reset-password-content-title")}
       </div>
-      <div class="survey-content-subtitle">
+      <div class="survey_content_subtitle">
           ${msg("reset-password-content-subtitle")?no_esc}
       </div>
-      <div class="survey-divider"></div>
-      <div class="survey-content-input-group ">
-        <div class="survey-content-input-label margin-left-20">
+      <div class="survey_divider"></div>
+      <div class="survey_content_input_group ">
+        <div class="survey_content_input_label margin-left-20">
           <span>${msg("register-content-email")}</span>
         </div>
-        <div class="survey-content-input-text">
+        <div class="survey_content_input_text">
           <input id="email" name="username" type="text"
                  autocomplete="email"
                  maxlength="300"
                  autofocus onchange="emailOnChange(event.target.value)"
-                 placeholder="${msg("survey-content-email-placeholder")}"/>
+                 placeholder="${msg("survey_content_email-placeholder")}"/>
         </div>
       </div>
-      <div class="survey-divider"></div>
-      <div class="survey-content-footer margin-bottom-20">
-        <div class="survey-content-footer-left">
-          <div class="survey-link-text survey-content-footer-login"
+      <div class="survey_divider"></div>
+      <div class="survey_content_bottom margin-bottom-20">
+        <div class="survey_content_bottom-left">
+          <div class="survey_link_text survey_content_bottom-login"
                onclick="goToUrl('${url.loginUrl}')">
-            <span>${msg("survey-go-back-to-login-link")}</span>
+            <span>${msg("survey_go-back-to-login-link")}</span>
           </div>
         </div>
-        <div class="survey-content-footer-right">
-          <div id="submitDiv" class="survey-button survey-content-disabled"
+        <div class="survey_content_bottom-right">
+          <div id="submitDiv" class="survey_button survey_content_disabled"
                onclick="validateAndSubmit('kc-reset-password-form')">
             <span>${msg("reset-password-button")}</span>
           </div>

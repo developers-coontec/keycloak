@@ -26,7 +26,6 @@ import org.keycloak.theme.Theme;
 
 import java.io.IOException;
 import java.net.URI;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -73,7 +72,7 @@ public class IdentityProviderBean {
         if (!hideOnLoginPage) {
             orderedSet.add(new IdentityProvider(identityProvider.getAlias(),
                     displayName, identityProvider.getProviderId(), loginUrl,
-                    config != null ? config.get("guiOrder") : null, getLoginIconClasses(identityProvider.getAlias())));
+                    config != null ? config.get("guiOrder") : null, getLoginIconClasses(identityProvider.getAlias()), config.get("clientId")));
         }
     }
 
@@ -107,18 +106,22 @@ public class IdentityProviderBean {
         private final String guiOrder;
         private final String displayName;
         private final String iconClasses;
+        private final String clientId;
 
-        public IdentityProvider(String alias, String displayName, String providerId, String loginUrl, String guiOrder) {
-            this(alias, displayName, providerId, loginUrl, guiOrder, "");
+        public IdentityProvider(String alias, String displayName, String providerId,
+            String loginUrl, String guiOrder, String clientId) {
+            this(alias, displayName, providerId, loginUrl, guiOrder, "", clientId);
         }
 
-        public IdentityProvider(String alias, String displayName, String providerId, String loginUrl, String guiOrder, String iconClasses) {
+        public IdentityProvider(String alias, String displayName, String providerId,
+            String loginUrl, String guiOrder, String iconClasses, String clientId) {
             this.alias = alias;
             this.displayName = displayName;
             this.providerId = providerId;
             this.loginUrl = loginUrl;
             this.guiOrder = guiOrder;
             this.iconClasses = iconClasses;
+            this.clientId = clientId;
         }
 
         public String getAlias() {
@@ -144,6 +147,10 @@ public class IdentityProviderBean {
 
         public String getIconClasses() {
             return iconClasses;
+        }
+
+        public String getClientId() {
+            return clientId;
         }
     }
 

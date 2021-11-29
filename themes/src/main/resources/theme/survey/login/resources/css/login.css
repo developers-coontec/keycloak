@@ -1,27 +1,35 @@
 
-.survey-content-login {
-}
-
-@media (max-width: 450px) {
-  .survey-content-login .survey-content-footer .survey-content-footer-left{
-    width: 100% !important;
-  }
-  .survey-content-login .survey-content-footer .survey-content-footer-right{
-    width: 100% !important;
-    margin-top: 20px;
-  }
-}
-
-.survey-login-social-links {
+.survey_content_login {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 184px;
+  margin-left: 360px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/*@media (max-width: 450px) {*/
+/*  .survey_content_login .survey_content_bottom .survey_content_bottom-left{*/
+/*    width: 100% !important;*/
+/*  }*/
+/*  .survey_content_login .survey_content_bottom .survey_content_bottom-right{*/
+/*    width: 100% !important;*/
+/*    margin-top: 20px;*/
+/*  }*/
+/*}*/
+
+
+.survey_login_social_links {
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 42px;
+  margin-bottom: 16px;
 }
 
-.survey-login-social-link-text {
+.survey_login_social_link_text {
   display: inline-block;
   vertical-align: top;
   margin-top: 3px;
@@ -38,100 +46,100 @@
   color: #000000;
 }
 
-.survey-login-social-link-group {
+.survey_login_social_link_group {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
   flex-direction: row;
   width: 100%;
 }
 
-.survey-login-social-link {
+.survey_login_social_link {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 14px;
-  width: 220px;
+  width: 360px;
   height: 40px;
   padding: 11px;
   border-radius: 2px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.24), 0 0 1px 0 rgba(0, 0, 0, 0.12);
 }
 
-.survey-login-social-link-img{
+.survey_login_social_link_img{
   width: 18px;
   height: 18px;
   object-fit: contain;
   display: inline-block;
 }
 
-.survey-login-social-link-naver {
+.survey_login_social_link_naver {
   vertical-align: top;
   margin-left: 0;
   margin-top: 10px;
   background-color: #ffffff;
 }
 
-.survey-login-social-link-naver-svg {
+.survey_login_social_link_naver-svg {
   background: url("../img/naver-btn.svg") no-repeat center center;
 }
 
-.survey-login-social-link-kakao {
+.survey_login_social_link_kakao {
   vertical-align: top;
   margin-left: 0;
   margin-top: 10px;
   background-color: #fae100;
 }
 
-.survey-login-social-link-kakao-svg {
+.survey_login_social_link_kakao-svg {
   background: url("../img/kakao-btn.svg") no-repeat center center;
 
 }
 
-.survey-login-social-link-google {
+.survey_login_social_link_google {
   vertical-align: top;
   margin-left: 0;
   background-color: #ffffff;
 }
 
-.survey-login-social-link-google-svg {
+.survey_login_social_link_google-svg {
   background: url("../img/google-btn.svg") no-repeat center center;
 }
 
-.survey-login-social-link-facebook {
+.survey_login_social_link_facebook {
   vertical-align: top;
   margin-left: 0;
   margin-top: 10px;
   background-color: #ffffff;
 }
 
-.survey-login-social-link-facebook-svg {
+.survey_login_social_link_facebook-svg {
   background: url("../img/facebook-btn.svg") no-repeat center center;
 }
 
 
-.survey-login-forgot-password {
+.survey_login_forgot_password {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-.survey-login-forgot-id {
+.survey_login_forgot_id {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-.survey-login-register {
+.survey_login_register {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   color: #ff7057;
 }
-.survey-login-register span {
-  border-bottom: solid 1px #ff7057;
+.survey_login_register span {
+  /*border-bottom: solid 1px #ff7057;*/
 }
-.survey-login-register:hover{
+.survey_login_register:hover{
   cursor: pointer;
 }

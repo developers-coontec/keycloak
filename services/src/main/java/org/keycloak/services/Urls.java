@@ -286,7 +286,7 @@ public class Urls {
     public static String getSurveyHomeUrl(URI baseURI, URI actionuri) {
         String baseUrl = baseURI != null ? baseURI.toString() : "";
         String actionUrl = actionuri != null ? actionuri.toString() : "";
-        String domainSuffix = "survey.com";
+        String domainSuffix = "meback.ai";
         String localhostDomain = "localhost";
         String homeUrl = "";
         if (actionUrl.contains(domainSuffix) || actionUrl.contains(localhostDomain)) {

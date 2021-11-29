@@ -12,58 +12,58 @@
            readonly="readonly" style="display:none;"/>
     <input type="password" id="password" name="password" autocomplete="current-password"
            style="display:none;"/>
-    <div class="survey-content survey-content-update-password">
-      <div class="survey-content-title">
+    <div class="survey_content survey_content_update-password">
+      <div class="survey_content_title">
           ${msg("update-password-content-title")}
       </div>
-      <div class="survey-divider"></div>
-      <div class="survey-content-input-group">
-        <div class="survey-content-input-label margin-left-20">
+      <div class="survey_divider"></div>
+      <div class="survey_content_input_group">
+        <div class="survey_content_input_label margin-left-20">
           <span>${msg("update-password-content-new-password")}</span>
           <span
               class="update-password-content-new-password-description">${msg("update-password-content-new-password-description")}</span>
         </div>
-        <div class="survey-content-input-text">
+        <div class="survey_content_input_text">
           <input id="password-new" name="password-new" type="password" autofocus
                  autocomplete="new-password"
-                 placeholder="${msg("survey-content-password-placeholder")}"
+                 placeholder="${msg("survey_content_password-placeholder")}"
                  maxlength="100"
                  onchange="validatePassword(this)"/>
-          <div id="survey-password-strength-group"
-               class="survey-password-strength survey-content-hide">
-            <div class="survey-password-strength-text">
-              <span>${msg("survey-password-strength-text")} :</span>
+          <div id="survey_password-strength-group"
+               class="survey_password-strength survey_content_hide">
+            <div class="survey_password-strength-text">
+              <span>${msg("survey_password-strength-text")} :</span>
             </div>
-            <div class="survey-password-strength-value">
-              <span id="survey-password-strength-value-span"></span>
+            <div class="survey_password-strength-value">
+              <span id="survey_password-strength-value-span"></span>
             </div>
           </div>
         </div>
       </div>
-      <div class="survey-divider"></div>
-      <div class="survey-content-input-group">
-        <div class="survey-content-input-label margin-left-20">
+      <div class="survey_divider"></div>
+      <div class="survey_content_input_group">
+        <div class="survey_content_input_label margin-left-20">
           <span>${msg("update-password-content-new-confirm-password")}</span>
         </div>
-        <div class="survey-content-input-text">
+        <div class="survey_content_input_text">
           <input id="password-confirm" name="password-confirm" type="password"
                  autocomplete="new-password"
-                 placeholder="${msg("survey-content-confirm-password-placeholder")}"
+                 placeholder="${msg("survey_content_confirm-password-placeholder")}"
                  maxlength="100"
                  onchange="validatePassword(this)"/>
         </div>
       </div>
     </div>
-    <div class="survey-divider"></div>
-    <div class="survey-content-footer margin-bottom-20">
-      <div class="survey-content-footer-left">
-        <div class="survey-link-text survey-content-footer-login"
+    <div class="survey_divider"></div>
+    <div class="survey_content_bottom margin-bottom-20">
+      <div class="survey_content_bottom-left">
+        <div class="survey_link_text survey_content_bottom-login"
              onclick="goToUrl('${url.loginUrl}')">
-          <span>${msg("survey-go-back-to-login-link")}</span>
+          <span>${msg("survey_go-back-to-login-link")}</span>
         </div>
       </div>
-      <div class="survey-content-footer-right">
-        <div class="survey-button" onclick="clickSubmit('kc-passwd-update-form')">
+      <div class="survey_content_bottom-right">
+        <div class="survey_button" onclick="clickSubmit('kc-passwd-update-form')">
           <span>${msg("update-password-button")}</span>
         </div>
       </div>

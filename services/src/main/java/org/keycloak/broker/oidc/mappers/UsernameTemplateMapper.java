@@ -34,8 +34,10 @@ import org.keycloak.social.github.GitHubIdentityProviderFactory;
 import org.keycloak.social.gitlab.GitLabIdentityProviderFactory;
 import org.keycloak.social.google.GoogleIdentityProviderFactory;
 import org.keycloak.social.instagram.InstagramIdentityProviderFactory;
+import org.keycloak.social.kakao.KakaoIdentityProviderFactory;
 import org.keycloak.social.linkedin.LinkedInIdentityProviderFactory;
 import org.keycloak.social.microsoft.MicrosoftIdentityProviderFactory;
+import org.keycloak.social.naver.NaverIdentityProviderFactory;
 import org.keycloak.social.openshift.OpenshiftV3IdentityProviderFactory;
 import org.keycloak.social.openshift.OpenshiftV4IdentityProviderFactory;
 import org.keycloak.social.paypal.PayPalIdentityProviderFactory;
@@ -70,6 +72,8 @@ public class UsernameTemplateMapper extends AbstractClaimMapper {
             GitHubIdentityProviderFactory.PROVIDER_ID,
             GitLabIdentityProviderFactory.PROVIDER_ID,
             GoogleIdentityProviderFactory.PROVIDER_ID,
+        NaverIdentityProviderFactory.PROVIDER_ID,
+        KakaoIdentityProviderFactory.PROVIDER_ID,
             InstagramIdentityProviderFactory.PROVIDER_ID,
             LinkedInIdentityProviderFactory.PROVIDER_ID,
             MicrosoftIdentityProviderFactory.PROVIDER_ID,

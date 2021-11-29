@@ -1,9 +1,9 @@
 
-.survey-content-register {
+.survey_content_register {
 
 }
 
-.survey-content-register .register-login-text {
+.survey_content_register .register-login-text {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -18,7 +18,7 @@
   color: #656d80;
 }
 
-.survey-content-register .register-login {
+.survey_content_register .register-login {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -32,11 +32,11 @@
   letter-spacing: normal;
   color: #ff593b;
 }
-.survey-content-register .register-login span{
+.survey_content_register .register-login span{
   border-bottom: solid 1px #ff7057;
 }
 
-.survey-content-register .register-login:hover {
+.survey_content_register .register-login:hover {
   cursor: pointer;
 }
 
@@ -45,7 +45,7 @@
   margin-left: 10px;
 }
 
-.survey-content-register .register-agreement {
+.survey_content_register .register-agreement {
   display: inline-block;
   vertical-align: top;
   margin-top: 0;
@@ -57,7 +57,7 @@
 }
 
 @media (max-width:450px){
-  .survey-content-register .register-agreement-checkbox {
+  .survey_content_register .register-agreement-checkbox {
     display: inline-block;
     vertical-align: top;
     margin: 10px 5px 10px 10px;
@@ -66,7 +66,7 @@
     border-radius: 2px;
     background-color: #ff593b;
   }
-  .survey-content-register .register-agreement-checkbox-small {
+  .survey_content_register .register-agreement-checkbox-small {
     display: inline-block;
     vertical-align: top;
     margin: 10px 5px 10px 10px;
@@ -78,7 +78,7 @@
 }
 
 @media (min-width:450px) {
-  .survey-content-register .register-agreement-checkbox {
+  .survey_content_register .register-agreement-checkbox {
     display: inline-block;
     vertical-align: top;
     margin: 10px 10px;
@@ -87,7 +87,7 @@
     border-radius: 2px;
     background-color: #ff593b;
   }
-  .survey-content-register .register-agreement-checkbox-small {
+  .survey_content_register .register-agreement-checkbox-small {
     display: inline-block;
     vertical-align: top;
     margin: 10px 10px;
@@ -205,7 +205,7 @@
   width: 100%;
 }
 
-.survey-content-register .register-validation-agreement {
+.survey_content_register .register-validation-agreement {
   display: inline-block;
   vertical-align: top;
   position: relative;
