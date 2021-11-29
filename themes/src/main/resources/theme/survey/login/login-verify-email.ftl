@@ -11,11 +11,8 @@
       <#--      <span>${Session["authenticatedUser"]["email"]}</span>-->
       <#--      <span>${account.email}</span>-->
       <#--    </div>-->
-    <div class="survey_divider"></div>
-    <div class="survey_content_bottom margin-bottom-20">
-      <div class="survey_content_bottom-left">
-      </div>
-      <div class="survey_content_bottom-right">
+    <div class="survey_content_links margin-top-20">
+      <div class="survey_content_button_group">
         <div id="verify-email-button" class="survey_button"
              onclick="goToUrl('${url.loginAction}')">
           <span>${msg("verify-email-link")}</span>

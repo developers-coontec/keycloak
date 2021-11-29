@@ -22,18 +22,10 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 20px;
-  height: 14px;
-  font-size: 14px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 0.88;
-  letter-spacing: normal;
-  color: #ff593b;
 }
-.survey_content_register .register-login span{
-  border-bottom: solid 1px #ff7057;
+
+.survey_content_register .register-login span {
+  /*border-bottom: solid 1px #ff7057;*/
 }
 
 .survey_content_register .register-login:hover {
@@ -46,61 +38,71 @@
 }
 
 .survey_content_register .register-agreement {
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 0;
-  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+  width: 360px;
   height: 43px;
   border-radius: 3px;
   border: solid 1px #000000;
-  background-color: #191a1a;
+  flex-wrap: wrap;
+}
+.survey_main .survey_content_register .register-agreement.survey_error {
+  border-bottom: solid 1px #000000 !important;
 }
 
-@media (max-width:450px){
+@media (max-width: 450px) {
   .survey_content_register .register-agreement-checkbox {
-    display: inline-block;
-    vertical-align: top;
-    margin: 10px 5px 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 5px 5px;
     width: 22px;
     height: 22px;
     border-radius: 2px;
-    background-color: #ff593b;
+    background-color: var(--blue);
   }
+
   .survey_content_register .register-agreement-checkbox-small {
-    display: inline-block;
-    vertical-align: top;
-    margin: 10px 5px 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 5px 5px;
     width: 19px;
     height: 19px;
     border-radius: 2px;
-    background-color: #ff593b;
+    background-color: var(--blue);
   }
 }
 
-@media (min-width:450px) {
+@media (min-width: 450px) {
   .survey_content_register .register-agreement-checkbox {
-    display: inline-block;
-    vertical-align: top;
+    display: flex;
+    justify-content: center;
+    align-content: center;
     margin: 10px 10px;
     width: 22px;
     height: 22px;
     border-radius: 2px;
-    background-color: #ff593b;
+    background-color: var(--blue);
   }
+
   .survey_content_register .register-agreement-checkbox-small {
-    display: inline-block;
-    vertical-align: top;
+    display: flex;
+    justify-content: center;
+    align-content: center;
     margin: 10px 10px;
     width: 19px;
     height: 19px;
     border-radius: 2px;
-    background-color: #ff593b;
+    background-color: var(--blue);
   }
 }
 
 .all-agreement-checkbox-checked-svg {
-  display: inline-block;
-  vertical-align: top;
+  display: flex;
+  justify-content: center;
+  align-content: center;
   margin: 2px 2px;
   width: 18px;
   height: 18px;
@@ -109,8 +111,9 @@
 }
 
 .small-agreement-checkbox-checked-svg {
-  display: inline-block;
-  vertical-align: top;
+  display: flex;
+  justify-content: center;
+  align-content: center;
   margin: 2px 2px;
   width: 16px;
   height: 16px;
@@ -119,78 +122,97 @@
 }
 
 
-@media (max-width:450px){
+@media (max-width: 450px) {
   .register-agreement-text {
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 15px;
-    margin-left: 1px;
-    height: 14px;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    height: 100%;
+    width: calc(100% - 70px);
     font-size: 12px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 0.88;
     letter-spacing: normal;
-    color: #ffffff;
+    color: var(--black);
   }
+
+  .register-agreement-text span {
+    padding-top: 15px;
+  }
+
   .register-agreement-text-small {
-    display: inline-block;
-    vertical-align: top;
-    border-bottom: 1px solid #ffffff;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    height: 100%;
+    width: 100%;
     margin-top: 15px;
     margin-left: 1px;
     padding-bottom: 2px;
-    height: 14px;
     font-size: 12px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 0.88;
     letter-spacing: normal;
-    color: #ffffff;
+    color: var(--black);
   }
 }
-@media (min-width:450px) {
+
+@media (min-width: 450px) {
   .register-agreement-text {
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 15px;
-    margin-left: 1px;
-    height: 14px;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    height: 100%;
+    width: calc(100% - 70px);
     font-size: 14px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 0.88;
     letter-spacing: normal;
-    color: #ffffff;
+    color: var(--black);
   }
+
+  .register-agreement-text span {
+    padding-top: 15px;
+  }
+
   .register-agreement-text-small {
-    display: inline-block;
-    vertical-align: top;
-    border-bottom: 1px solid #ffffff;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    height: 100%;
+    width: 100%;
     margin-top: 15px;
     margin-left: 1px;
     padding-bottom: 2px;
-    height: 14px;
     font-size: 12px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 0.88;
     letter-spacing: normal;
-    color: #ffffff;
+    color: var(--black);
   }
 }
 
 .all-agreement-dropdown {
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
   margin-top: 17px;
-  margin-right: 20px;
-  position: relative;
-  float: right;
 }
 
+.register-agreement-select {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  width: 100%;
+}
 
 .register-agreement-select-options {
   display: inline-block;
@@ -198,10 +220,18 @@
   position: relative;
   margin-bottom: 0;
   width: 100%;
-  background-color: #191a1a;
+  border-radius: 3px;
+  margin-top: 1px;
+  border: solid 1px #000000;
+}
+.survey_main .register-agreement-select-options.survey_error {
+  border-bottom: solid 1px #000000 !important;
 }
 
 .register-agreement-select-section-row {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
   width: 100%;
 }
 
@@ -216,5 +246,5 @@
   font-style: normal;
   line-height: 1.17;
   letter-spacing: normal;
-  color: #a0141b;
+  color: var(--red);
 }

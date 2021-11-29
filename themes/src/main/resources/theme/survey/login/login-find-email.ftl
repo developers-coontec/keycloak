@@ -41,9 +41,8 @@
       <div class="survey_content_subtitle">
           ${msg("find-email-content-subtitle")?no_esc}
       </div>
-      <div class="survey_divider"></div>
       <div class="survey_content_input_group">
-        <div class="survey_content_input_label margin-left-20">
+        <div class="survey_content_input_label">
           <span>${msg("find-email-content-name")}</span>
         </div>
         <div class="survey_content_input_text">
@@ -55,9 +54,8 @@
                  placeholder="${msg("survey_content_name-placeholder")}"/>
         </div>
       </div>
-      <div class="survey_divider"></div>
       <div class="survey_content_input_group">
-        <div class="survey_content_input_label margin-left-20">
+        <div class="survey_content_input_label">
           <span>${msg("find-email-content-mobile-phone-number")}</span>
         </div>
         <div class="survey_content_input_text">
@@ -69,18 +67,17 @@
                  placeholder="${msg("survey_content_mobile-phone-number-placeholder")}"/>
         </div>
       </div>
-      <div class="survey_divider"></div>
-      <div class="survey_content_bottom margin-bottom-20">
-        <div class="survey_content_bottom-left">
-          <div class="survey_link_text survey_content_bottom-login"
-               onclick="goToUrl('${url.loginUrl}')">
-            <span>${msg("survey_go-back-to-login-link")}</span>
-          </div>
-        </div>
-        <div class="survey_content_bottom-right">
+      <div class="survey_content_links margin-top-20">
+        <div class="survey_content_button_group">
           <div id="submitDiv" class="survey_button survey_content_disabled"
                onclick="validateAndSubmit('kc-find-email-form')">
             <span>${msg("find-email-button")}</span>
+          </div>
+        </div>
+        <div class="survey_content_link_group margin-top-32">
+          <div class="survey_link_text survey_content_bottom-login"
+               onclick="goToUrl('${url.loginUrl}')">
+            <span>${msg("survey_go-back-to-login-link")}</span>
           </div>
         </div>
       </div>

@@ -11,20 +11,19 @@
             ${msg("id-not-found")}
         </#if>
     </div>
-    <div class="survey_divider"></div>
-    <div class="survey_content_bottom margin-bottom-20">
-      <div class="survey_content_bottom-left">
-        <div class="survey_link_text " onclick="goToUrl('${url.loginUrl}')">
-          <span>${msg("survey_go-back-to-login-link")}</span>
-        </div>
-      </div>
-      <div class="survey_content_bottom-right">
-          <#if email?? >
+    <div class="survey_content_links margin-top-20">
+        <#if email?? >
+          <div class="survey_content_button_group">
             <div id="resetPassword" class="survey_button"
                  onclick="goToUrl('${url.loginResetCredentialsUrl}')">
               <span>${msg("reset-password-button")}</span>
             </div>
-          </#if>
+          </div>
+        </#if>
+      <div class="survey_content_link_group margin-top-32">
+        <div class="survey_link_text " onclick="goToUrl('${url.loginUrl}')">
+          <span>${msg("survey_go-back-to-login-link")}</span>
+        </div>
       </div>
     </div>
   </div>

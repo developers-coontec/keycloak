@@ -168,6 +168,16 @@ body {
   overflow-y: hidden;
   overflow-x: hidden;
 }
+
+.survey_main .survey_content  {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 184px;
+  margin-left: 360px;
+  width: 100%;
+  flex-wrap: wrap;
+}
 .survey_main .survey_content_left{
   display: flex;
   justify-content: center;
@@ -225,8 +235,8 @@ body {
 
 .survey_content_body {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   height: calc(100% - 60px - 60px);
   width: 100%;
 }
@@ -454,8 +464,7 @@ body {
   font-style: normal;
   line-height: 5;
   letter-spacing: -0.45px;
-  color: #000000;
-  margin-left: 130px;
+  color: var(--dark_2);
 }
 
 @media (max-width: 450px) {
@@ -475,11 +484,10 @@ body {
   display: flex;
   justify-content: flex-start;
   align-content: center;
+  flex-wrap: wrap;
   padding: 0;
-  border-bottom: 1px solid var(--dark_3);
   width: 360px;
   height: 41px;
-
   color: var(--black);
 }
 
@@ -505,6 +513,7 @@ body {
   font-style: normal;
   line-height: 1.33;
   letter-spacing: normal;
+  border-bottom: 1px solid var(--dark_3);
 }
 .survey_main .survey_content_input_text input:focus {
   text-decoration: none;
@@ -517,20 +526,23 @@ body {
 }
 
 .survey_main .survey_content_disabled{
-  border-radius: 20px !important;
-  border: solid 1px #e6e9f1 !important;
-  background-color: rgba(247, 248, 251, 0.54) !important;
+  background-color: var(--gray_1);
 }
 
 .survey_main .survey_content_disabled input{
-  color: #acb0bb !important;
+  color: var(--dark_2) !important;
 }
 
+.survey_main .survey_content_disabled span{
+  color: var(--dark_2) !important;
+}
 
 
 
 .survey_main .survey_link_text {
-  width: 51px;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
   height: 16px;
   font-family: AppleSDGothicNeoR, "Open Sans", sans-serif;
   font-size: 11px;
@@ -558,12 +570,10 @@ body {
 }
 
 .survey_main .dropdown-default {
-  display: inline-block;
-  vertical-align: top;
   width: 16px;
   height: 8px;
   object-fit: contain;
-  background: url("../img/dropbox-btn-dark.svg") no-repeat center center;
+  background: url("../img/dropbox-btn-default.svg") no-repeat center center;
 }
 
 .survey_main .dropdown-clicked {
@@ -572,7 +582,7 @@ body {
   width: 16px;
   height: 8px;
   object-fit: contain;
-  background: url("../img/dropbox-btn-clicked-dark.svg") no-repeat center center;
+  background: url("../img/dropbox-btn-clicked.svg") no-repeat center center;
 }
 
 .survey_main .survey_content_hide{
@@ -602,6 +612,9 @@ body {
 }
 
 .survey_main .survey_error-text {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
   width: 100%;
   height: 16px;
   font-family: AppleSDGothicNeoR, "Open Sans", sans-serif;
@@ -663,4 +676,9 @@ body {
   letter-spacing: normal;
   text-align: right;
   margin-left: 10px;
+}
+
+.survey_flex_br{
+  width: 100%;
+  height: 0;
 }

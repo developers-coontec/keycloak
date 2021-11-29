@@ -297,7 +297,7 @@
           document.getElementById('div-all-agreement-dropdown').classList.add("dropdown-default");
           document.getElementById('register-agreement-option-section').classList.add(
               "survey_content_hide");
-          document.getElementById('register-button').classList.remove("margin-top-155");
+          document.getElementById('survey_login_social_links').classList.remove("margin-top-155");
         } else {
           document.getElementById('all-agreement-dropdown').value = true;
           document.getElementById('div-all-agreement-dropdown').classList.remove(
@@ -305,7 +305,7 @@
           document.getElementById('div-all-agreement-dropdown').classList.add("dropdown-clicked");
           document.getElementById('register-agreement-option-section').classList.remove(
               "survey_content_hide");
-          document.getElementById('register-button').classList.add("margin-top-155");
+          document.getElementById('survey_login_social_links').classList.add("margin-top-155");
         }
         // console.log(document.getElementById('all-agreement-dropdown'));
       }
@@ -375,19 +375,21 @@
         window.open(newUrl, '_blank', features);
       }
 
-      function createSpanElement(text) {
+      function createErrorElement(text) {
+        const errorDiv = document.createElement('div');
         const span = document.createElement('span');
         span.textContent = text;
-        span.className = 'survey_error-text';
-        return span;
+        errorDiv.className = 'survey_error-text';
+        errorDiv.append(span);
+        return errorDiv;
       }
 
       $(document).ready(function () {
-        const emailErrorSpan = createSpanElement('이메일 주소가 유효하지 않습니다.');
-        const nameErrorSpan = createSpanElement('이름은 표준 한글 또는 영문만 입력가능합니다.');
-        const phoneNumberErrorSpan = createSpanElement('휴대폰 번호가 유효하지 않습니다.');
-        const companyErrorSpan = createSpanElement('첫 단어에 공백이 포함될 수 없습니다.');
-        const refCodeErrorSpan = createSpanElement('첫 단어에 공백이 포함될 수 없습니다.');
+        const emailErrorSpan = createErrorElement('이메일 주소가 유효하지 않습니다.');
+        const nameErrorSpan = createErrorElement('이름은 표준 한글 또는 영문만 입력가능합니다.');
+        const phoneNumberErrorSpan = createErrorElement('휴대폰 번호가 유효하지 않습니다.');
+        const companyErrorSpan = createErrorElement('첫 단어에 공백이 포함될 수 없습니다.');
+        const refCodeErrorSpan = createErrorElement('첫 단어에 공백이 포함될 수 없습니다.');
         let isValid1 = false;
         if ($('#email')[0]) {
           isValid1 = REGEX_EMAIL.test($('#email')[0].value);  // email
@@ -400,10 +402,11 @@
         if ($('#name')[0]) {
           isValid3 = REGEX_NAME.test($('#name')[0].value); // name
         }
-        let isValid4 = false;
-        if ($('#mobilePhoneNumber')[0]) {
-          isValid4 = REGEX_PHONE_NUMBER.test($('#mobilePhoneNumber')[0].value); // phone
-        }
+        // let isValid4 = false;
+        // if ($('#mobilePhoneNumber')[0]) {
+        //   isValid4 = REGEX_PHONE_NUMBER.test($('#mobilePhoneNumber')[0].value); // phone
+        // }
+        let isValid4 = true;
         let isValid5 = true;  // company
         let isValid6 = true;  // ref Code
         let isValid7 = false; // service

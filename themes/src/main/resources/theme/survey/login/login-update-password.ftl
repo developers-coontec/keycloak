@@ -16,9 +16,8 @@
       <div class="survey_content_title">
           ${msg("update-password-content-title")}
       </div>
-      <div class="survey_divider"></div>
       <div class="survey_content_input_group">
-        <div class="survey_content_input_label margin-left-20">
+        <div class="survey_content_input_label">
           <span>${msg("update-password-content-new-password")}</span>
           <span
               class="update-password-content-new-password-description">${msg("update-password-content-new-password-description")}</span>
@@ -40,9 +39,8 @@
           </div>
         </div>
       </div>
-      <div class="survey_divider"></div>
       <div class="survey_content_input_group">
-        <div class="survey_content_input_label margin-left-20">
+        <div class="survey_content_input_label">
           <span>${msg("update-password-content-new-confirm-password")}</span>
         </div>
         <div class="survey_content_input_text">
@@ -54,17 +52,16 @@
         </div>
       </div>
     </div>
-    <div class="survey_divider"></div>
-    <div class="survey_content_bottom margin-bottom-20">
-      <div class="survey_content_bottom-left">
+    <div class="survey_content_links margin-top-20">
+      <div class="survey_content_button_group">
+        <div class="survey_button" onclick="clickSubmit('kc-passwd-update-form')">
+          <span>${msg("update-password-button")}</span>
+        </div>
+      </div>
+      <div class="survey_content_link_group margin-top-32">
         <div class="survey_link_text survey_content_bottom-login"
              onclick="goToUrl('${url.loginUrl}')">
           <span>${msg("survey_go-back-to-login-link")}</span>
-        </div>
-      </div>
-      <div class="survey_content_bottom-right">
-        <div class="survey_button" onclick="clickSubmit('kc-passwd-update-form')">
-          <span>${msg("update-password-button")}</span>
         </div>
       </div>
     </div>

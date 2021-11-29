@@ -1,12 +1,5 @@
 
 .survey_content_login {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-top: 184px;
-  margin-left: 360px;
-  width: 100%;
-  flex-wrap: wrap;
 }
 
 /*@media (max-width: 450px) {*/
@@ -30,8 +23,9 @@
 }
 
 .survey_login_social_link_text {
-  display: inline-block;
-  vertical-align: top;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
   margin-top: 3px;
   margin-left: 20px;
   width: auto;
@@ -135,7 +129,6 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  color: #ff7057;
 }
 .survey_login_register span {
   /*border-bottom: solid 1px #ff7057;*/

@@ -24,10 +24,9 @@
             <br/><br/>${msg("survey_content_naver-description", "${(user.email!'')}")?no_esc}
           </#if>
       </div>
-      <div class="survey_divider"></div>
         <#if naverIdRequired == "false">
           <div class="survey_content_input_group ">
-            <div class="survey_content_input_label margin-left-20">
+            <div class="survey_content_input_label">
               <span>${msg("register-content-email")}</span>
             </div>
             <div class="survey_content_input_text survey_content_disabled">
@@ -38,7 +37,7 @@
         </#if>
         <#if naverIdRequired == "true">
           <div class="survey_content_input_group ">
-            <div class="survey_content_input_label margin-left-20">
+            <div class="survey_content_input_label">
               <span>${msg("register-content-naver-id")}</span>
             </div>
             <div class="survey_content_input_text">
@@ -50,9 +49,8 @@
             </div>
           </div>
         </#if>
-      <div class="survey_divider"></div>
       <div class="survey_content_input_group ">
-        <div class="survey_content_input_label margin-left-20">
+        <div class="survey_content_input_label">
           <span>${msg("register-content-name")}</span>
         </div>
         <div class="survey_content_input_text">
@@ -62,22 +60,20 @@
                  placeholder="${msg("survey_content_name-placeholder")}"/>
         </div>
       </div>
-      <div class="survey_divider"></div>
+<#--      <div class="survey_content_input_group ">-->
+<#--        <div class="survey_content_input_label">-->
+<#--          <span>${msg("register-content-mobile-phone-number")}</span>-->
+<#--        </div>-->
+<#--        <div class="survey_content_input_text">-->
+<#--          <input id="mobilePhoneNumber" name="mobilePhoneNumber" type="text"-->
+<#--                 autocomplete="mobilePhoneNumber"-->
+<#--                 maxlength="100"-->
+<#--                 value="${(mobilePhoneNumber!user.mobilePhoneNumber!'')}"-->
+<#--                 placeholder="${msg("survey_content_mobile-phone-number-placeholder")}"/>-->
+<#--        </div>-->
+<#--      </div>-->
       <div class="survey_content_input_group ">
-        <div class="survey_content_input_label margin-left-20">
-          <span>${msg("register-content-mobile-phone-number")}</span>
-        </div>
-        <div class="survey_content_input_text">
-          <input id="mobilePhoneNumber" name="mobilePhoneNumber" type="text"
-                 autocomplete="mobilePhoneNumber"
-                 maxlength="100"
-                 value="${(mobilePhoneNumber!user.mobilePhoneNumber!'')}"
-                 placeholder="${msg("survey_content_mobile-phone-number-placeholder")}"/>
-        </div>
-      </div>
-      <div class="survey_divider"></div>
-      <div class="survey_content_input_group ">
-        <div class="survey_content_input_label margin-left-20">
+        <div class="survey_content_input_label">
           <span>${msg("register-content-company")}</span>
         </div>
         <div class="survey_content_input_text">
@@ -88,26 +84,24 @@
                  placeholder="${msg("survey_content_company-placeholder")}"/>
         </div>
       </div>
-      <div class="survey_divider"></div>
-      <div class="survey_content_input_group ">
-        <div class="survey_content_input_label margin-left-20">
-          <span>${msg("register-content-referral-code")}</span>
-        </div>
-        <div class="survey_content_input_text">
-            <#if referredByCode?? && referredByCode?has_content >
-              <input id="referredByCode" name="referredByCode1" type="text"
-                     disabled class="survey_content_disabled"
-                     value="${(referredByCode!'')}"/>
-              <input name="referredByCode" type="hidden"
-                     value="${(referredByCode!'')}"/>
-            <#else>
-              <input id="referredByCode" name="referredByCode" type="text"
-                     autocomplete="off" maxlength="6"
-                     value="${(referredByCode!'')}"/>
-            </#if>
-        </div>
-      </div>
-      <div class="survey_divider"></div>
+<#--      <div class="survey_content_input_group ">-->
+<#--        <div class="survey_content_input_label">-->
+<#--          <span>${msg("register-content-referral-code")}</span>-->
+<#--        </div>-->
+<#--        <div class="survey_content_input_text">-->
+<#--            <#if referredByCode?? && referredByCode?has_content >-->
+<#--              <input id="referredByCode" name="referredByCode1" type="text"-->
+<#--                     disabled class="survey_content_disabled"-->
+<#--                     value="${(referredByCode!'')}"/>-->
+<#--              <input name="referredByCode" type="hidden"-->
+<#--                     value="${(referredByCode!'')}"/>-->
+<#--            <#else>-->
+<#--              <input id="referredByCode" name="referredByCode" type="text"-->
+<#--                     autocomplete="off" maxlength="6"-->
+<#--                     value="${(referredByCode!'')}"/>-->
+<#--            </#if>-->
+<#--        </div>-->
+<#--      </div>-->
       <div id="register-agreement-section" class="register-agreement">
         <div class="register-agreement-select">
           <div class="register-agreement-checkbox"
@@ -168,19 +162,18 @@
           <span>${msg("survey_validation-require-accept")}</span>
         </div>
       </div>
-      <div class="survey_divider"></div>
-      <div class="survey_content_bottom margin-bottom-20">
-        <div class="survey_content_bottom-left">
+      <div class="survey_content_links margin-top-20">
+        <div class="survey_content_button_group">
+          <div id="register-button" class="survey_button">
+            <span>${msg("register-button")}</span>
+          </div>
+        </div>
+        <div class="survey_content_link_group margin-top-32">
           <div class="register-login-text">
             <span>${msg("register-login-msg")}</span>
           </div>
           <div class="register-login" onclick="goToUrl('${url.loginUrl}')">
             <span>${msg("register-login-link")}</span>
-          </div>
-        </div>
-        <div class="survey_content_bottom-right">
-          <div id="register-button" class="survey_button">
-            <span>${msg("register-button")}</span>
           </div>
         </div>
       </div>
