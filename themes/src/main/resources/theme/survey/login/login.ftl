@@ -119,13 +119,13 @@
           <div class="survey_link_description">
             <span>${msg("login-content-forgot-id-or-password-msg")}</span>
           </div>
-          <div class="survey_login_forgot_id survey_link_text margin-left-10"
-               onclick="goToUrl('${url.loginFindEmailUrl}')">
-            <span>${msg("login-content-forgot-id")}</span>
-          </div>
-          <div class="survey_content_or margin-left-10">
-            <span>|</span>
-          </div>
+<#--          <div class="survey_login_forgot_id survey_link_text margin-left-10"-->
+<#--               onclick="goToUrl('${url.loginFindEmailUrl}')">-->
+<#--            <span>${msg("login-content-forgot-id")}</span>-->
+<#--          </div>-->
+<#--          <div class="survey_content_or margin-left-10">-->
+<#--            <span>|</span>-->
+<#--          </div>-->
           <div class="survey_login_forgot_password survey_link_text margin-left-10"
                onclick="goToUrl('${url.loginResetCredentialsUrl}')">
             <span>${msg("login-content-forgot-password")}</span>
