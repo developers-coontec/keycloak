@@ -106,7 +106,7 @@
 <#--            </#if>-->
 <#--        </div>-->
 <#--      </div>-->
-      <div id="register-agreement-section" class="register-agreement  margin-top-20">
+      <div id="register-agreement-section" class="register-agreement margin-top-20">
         <div class="register-agreement-select">
           <div class="register-agreement-checkbox"
           >

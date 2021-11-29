@@ -102,7 +102,7 @@
 <#--            </#if>-->
 <#--        </div>-->
 <#--      </div>-->
-      <div id="register-agreement-section" class="register-agreement">
+      <div id="register-agreement-section" class="register-agreement margin-top-20">
         <div class="register-agreement-select">
           <div class="register-agreement-checkbox"
           >
@@ -169,10 +169,10 @@
           </div>
         </div>
         <div class="survey_content_link_group margin-top-32">
-          <div class="register-login-text">
+          <div class="survey_link_description">
             <span>${msg("register-login-msg")}</span>
           </div>
-          <div class="register-login" onclick="goToUrl('${url.loginUrl}')">
+          <div class="register-login survey_link_text margin-left-10" onclick="goToUrl('${url.loginUrl}')">
             <span>${msg("register-login-link")}</span>
           </div>
         </div>

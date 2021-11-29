@@ -3,35 +3,6 @@
 
 }
 
-.survey_content_register .register-login-text {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 19px;
-  font-size: 15px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 5;
-  letter-spacing: -0.45px;
-  text-align: left;
-  color: #656d80;
-}
-
-.survey_content_register .register-login {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.survey_content_register .register-login span {
-  /*border-bottom: solid 1px #ff7057;*/
-}
-
-.survey_content_register .register-login:hover {
-  cursor: pointer;
-}
-
 .register-content-label-password-description {
   font-size: 12px;
   margin-left: 10px;
