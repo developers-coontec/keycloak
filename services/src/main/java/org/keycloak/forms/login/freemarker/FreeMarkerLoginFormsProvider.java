@@ -67,6 +67,7 @@ import org.keycloak.theme.beans.MessageBean;
 import org.keycloak.theme.beans.MessageFormatterMethod;
 import org.keycloak.theme.beans.MessageType;
 import org.keycloak.theme.beans.MessagesPerFieldBean;
+import org.keycloak.utils.IdentityProviderUtils;
 import org.keycloak.utils.MediaType;
 
 import javax.ws.rs.core.MultivaluedMap;
@@ -235,19 +236,27 @@ public class FreeMarkerLoginFormsProvider implements LoginFormsProvider {
                     attributes.put("identityProviderId", identityProviderId);
                 }
                 String name = "";
+                String lastName = null;
+                String firstName = null;
                 if (userCtx.getLastName() != null && !userCtx.getLastName().isEmpty()) {
-                    name += userCtx.getLastName();
+                    lastName = userCtx.getLastName().trim();
                 }
                 if (userCtx.getFirstName() != null && !userCtx.getFirstName().isEmpty()) {
-                    name += userCtx.getFirstName();
+                    firstName = userCtx.getFirstName().trim();
                 }
+                if (IdentityProviderUtils.KOREAN_LAST_NAMES.contains(lastName)){
+                    name = lastName + firstName;
+                } else {
+                    name = firstName + " " + lastName;
+                }
+                attributes.put(Constants.FIELD_NAME, name);
+
                 String userEmail = userCtx.getEmail();
                 if (NaverIdentityProviderFactory.PROVIDER_ID.equals(identityProviderId) && !userEmail.contains("naver.com")){
                     attributes.put(Validation.FIELD_NAVER_ID_REQUIRED, "true");
                 } else {
                     attributes.put(Validation.FIELD_NAVER_ID_REQUIRED, "false");
                 }
-                attributes.put(Constants.FIELD_NAME, name);
                 String mobilePhoneNumber = userCtx.getFirstAttribute(Constants.FIELD_MOBILE_PHONE_NUMBER);
                 if (mobilePhoneNumber != null && !mobilePhoneNumber.isEmpty()) {
                     attributes.put(Constants.FIELD_MOBILE_PHONE_NUMBER, mobilePhoneNumber);

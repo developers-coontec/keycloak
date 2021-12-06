@@ -17,6 +17,7 @@
 package org.keycloak.social.google;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import java.io.IOException;
 import org.keycloak.OAuth2Constants;
 import org.keycloak.broker.oidc.OIDCIdentityProvider;
 import org.keycloak.broker.oidc.OIDCIdentityProviderConfig;
@@ -28,6 +29,7 @@ import org.keycloak.common.ClientConnection;
 import org.keycloak.common.util.KeycloakUriBuilder;
 import org.keycloak.events.EventBuilder;
 import org.keycloak.models.KeycloakSession;
+import org.keycloak.representations.AccessTokenResponse;
 import org.keycloak.representations.JsonWebToken;
 
 import javax.ws.rs.core.MultivaluedMap;
@@ -74,13 +76,8 @@ public class GoogleIdentityProvider extends OIDCIdentityProvider implements Soci
     }
 
     @Override
-    protected BrokeredIdentityContext extractIdentityFromProfile(EventBuilder event, JsonNode profile) {
-        BrokeredIdentityContext user = super.extractIdentityFromProfile(event, profile);
-
-        String username = getJsonProperty(profile, "username");
-
-        String firstName = getJsonProperty(profile, "first_name");
-        String lastName = getJsonProperty(profile, "last_name");
+    protected BrokeredIdentityContext extractIdentity(AccessTokenResponse tokenResponse, String accessToken, JsonWebToken idToken) throws IOException {
+        BrokeredIdentityContext user = super.extractIdentity(tokenResponse, accessToken, idToken);
 
         return user;
     }
