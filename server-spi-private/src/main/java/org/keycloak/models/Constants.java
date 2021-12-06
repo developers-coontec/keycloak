@@ -85,7 +85,7 @@ public final class Constants {
     public static final String FIELD_MOBILE_PHONE_NUMBER = "mobilePhoneNumber";
     public static final String FIELD_PROFILE_IMAGE_URL = "profileImageUrl";
     public static final String FIELD_PROFILE_THUMBNAIL_IMAGE_URL = "profileThumbnailImageUrl";
-    public static final String FIELD_BIRTH_DATE = "birthDate";
+    public static final String FIELD_BIRTH_DATE = "birthdate";
     public static final String FIELD_LOCALE = "locale";
     public static final String FIELD_GENDER_CODE = "genderCode";
     public static final String FIELD_COMPANY = "company";
