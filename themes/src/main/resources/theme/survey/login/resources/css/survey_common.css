@@ -253,7 +253,7 @@ body {
 }
 
 .survey_main .survey_content_top .survey_content_top_img {
-  width: 100px;
+  width: 200px;
   height: 40px;
   object-fit: contain;
   background: url("../img/logo.svg") no-repeat center center;
