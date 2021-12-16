@@ -18,6 +18,7 @@
   border: solid 1px #000000;
   flex-wrap: wrap;
 }
+
 .survey_main .survey_content_register .register-agreement.survey_error {
   border-bottom: solid 1px #000000 !important;
 }
@@ -93,83 +94,43 @@
 }
 
 
-@media (max-width: 450px) {
-  .register-agreement-text {
-    display: flex;
-    justify-content: flex-start;
-    align-content: center;
-    height: 100%;
-    width: calc(100% - 70px);
-    font-size: 12px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 0.88;
-    letter-spacing: normal;
-    color: var(--black);
-  }
-
-  .register-agreement-text span {
-    padding-top: 15px;
-  }
-
-  .register-agreement-text-small {
-    display: flex;
-    justify-content: flex-start;
-    align-content: center;
-    height: 100%;
-    width: 100%;
-    margin-top: 15px;
-    margin-left: 1px;
-    padding-bottom: 2px;
-    font-size: 12px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 0.88;
-    letter-spacing: normal;
-    color: var(--black);
-  }
+.register-agreement-text {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  height: 100%;
+  width: calc(100% - 70px);
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  color: var(--dark_1);
 }
 
-@media (min-width: 450px) {
-  .register-agreement-text {
-    display: flex;
-    justify-content: flex-start;
-    align-content: center;
-    height: 100%;
-    width: calc(100% - 70px);
-    font-size: 14px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 0.88;
-    letter-spacing: normal;
-    color: var(--black);
-  }
-
-  .register-agreement-text span {
-    padding-top: 15px;
-  }
-
-  .register-agreement-text-small {
-    display: flex;
-    justify-content: flex-start;
-    align-content: center;
-    height: 100%;
-    width: 100%;
-    margin-top: 15px;
-    margin-left: 1px;
-    padding-bottom: 2px;
-    font-size: 12px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 0.88;
-    letter-spacing: normal;
-    color: var(--black);
-  }
+.register-agreement-text span {
+  padding-top: 13px;
 }
+
+.register-agreement-text-small {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  height: 100%;
+  width: 100%;
+  margin-top: 11px;
+  margin-left: 1px;
+  padding-bottom: 2px;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.54;
+  letter-spacing: normal;
+  color: var(--dark_1);
+}
+
 
 .all-agreement-dropdown {
   display: flex;
@@ -195,6 +156,7 @@
   margin-top: 1px;
   border: solid 1px #000000;
 }
+
 .survey_main .register-agreement-select-options.survey_error {
   border-bottom: solid 1px #000000 !important;
 }
