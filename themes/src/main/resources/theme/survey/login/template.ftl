@@ -36,7 +36,7 @@
     <!-- Google Tag Manager -->
     <script>
       console.log('window.location.host:' + window.location.host, navigator.userAgent);
-      if (window.location.host === "app.meback.ai" ||
+      if (window.location.host === "surveyapp.meback.ai" ||
           window.location.host === "auth.meback.ai") {
 
         // (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -77,11 +77,11 @@
       function getSurveyHomeUrl() {
         var url = window.location.href;
         if (url.includes("authtest.meback.ai")) {
-          return "https://test.meback.ai";
+          return "https://surveytest.meback.ai";
         } else if (url.includes("authdemo.meback.ai")) {
-          return "https://demo.meback.ai";
+          return "https://surveydemo.meback.ai";
         } else if (url.includes("auth.meback.ai")) {
-          return "https://app.meback.ai";
+          return "https://surveyapp.meback.ai";
         } else {
           return "http://localhost:8080";
         }

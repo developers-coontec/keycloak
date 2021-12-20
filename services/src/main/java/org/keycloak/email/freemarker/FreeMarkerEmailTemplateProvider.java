@@ -103,8 +103,8 @@ public class FreeMarkerEmailTemplateProvider implements EmailTemplateProvider {
     }
 
     protected void addCommonAttributes(Map<String, Object> attributes, String buttonLink) {
-        attributes.put("homeUrl", "https://app.meback.ai");
-        attributes.put("dashboardUrl", "https://app.meback.ai/dashboard");
+        attributes.put("homeUrl", "https://surveyapp.meback.ai");
+        attributes.put("dashboardUrl", "https://surveyapp.meback.ai/dashboard");
         String name = "";
         if (user.getLastName() != null && !user.getLastName().isEmpty()) {
             name += user.getLastName();
