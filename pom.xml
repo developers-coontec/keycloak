@@ -137,7 +137,7 @@
         <jna.version>4.1.0</jna.version>
 
         <!-- Databases -->
-        <mysql.version>8.0.23</mysql.version>
+        <mysql.version>5.7.36</mysql.version>
         <mysql.driver.version>8.0.23</mysql.driver.version>
         <postgresql.version>13.2</postgresql.version>
         <postgresql.driver.version>42.2.18</postgresql.driver.version>
