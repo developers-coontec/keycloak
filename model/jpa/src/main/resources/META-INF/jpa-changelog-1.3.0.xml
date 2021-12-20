@@ -35,8 +35,8 @@
             <column name="AUTH_CLIENT_ID" type="VARCHAR(255)"/>
             <column name="AUTH_USER_ID" type="VARCHAR(255)"/>
             <column name="IP_ADDRESS" type="VARCHAR(255)"/>
-            <column name="RESOURCE_PATH" type="VARCHAR(2550)"/>
-            <column name="REPRESENTATION" type="TEXT(25500)"/>
+            <column name="RESOURCE_PATH" type="TEXT"/>
+            <column name="REPRESENTATION" type="LONGTEXT"/>
             <column name="ERROR" type="VARCHAR(255)"/>
         </createTable>
         <createTable tableName="AUTHENTICATOR">
@@ -149,7 +149,7 @@
         </update>
         <dropDefaultValue tableName="IDENTITY_PROVIDER" columnName="UPDATE_PROFILE_FIRST_LOGIN" />
         <dropColumn tableName="IDENTITY_PROVIDER" columnName="UPDATE_PROFILE_FIRST_LOGIN"/>
-        
+
         <addColumn tableName="USER_REQUIRED_ACTION">
             <column name="REQUIRED_ACTION" type="VARCHAR(255)" defaultValue=" ">
                 <constraints nullable="false"/>

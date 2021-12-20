@@ -118,7 +118,7 @@
         <dropDefaultValue tableName="CLIENT" columnName="DIRECT_GRANTS_ONLY" />
         <dropColumn tableName="CLIENT" columnName="DIRECT_GRANTS_ONLY"/>
 
-        <modifyDataType tableName="REALM" columnName="PASSWORD_POLICY" newDataType="VARCHAR(2550)"/>
+        <modifyDataType tableName="REALM" columnName="PASSWORD_POLICY" newDataType="TEXT"/>
 
         <!-- Sybase specific hacks -->
         <modifySql dbms="sybase">

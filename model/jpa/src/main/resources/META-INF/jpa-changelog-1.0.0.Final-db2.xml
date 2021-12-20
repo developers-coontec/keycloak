@@ -114,7 +114,7 @@
                 <constraints nullable="false"/>
             </column>
             <column name="CLIENT_ID" type="VARCHAR(255)"/>
-            <column name="DETAILS_JSON" type="VARCHAR(2550)"/>
+            <column name="DETAILS_JSON" type="TEXT"/>
             <column name="ERROR" type="VARCHAR(255)"/>
             <column name="IP_ADDRESS" type="VARCHAR(255)"/>
             <column name="REALM_ID" type="VARCHAR(255)"/>
@@ -175,8 +175,8 @@
                 <constraints nullable="false"/>
             </column>
             <column name="PASSWORD_POLICY" type="VARCHAR(255)"/>
-            <column name="PRIVATE_KEY" type="VARCHAR(2048)"/>
-            <column name="PUBLIC_KEY" type="VARCHAR(2048)"/>
+            <column name="PRIVATE_KEY" type="TEXT"/>
+            <column name="PUBLIC_KEY" type="TEXT"/>
             <column name="REGISTRATION_ALLOWED" type="BOOLEAN" defaultValueBoolean="false">
                 <constraints nullable="false"/>
             </column>
