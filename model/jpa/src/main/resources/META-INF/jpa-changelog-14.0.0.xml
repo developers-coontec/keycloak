@@ -47,7 +47,6 @@
         </preConditions>
         <createIndex tableName="CLIENT_ATTRIBUTES" indexName="IDX_CLIENT_ATT_BY_NAME_VALUE">
             <column name="NAME" type="VARCHAR(255)"/>
-            <column name="VALUE" type="VARCHAR(255)"/>
         </createIndex>
     </changeSet>
 
@@ -60,7 +59,6 @@
         </preConditions>
         <createIndex tableName="CLIENT_ATTRIBUTES" indexName="IDX_CLIENT_ATT_BY_NAME_VALUE">
             <column name="NAME" type="VARCHAR(255)"/>
-            <column name="VALUE(255)" valueComputed="VALUE(255)" />
         </createIndex>
     </changeSet>
 
