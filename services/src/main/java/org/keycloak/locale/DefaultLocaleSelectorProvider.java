@@ -57,6 +57,11 @@ public class DefaultLocaleSelectorProvider implements LocaleSelectorProvider {
             return Locale.forLanguageTag(realmDefaultLocale);
         }
 
+        Locale headerLocale = getAcceptLanguageHeaderLocale(realm, requestHeaders);
+        if (headerLocale != null) {
+            return headerLocale;
+        }
+
         return Locale.ENGLISH;
     }
 
@@ -83,10 +88,10 @@ public class DefaultLocaleSelectorProvider implements LocaleSelectorProvider {
             return locale;
         }
 
-        locale = getAcceptLanguageHeaderLocale(realm, requestHeaders);
-        if (locale != null) {
-            return locale;
-        }
+//        locale = getAcceptLanguageHeaderLocale(realm, requestHeaders);
+//        if (locale != null) {
+//            return locale;
+//        }
 
         return null;
     }
