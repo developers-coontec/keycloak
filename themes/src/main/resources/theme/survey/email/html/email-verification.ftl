@@ -18,270 +18,72 @@
       background-color: #ffffff;
     }
 
-    .email-content {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 600px;
-      padding-top: 23px;
-    }
-
-    .email-top-section{
-      display: inline-block;
-      vertical-align: top;
-      border: solid 1px #efeff4;
-      padding-top: 15px;
-      width: 600px;
-      background-color: #ffffff;
-    }
-
-    .email-header {
-      display: inline-block;
-      vertical-align: top;
-      height: 50px;
-      width: 100%;
-    }
-
-    .email-header-logo {
-    }
-
-    a:hover, a:active, a:link, a:visited {
+    a:hover,
+    a:active,
+    a:link,
+    a:visited {
       text-decoration: none;
       border: none;
     }
-
-    .email-header-logo .logo {
-      margin-left: 30px;
-      margin-top: 12px;
-      width: 107px;
-      height: 15px;
-      object-fit: contain;
-    }
-
-    .email-header-link-button {
-      position: relative;
-      padding: 5px 8px;
-      margin-right: 30px;
-      float: right;
-      text-align: center;
-      height: 18px;
-      border-radius: 2px;
-      border: solid 1px #cacaca;
-      background-color: #ffffff;
-    }
-
-    .email-header-link-button span {
-      width: 150px;
-      height: 11px;
-      font-weight: 700;
-      font-size: 13px;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 0.85;
-      letter-spacing: normal;
-      text-align: center;
-      color: #000000;
-    }
-
-    .email-title {
-      display: inline-block;
-      vertical-align: top;
-      margin: 30px 30px 0 30px;
-      width: 530px;
-      height: auto;
-      font-size: 26px;
-      font-weight: 800;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.51;
-      letter-spacing: normal;
-    }
-
-    .email-title-1 {
-      color: #000000;
-    }
-
-    .email-title-2 {
-      color: #ff593b;
-    }
-
-    .email-subtitle {
-      display: inline-block;
-      vertical-align: top;
-      margin: 20px 30px 0 30px;
-      width: 530px;
-      height: auto;
-      font-size: 14px;
-      font-weight: 400;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.49;
-      letter-spacing: normal;
-      color: #000000;
-    }
-
-    .email-subtitle-1 {
-    }
-
-    .email-subtitle-2 {
-    }
-
-    .email-button-container {
-      margin: 40px 30px 30px 30px;
-      display: inline-block;
-      text-align: center;
-      height: 40px;
-    }
-
-    .email-button-container .email-main-button {
-      border-radius: 2px;
-      background-color: #ff593b;
-      margin: 0;
-      padding: 13px 19px;
-      width: 100%;
-      height: 14px;
-      font-size: 14px;
-      font-weight: 700;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1;
-      letter-spacing: normal;
-      text-align: center;
-      color: #ffffff;
-    }
-
-    .document-email-footer-container {
-      display: inline-block;
-      vertical-align: top;
-      width: 600px;
-      height: auto;
-      font-size: 13px;
-      font-weight: 400;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.46;
-      letter-spacing: normal;
-      color: #686d76;
-      background-color: #ffffff;
-      padding: 20px 0;
-    }
-
-    .document-email-footer-1 {
-      display: inline-block;
-      vertical-align: top;
-    }
-
-    .document-email-footer-2 {
-      display: inline-block;
-      vertical-align: top;
-      margin-top: 5px;
-    }
-
-    .email-text-strong {
-      font-weight: 800;
-    }
-
-    .document-expire-background {
-      background-color: #ffeebb;
-    }
-
-    .document-cancel-background {
-      background-color: #ffd7d7;
-    }
-
-    .document-reject-background {
-      background-color: #ffd7d7;
-    }
-
-    .document-forward-background {
-      background-color: #e0e9ff;
-    }
-
-    .width-100 {
-      width: 100px;
-    }
-
-    .width-110 {
-      width: 110px;
-    }
-
-    .width-120 {
-      width: 120px;
-    }
-
-    .width-130 {
-      width: 130px;
-    }
-
-    .width-140 {
-      width: 140px;
-    }
-
-    .width-150 {
-      width: 150px;
-    }
-
-    .width-160 {
-      width: 160px;
-    }
-
-    .width-170 {
-      width: 170px;
-    }
-
-    .width-180 {
-      width: 180px;
-    }
-
-    .width-190 {
-      width: 190px;
-    }
-
-    .width-200 {
-      width: 200px;
-    }
-
   </style>
 </head>
 
-<body style="font-family: 'NanumSquare', 'Noto Sans KR', sans-serif; font-weight: 400; background-color: #ffffff;" th:inline="text">
-<div class="email-content" style="display: block; margin-left: auto; margin-right: auto; width: 600px; padding-top: 23px;">
-  <div class="email-top-section" style="display: inline-block; vertical-align: top; border: solid 1px #efeff4; padding-top: 15px; width: 600px; background-color: #ffffff;">
-    <div class="email-header" style="display: inline-block; vertical-align: top; height: 50px; width: 100%;">
-      <a href="${homeUrl}" class="email-header-logo" target="_blank">
-        <img class="logo logo-margin"
-             style="margin-left: 30px; margin-top: 12px; width: 107px; height: 15px; object-fit: contain;"
-             src="https://survey_email.s3.ap-northeast-2.amazonaws.com/logo%402x.png" />
-      </a>
-      <a href="${dashboardUrl}" target="_blank1">
-        <div class="email-header-link-button" style="position: relative; padding: 5px 8px; margin-right: 30px; float: right; text-align: center; height: 18px; border-radius: 2px; border: solid 1px #cacaca; background-color: #ffffff;">
-          <span style="width: 150px; height: 11px; font-weight: 700; font-size: 13px; font-stretch: normal; font-style: normal; line-height: 0.85; letter-spacing: normal; text-align: center; color: #000000;">${msg("myDocumentButton")?no_esc}</span>
-        </div>
-      </a>
-    </div>
-    <div class="email-title" style="display: inline-block; vertical-align: top; margin: 30px 30px 0 30px; width: 530px; height: auto; font-size: 26px; font-weight: 800; font-stretch: normal; font-style: normal; line-height: 1.51; letter-spacing: normal;">
-      <div class="email-title-1" style="color: #000000;">
-        <span>${msg("emailVerificationTitle","${name}")?no_esc}</span>
-      </div>
-    </div>
-    <div class="email-subtitle" style="display: inline-block; vertical-align: top; margin: 20px 30px 0 30px; width: 530px; height: auto; font-size: 14px; font-weight: 400; font-stretch: normal; font-style: normal; line-height: 1.49; letter-spacing: normal; color: #000000;">
-      <div class="email-subtitle-1">
-        <span>${msg("emailVerificationSubtitle")?no_esc}</span>
-      </div>
-    </div>
-    <div class="email-button-container width-100" style="margin: 40px 30px 30px 30px; display: inline-block; text-align: center; height: 40px; width: 100px;">
-      <a href="${mainButtonUrl}"
-         target="_blank2">
-        <div class="email-main-button" style="border-radius: 2px; background-color: #ff593b; margin: 0; padding: 13px 19px; width: 100%; height: 14px; font-size: 14px; font-weight: 700; font-stretch: normal; font-style: normal; line-height: 1; letter-spacing: normal; text-align: center; color: #ffffff;">
-          <span>${msg("emailVerificationButton")?no_esc}</span>
-        </div>
-      </a>
-    </div>
+<body
+    style="font-family: 'NanumSquare', 'Noto Sans KR', sans-serif; font-weight: 400; background-color: #ffffff;"
+    th:inline="text">
+<div class="email-content"
+     style="display: block; margin-left: auto; margin-right: auto; width: 800px; margin-top: 23px; border: solid 1px #dddddd; background-color: #ffffff;">
+  <div class="email-header"
+       style="display: inline-block; vertical-align: top; height: 60px; width: 100%;">
+    <a href="${homeUrl}" class="email-header-logo" target="_blank"
+       style="text-decoration: none;">
+      <img class="logo logo-margin"
+           style="margin-left: 20px; margin-top: 11px; width: 100px; height: 40px; object-fit: contain;"
+           src="https://survey-email.s3.ap-northeast-2.amazonaws.com/logo%403x.png"/>
+    </a>
   </div>
-  <div class="document-email-footer-container" style="display: inline-block; vertical-align: top; width: 600px; height: auto; font-size: 13px; font-weight: 400; font-stretch: normal; font-style: normal; line-height: 1.46; letter-spacing: normal; color: #686d76; background-color: #ffffff; padding: 20px 0;">
-    <p class="document-email-footer-1" style="display: inline-block; vertical-align: top;">
-    <span>${msg("emailVerificationFooter")?no_esc}</span>
-    </p>
+  <div class="survey-info-container"
+       style="display: block; height: auto; font-stretch: normal; font-style: normal; letter-spacing: normal; text-align: center;">
+    <div class="survey-info-box"
+         style="display: block; margin-left: auto; margin-right: auto; width: 400px">
+      <div class="survey-title"
+           style="display: block; margin-left: auto; margin-right: auto; margin-top: 20px;">
+        <span class="survey_title_text"
+              style="font-size: 17px; font-weight: bold; line-height: 1.29; color: #303542;">
+          ${msg("emailVerificationTitle","${name}")?no_esc}
+        </span>
+      </div>
+      <div class="survey-subtitle"
+           style="display: block; margin-left: auto; margin-right: auto; margin-top: 20px;">
+        <span class="survey_subtitle_text"
+              style="font-size: 15px; font-weight: normal; line-height: 1.33; color: #303542;">
+          ${msg("emailVerificationSubtitle")?no_esc}
+        </span>
+      </div>
+      <div class="survey_inupt_message_box"
+           style="margin-top: 25px; padding: 20px 16px; border-radius: 4px;border: solid 1px #d1d3da;">
+        <span class="survey_inupt_message_text"
+              style="white-space: normal; font-size: 15px; font-weight: normal; line-height: 1.33; color: #303542;"
+              th:text="${inputMessage}">사용자 입력 메시지 사용자 입력 메시지 사용자 입력 메시지 사용자 입력 메시지 사용자 입력 메시지 사용자 입력 메시지 사용자 입력 메시지
+        </span>
+      </div>
+      <a href="${mainButtonUrl}" target="_blank2" style="height: 40px; text-decoration: none;">
+        <div class="email-main-button"
+             style=" padding: 13px; margin-top: 20px; border-radius: 4px; box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1); background-color: #1eafd8;">
+          <span class="email-main-button-label"
+                style="font-size: 15px; font-weight: 500; line-height: 1.47; color: #ffffff;">
+            ${msg("emailVerificationButton")?no_esc}
+          </span>
+        </div>
+      </a>
+      <div class="survey-email-footer"
+           style="display: block; margin-top: 40px; margin-left: auto; margin-right: auto; margin-bottom: 128px;">
+        <span class="survey-email_footer_text"
+              style="display: block; font-size: 11px; font-weight: normal; line-height: 1.45; color: #9196a3;">
+          ${msg("emailVerificationFooter")?no_esc}
+        </span>
+      </div>
+    </div>
   </div>
 </div>
 </body>
