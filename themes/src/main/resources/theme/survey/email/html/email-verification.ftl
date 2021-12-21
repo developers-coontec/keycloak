@@ -60,13 +60,6 @@
           ${msg("emailVerificationSubtitle")?no_esc}
         </span>
       </div>
-      <div class="survey_inupt_message_box"
-           style="margin-top: 25px; padding: 20px 16px; border-radius: 4px;border: solid 1px #d1d3da;">
-        <span class="survey_inupt_message_text"
-              style="white-space: normal; font-size: 15px; font-weight: normal; line-height: 1.33; color: #303542;"
-              th:text="${inputMessage}">사용자 입력 메시지 사용자 입력 메시지 사용자 입력 메시지 사용자 입력 메시지 사용자 입력 메시지 사용자 입력 메시지 사용자 입력 메시지
-        </span>
-      </div>
       <a href="${mainButtonUrl}" target="_blank2" style="height: 40px; text-decoration: none;">
         <div class="email-main-button"
              style=" padding: 13px; margin-top: 20px; border-radius: 4px; box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1); background-color: #1eafd8;">
