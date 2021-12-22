@@ -296,11 +296,11 @@ public class Urls {
         }
         if (!homeUrl.isEmpty()) {
             if (homeUrl.contains("authtest." + domainSuffix)) {
-                return "https://test." + domainSuffix;
+                return "https://surveytest." + domainSuffix;
             } else if (homeUrl.contains("authdemo." + domainSuffix)) {
-                return "https://demo." + domainSuffix;
+                return "https://surveydemo." + domainSuffix;
             } else if (homeUrl.contains("auth." + domainSuffix)) {
-                return "https://app." + domainSuffix;
+                return "https://surveyapp." + domainSuffix;
             } else if (homeUrl.contains("localhost")) {
                 return "http://localhost:8080";
             }
