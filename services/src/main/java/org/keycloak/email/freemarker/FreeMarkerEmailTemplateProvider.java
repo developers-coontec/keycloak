@@ -27,7 +27,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Properties;
-
 import org.keycloak.broker.provider.BrokeredIdentityContext;
 import org.keycloak.common.util.ObjectUtil;
 import org.keycloak.email.EmailException;
@@ -38,6 +37,7 @@ import org.keycloak.email.freemarker.beans.ProfileBean;
 import org.keycloak.events.Event;
 import org.keycloak.events.EventType;
 import org.keycloak.forms.login.freemarker.model.UrlBean;
+import org.keycloak.models.Constants;
 import org.keycloak.models.KeycloakSession;
 import org.keycloak.models.KeycloakUriInfo;
 import org.keycloak.models.RealmModel;
@@ -106,11 +106,16 @@ public class FreeMarkerEmailTemplateProvider implements EmailTemplateProvider {
         attributes.put("homeUrl", "https://surveyapp.meback.ai");
         attributes.put("dashboardUrl", "https://surveyapp.meback.ai/dashboard");
         String name = "";
-        if (user.getLastName() != null && !user.getLastName().isEmpty()) {
-            name += user.getLastName();
-        }
-        if (user.getFirstName() != null && !user.getFirstName().isEmpty()) {
-            name += user.getFirstName();
+
+        if(user.getFirstAttribute(Constants.FIELD_NAME) != null) {
+            name = user.getFirstAttribute(Constants.FIELD_NAME);
+        } else {
+            if (user.getLastName() != null && !user.getLastName().isEmpty()) {
+                name += user.getLastName();
+            }
+            if (user.getFirstName() != null && !user.getFirstName().isEmpty()) {
+                name += user.getFirstName();
+            }
         }
         attributes.put("name", name);
         attributes.put("mainButtonUrl", buttonLink);
