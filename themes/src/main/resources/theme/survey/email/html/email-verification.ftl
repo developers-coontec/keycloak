@@ -56,7 +56,7 @@
       <div class="survey-subtitle"
            style="display: block; margin-left: auto; margin-right: auto; margin-top: 20px;">
         <span class="survey_subtitle_text"
-              style="font-size: 15px; font-weight: normal; line-height: 1.33; color: #303542;">
+              style="font-size: 13px; font-weight: normal; line-height: 1.33; color: #303542;">
           ${msg("emailVerificationSubtitle")?no_esc}
         </span>
       </div>
