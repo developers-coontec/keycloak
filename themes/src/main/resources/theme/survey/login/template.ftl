@@ -706,11 +706,11 @@
           <span>${msg("survey_footer_copypright")}</span>
         </div>
         <div class="survey_content_bottom_terms_use"
-             onclick="openNewWindows('https://www.meback.ai/policy/service.html', 800, 800)">
+             onclick="openNewWindows('https://www.meback.ai/policy-service', 800, 800)">
           <span>${msg("survey_footer_terms_use")}</span>
         </div>
         <div class="survey_content_bottom_privacy_policy"
-             onclick="openNewWindows('https://www.meback.ai/policy/privacy.html', 800, 800)">
+             onclick="openNewWindows('https://www.meback.ai/policy-privacy', 800, 800)">
           <span>${msg("survey_footer_privacy_policy")}</span>
         </div>
       </div>
