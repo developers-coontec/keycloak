@@ -132,7 +132,7 @@
             </div>
             <input id="serviceAgreement" name="serviceAgreement" type="hidden">
             <div class="register-agreement-text-small"
-                 onclick="openNewWindows('https://www.meback.ai/policy-service', 800, 800)">
+                 onclick="openNewWindows('https://www.meback.ai/policy-service', 800, 1000)">
               <span>${msg("register-content-service-agreement")}</span>
             </div>
           </div>
@@ -144,7 +144,7 @@
             </div>
             <input id="privacyAgreement" name="privacyAgreement" type="hidden">
             <div class="register-agreement-text-small"
-                 onclick="openNewWindows('https://www.meback.ai/policy-privacy', 800, 800)">
+                 onclick="openNewWindows('https://www.meback.ai/policy-privacy', 800, 1000)">
               <span>${msg("register-content-privacy-agreement")}</span>
             </div>
           </div>
@@ -156,7 +156,7 @@
             </div>
             <input id="marketingAgreement" name="marketingAgreement" type="hidden">
             <div class="register-agreement-text-small"
-                 onclick="openNewWindows('https://www.meback.ai/policy-marketing', 800, 800)">
+                 onclick="openNewWindows('https://www.meback.ai/policy-marketing', 800, 1000)">
               <span>${msg("register-content-marketing-agreement")}</span>
             </div>
           </div>
