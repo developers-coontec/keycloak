@@ -178,7 +178,7 @@ body {
   flex-wrap: wrap;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1100px) {
   .survey_main .survey_content_top .survey_content_top_img {
     width: 160px;
   }
@@ -205,7 +205,7 @@ body {
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 1100px) {
   .survey_main .survey_content_top .survey_content_top_img {
     width: 200px;
   }
