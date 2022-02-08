@@ -193,8 +193,7 @@ body {
   }
   .survey_main .survey_content_right .survey_content_body{
     width: 100%;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 30px 10px;
     justify-content: center;
     align-items: flex-start;
     min-height: calc(100% - 60px);
