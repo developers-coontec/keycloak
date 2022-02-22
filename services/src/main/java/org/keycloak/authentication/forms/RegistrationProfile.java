@@ -132,6 +132,10 @@ public class RegistrationProfile implements FormAction, FormActionFactory {
         if (mobilePhoneNumber != null) {
             user.setSingleAttribute(Constants.FIELD_MOBILE_PHONE_NUMBER, mobilePhoneNumber);
         }
+        String name = formData.getFirst(Constants.FIELD_NAME);
+        if (name != null && !name.isEmpty()) {
+            user.setSingleAttribute(Constants.FIELD_NAME, name);
+        }
         String company = formData.getFirst(Constants.FIELD_COMPANY);
         if (company != null && !company.isEmpty()) {
             user.setSingleAttribute(Constants.FIELD_COMPANY, company);
