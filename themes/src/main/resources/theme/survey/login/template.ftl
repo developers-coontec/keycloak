@@ -88,13 +88,13 @@
       }
 
       function goToUrl(url) {
-        console.log(url);
+        // console.log(url);
         if (url.includes("/auth/realms/survey/account") ||
             url.includes("/auth/?client_id=web_app") ||
             url.includes("/auth/realms/survey/login-actions/authenticate?client_id=web_app")
         ) {
           url = getSurveyHomeUrl();
-          console.log('modified url:' + url);
+          // console.log('modified url:' + url);
         }
         window.location.href = url;
         return false;
@@ -127,7 +127,7 @@
       }
 
       function displayAgreementRequiredErrorMessage() {
-        console.log('displayAgreementRequiredErrorMessage');
+        // console.log('displayAgreementRequiredErrorMessage');
         // document.getElementById('register-validation-accept-agreement').classList.remove("survey_content_hide");
         document.getElementById('register-validation-accept-agreement').classList.remove(
             "survey_content_hide");
@@ -135,7 +135,7 @@
       }
 
       function hideAgreementRequiredErrorMessage() {
-        console.log('hideAgreementRequiredErrorMessage');
+        // console.log('hideAgreementRequiredErrorMessage');
         document.getElementById('register-validation-accept-agreement').classList.add(
             "survey_content_hide");
         // document.getElementById('register-button').classList.remove("survey_content_disabled");
@@ -156,9 +156,9 @@
         var localPrivacyAgreement = getElementValueById('privacyAgreement');
         var localMarketingAgreement = getElementValueById('marketingAgreement');
 
-        console.log('isAgreementRequired', updateAllAgreement, inputValidateAllFields,
-            localAllAgreement, localServiceAgreement, localPrivacyAgreement,
-            localMarketingAgreement);
+        // console.log('isAgreementRequired', updateAllAgreement, inputValidateAllFields,
+        //     localAllAgreement, localServiceAgreement, localPrivacyAgreement,
+        //     localMarketingAgreement);
         if (updateAllAgreement === true) {
           if (isValueTrue(localServiceAgreement) &&
               isValueTrue(localPrivacyAgreement) &&
@@ -186,7 +186,7 @@
           return 0;
         }
         var inputPassword = inputElement.value;
-        console.log('validatePassword:' + inputPassword);
+        // console.log('validatePassword:' + inputPassword);
         var numberExists = false;
         var lowerCaseAlphabetExists = false;
         var upperCaseAlphabetExists = false;
@@ -216,9 +216,9 @@
             validCount = 0;
           }
         }
-        console.log('validatePassword:' + inputPassword, validCount, numberExists,
-            lowerCaseAlphabetExists, upperCaseAlphabetExists, specialCharacterExists,
-            lengthGreaterThanSeven);
+        // console.log('validatePassword:' + inputPassword, validCount, numberExists,
+        //     lowerCaseAlphabetExists, upperCaseAlphabetExists, specialCharacterExists,
+        //     lengthGreaterThanSeven);
 
         var passwordStrengthGroupElement = document.getElementById(
             'survey_password-strength-group');
@@ -255,20 +255,20 @@
       }
 
       function allAgreementChecked() {
-        console.log('allAgreementChecked');
+        // console.log('allAgreementChecked');
         document.getElementById('allAgreement').value = true;
         document.getElementById('all-agreement-checkbox').classList.remove("survey_content_hide");
       }
 
       function allAgreementUnchecked() {
-        console.log('allAgreementUnchecked');
+        // console.log('allAgreementUnchecked');
         document.getElementById('allAgreement').value = false;
         document.getElementById('all-agreement-checkbox').classList.add("survey_content_hide");
       }
 
       function onAllAgreementClick(inputValue) {
         var checkedValue = document.getElementById('allAgreement').value;
-        console.log('onAllAgreementClick', checkedValue, inputValue);
+        // console.log('onAllAgreementClick', checkedValue, inputValue);
         if (inputValue) {
           checkedValue = !inputValue;
         }
@@ -289,7 +289,7 @@
 
       function onAllAgreementDropdownClick() {
         var checkedValue = document.getElementById('all-agreement-dropdown').value;
-        console.log('onAllAgreementDropdownClick', checkedValue);
+        // console.log('onAllAgreementDropdownClick', checkedValue);
         if (isValueTrue(checkedValue)) {
           document.getElementById('all-agreement-dropdown').value = false;
           document.getElementById('div-all-agreement-dropdown').classList.remove(
@@ -312,8 +312,8 @@
 
       function onServiceAgreementClick(inputValue, updateAllAgreement, inputValidateAllFields) {
         var checkedValue = document.getElementById('serviceAgreement').value;
-        console.log('onServiceAgreementClick', checkedValue, inputValue, updateAllAgreement,
-            inputValidateAllFields);
+        // console.log('onServiceAgreementClick', checkedValue, inputValue, updateAllAgreement,
+        //     inputValidateAllFields);
         if (inputValue) {
           checkedValue = !inputValue;
         }
@@ -332,8 +332,8 @@
 
       function onPrivacyAgreementClick(inputValue, updateAllAgreement, inputValidateAllFields) {
         var checkedValue = document.getElementById('privacyAgreement').value;
-        console.log('onPrivacyAgreementClick', checkedValue, inputValue, updateAllAgreement,
-            inputValidateAllFields);
+        // console.log('onPrivacyAgreementClick', checkedValue, inputValue, updateAllAgreement,
+        //     inputValidateAllFields);
         if (inputValue) {
           checkedValue = !inputValue;
         }
@@ -352,8 +352,8 @@
 
       function onMarketingAgreementClick(inputValue, updateAllAgreement, inputValidateAllFields) {
         var checkedValue = document.getElementById('marketingAgreement').value;
-        console.log('onMarketingAgreementClick', checkedValue, inputValue, updateAllAgreement,
-            inputValidateAllFields);
+        // console.log('onMarketingAgreementClick', checkedValue, inputValue, updateAllAgreement,
+        //     inputValidateAllFields);
         if (inputValue) {
           checkedValue = !inputValue;
         }
@@ -415,8 +415,8 @@
 
         function checkValid() {
           const registerButton = $('#register-button')[0];
-          console.log('registerButton checkValid', isValid1, isValid2, isValid3, isValid4, isValid5,
-              isValid6, isValid7, isValid8, isValid9);
+          // console.log('registerButton checkValid', isValid1, isValid2, isValid3, isValid4, isValid5,
+          //     isValid6, isValid7, isValid8, isValid9);
           if (isValid1 && isValid2 && isValid3 && isValid4 && isValid5 && isValid5 && isValid6
               && isValid7 && isValid8 && isValid9) {
             registerButton?.classList.remove('survey_content_disabled');
