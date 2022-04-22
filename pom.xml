@@ -247,8 +247,8 @@
     </repositories>
     <distributionManagement>
         <repository>
-            <id>jboss-releases-repository</id>
-            <name>JBoss Releases Repository</name>
+            <id>jboss-mixed-repository</id>
+            <name>JBoss Mixed Repository</name>
             <url>https://maven.meback.ai/repository/maven-mixed/</url>
         </repository>
     </distributionManagement>
