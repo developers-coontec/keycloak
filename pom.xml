@@ -249,7 +249,7 @@
         <repository>
             <id>jboss-releases-repository</id>
             <name>JBoss Releases Repository</name>
-            <url>http://maven.meback.ai:8282/repository/maven-releases/</url>
+            <url>https://maven.meback.ai/repository/maven-mixed/</url>
         </repository>
     </distributionManagement>
 
