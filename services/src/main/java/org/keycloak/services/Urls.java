@@ -286,7 +286,7 @@ public class Urls {
     public static String getSurveyHomeUrl(URI baseURI, URI actionuri) {
         String baseUrl = baseURI != null ? baseURI.toString() : "";
         String actionUrl = actionuri != null ? actionuri.toString() : "";
-        String domainSuffix = "meback.ai";
+        String domainSuffix = "planesg.ai";
         String localhostDomain = "localhost";
         String homeUrl = "";
         if (actionUrl.contains(domainSuffix) || actionUrl.contains(localhostDomain)) {
@@ -296,11 +296,11 @@ public class Urls {
         }
         if (!homeUrl.isEmpty()) {
             if (homeUrl.contains("authtest." + domainSuffix)) {
-                return "https://surveytest." + domainSuffix;
+                return "https://datatest." + domainSuffix;
             } else if (homeUrl.contains("authdemo." + domainSuffix)) {
-                return "https://surveydemo." + domainSuffix;
+                return "https://datademo." + domainSuffix;
             } else if (homeUrl.contains("auth." + domainSuffix)) {
-                return "https://surveyapp." + domainSuffix;
+                return "https://dataapp." + domainSuffix;
             } else if (homeUrl.contains("localhost")) {
                 return "http://localhost:8080";
             }

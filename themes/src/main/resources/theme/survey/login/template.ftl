@@ -36,8 +36,8 @@
     <!-- Google Tag Manager -->
     <script>
       console.log('window.location.host:' + window.location.host, navigator.userAgent);
-      if (window.location.host === "surveyapp.meback.ai" ||
-          window.location.host === "auth.meback.ai") {
+      if (window.location.host === "dataapp.planesg.ai" ||
+          window.location.host === "auth.planesg.ai") {
 
         // (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         //       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -76,12 +76,12 @@
 
       function getSurveyHomeUrl() {
         var url = window.location.href;
-        if (url.includes("authtest.meback.ai")) {
-          return "https://surveytest.meback.ai";
-        } else if (url.includes("authdemo.meback.ai")) {
-          return "https://surveydemo.meback.ai";
-        } else if (url.includes("auth.meback.ai")) {
-          return "https://surveyapp.meback.ai";
+        if (url.includes("authtest.planesg.ai")) {
+          return "https://datatest.planesg.ai";
+        } else if (url.includes("authdemo.planesg.ai")) {
+          return "https://datademo.planesg.ai";
+        } else if (url.includes("auth.planesg.ai")) {
+          return "https://dataapp.planesg.ai";
         } else {
           return "http://localhost:8080";
         }
@@ -677,12 +677,14 @@
     // });
   </script>
   <div class="survey_main">
-    <div class="survey_content_top">
-      <div class="survey_content_top_img" onclick="goToUrl('${url.homeUrl}')">
+<#--    <div class="survey_content_top">-->
+<#--      <div class="survey_content_top_img" onclick="goToUrl('${url.homeUrl}')">-->
 
-      </div>
-    </div>
+<#--      </div>-->
+<#--    </div>-->
     <div class="survey_content_left">
+      <div class="survey_content_top_img" onclick="goToUrl('${url.homeUrl}')">
+      </div>
     </div>
     <div class="survey_content_right">
       <div class="survey_content_body">
@@ -706,11 +708,11 @@
           <span>${msg("survey_footer_copypright")}</span>
         </div>
         <div class="survey_content_bottom_terms_use"
-             onclick="openNewWindows('https://www.meback.ai/policy-service', 800, 1000)">
+             onclick="openNewWindows('https://www.planesg.ai/policy-service', 800, 1000)">
           <span>${msg("survey_footer_terms_use")}</span>
         </div>
         <div class="survey_content_bottom_privacy_policy"
-             onclick="openNewWindows('https://www.meback.ai/policy-privacy', 800, 1000)">
+             onclick="openNewWindows('https://www.planesg.ai/policy-privacy', 800, 1000)">
           <span>${msg("survey_footer_privacy_policy")}</span>
         </div>
       </div>

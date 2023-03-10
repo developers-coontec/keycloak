@@ -1,4 +1,5 @@
 :root {
+  --primary: #309EEE;
   --white: #ffffff;
   --dark_1: #303542;
   --dark_2: #9196a3;
@@ -178,6 +179,14 @@ body {
   flex-wrap: wrap;
 }
 
+.survey_main .survey_content_left .survey_content_top_img {
+  margin-top: 50px;
+  height: 40px;
+  width: 240px;
+  object-fit: contain;
+  background: url("../img/logo.svg") no-repeat center center;
+}
+
 @media (max-width: 1100px) {
   .survey_main .survey_content_top .survey_content_top_img {
     width: 160px;
@@ -187,7 +196,7 @@ body {
   }
   .survey_main .survey_content_right{
     width: 100%;
-    height: calc(100% - 60px);
+    height: 100%;
     justify-content: center;
     align-items: flex-start;
   }
@@ -209,15 +218,15 @@ body {
     width: 200px;
   }
   .survey_main .survey_content_left{
-    width: 360px;
-    min-width: 360px;
-    max-width: 360px;
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
   }
   .survey_main .survey_content_right{
     justify-content: flex-start;
     align-content: flex-start;
-    width: calc(100% - 360px);
-    height: calc(100% - 60px);
+    width: calc(100% - 300px);
+    height: 100%;
   }
   .survey_main .survey_content_right .survey_content_body{
     width: 100%;
@@ -230,13 +239,12 @@ body {
 
 .survey_main .survey_content_left{
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-content: flex-start;
-  flex-direction: column;
-  height: calc(100vh - 1px);
-  background: url(../img/sidebar.svg) no-repeat center;
-  background-size: cover;
-  margin-top: 1px;
+  align-items: flex-start;
+  flex-direction: row;
+  height: 100vh;
+  background-color: var(--primary);
 }
 .survey_main .survey_content_right{
   display: flex;
@@ -269,6 +277,12 @@ body {
   font-style: normal;
   line-height: 1.64;
   letter-spacing: normal;
+}
+
+.survey_content_bottom .survey_content_bottom_copyright:hover,
+.survey_content_bottom .survey_content_bottom_terms_use:hover,
+.survey_content_bottom .survey_content_bottom_privacy_policy:hover{
+  cursor: pointer;
 }
 
 .survey_content_bottom .survey_content_bottom_terms_use,
@@ -416,7 +430,11 @@ body {
   padding: 13px 20px 13px 20px;
   border-radius: 4px;
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
-  background-color: var(--blue);
+  background-color: var(--primary);
+}
+
+.survey_button:hover {
+  cursor: pointer;
 }
 
 .survey_main .survey_button span {

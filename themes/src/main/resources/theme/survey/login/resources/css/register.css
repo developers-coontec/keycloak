@@ -129,8 +129,15 @@
   line-height: 1.54;
   letter-spacing: normal;
   color: var(--dark_1);
+  text-decoration: underline;
+}
+.register-agreement-text-small:hover {
+  cursor: pointer;
 }
 
+.register-login:hover{
+  cursor: pointer;
+}
 
 .all-agreement-dropdown {
   display: flex;
