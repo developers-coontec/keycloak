@@ -190,6 +190,12 @@ public interface UserResource {
     @Deprecated
     void resetPasswordEmail(@QueryParam("client_id") String clientId);
 
+    @PUT
+    @Path("reset-password-email")
+    @Deprecated
+    void resetPasswordEmail(@QueryParam("redirect_uri") String redirectUri,
+        @QueryParam("client_id") String clientId);
+
     /**
      * Sends an email to the user with a link within it.  If they click on the link they will be asked to perform some actions
      * i.e. reset password, update profile, etc.
