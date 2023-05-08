@@ -164,6 +164,7 @@
                                 <artifactItem>
                                     <groupId>org.keycloak</groupId>
                                     <artifactId>keycloak-server-feature-pack</artifactId>
+                                    <version>14.0.0</version>
                                     <type>zip</type>
                                     <outputDirectory>${basedir}/target/${project.build.finalName}/docs</outputDirectory>
                                     <includes>content/docs/licenses-${product.slot}/**</includes>
