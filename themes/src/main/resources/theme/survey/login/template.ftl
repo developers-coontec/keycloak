@@ -682,11 +682,11 @@
 
 <#--      </div>-->
 <#--    </div>-->
-    <div class="survey_content_left">
+    <div class="survey_content_top">
       <div class="survey_content_top_img" onclick="goToUrl('${url.homeUrl}')">
       </div>
     </div>
-    <div class="survey_content_right">
+    <div class="survey_content_main">
       <div class="survey_content_body">
           <#if displayMessage && message?has_content && (message.type != 'warning' || !isAppInitiatedAction??)>
             <div class="alert alert-${message.type}">
