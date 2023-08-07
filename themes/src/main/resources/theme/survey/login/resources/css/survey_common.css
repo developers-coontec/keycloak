@@ -500,7 +500,7 @@ body {
 .survey_main .survey_content_input_text {
   display: flex;
   justify-content: flex-start;
-  align-content: center;
+  align-content: flex-start;
   flex-wrap: wrap;
   padding: 0;
   width: 360px;
