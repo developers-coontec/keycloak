@@ -7,6 +7,7 @@
       function onLoadFunction() {
         console.log('onLoadFunction');
         isAgreementRequired(false);
+        onAllAgreementDropdownClick();
       }
 
       window.addEventListener('load', onLoadFunction);
