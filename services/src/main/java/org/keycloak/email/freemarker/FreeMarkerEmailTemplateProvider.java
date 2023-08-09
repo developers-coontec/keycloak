@@ -139,7 +139,7 @@ public class FreeMarkerEmailTemplateProvider implements EmailTemplateProvider {
         attributes.put("realmName", getRealmName());
         addCommonAttributes(attributes, link);
 
-        send("passwordResetSubject", "password-reset.ftl", attributes);
+        send("emailPasswordResetSubject", "email-password-reset.ftl", attributes);
     }
 
     @Override
