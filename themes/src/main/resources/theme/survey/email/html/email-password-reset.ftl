@@ -70,7 +70,7 @@
       </span>
     </div>
     <a href="${mainButtonUrl}" target="_blank2"
-       style="margin-top: 40px; margin-left: auto; margin-right: auto; height: 56px; justify-content: center">
+       style="text-decoration: none; margin-top: 40px; margin-left: auto; margin-right: auto; height: 56px; justify-content: center">
       <div class="email-main-button"
            style=" padding: 14px 20px; text-align: center; width: 160px; margin-top: 40px; height: 28px; margin-left: auto; margin-right: auto; background: #309EEE; border-radius: 3px;">
         <span class="email-main-button-label"
