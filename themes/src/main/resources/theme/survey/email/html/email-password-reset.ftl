@@ -42,7 +42,7 @@
            src="https://plan-esg-resources.s3.ap-northeast-2.amazonaws.com/images/logo.png"/>
     </a>
     <span class="header_subtitle_text"
-          style="width: 110px; font-size: 12px; font-weight: 400; line-height: 18px; text-align: right; letter-spacing: -0.005em; color: #808080;">
+          style="width: 150px; font-size: 12px; font-weight: 400; line-height: 18px; text-align: right; letter-spacing: -0.005em; color: #808080;">
       ${msg("emailPasswordResetHeaderSub")?no_esc}
     </span>
 
