@@ -167,7 +167,7 @@
           <span>${msg("survey_validation-require-accept")}</span>
         </div>
       </div>
-      <div id="survey_login_social_links" class="survey_login_social_links">
+      <div id="agreement_next_section" class="survey_login_social_links">
           <#if realm.password && social.providers??>
             <div class="survey_login_social_link_group">
                 <#list social.providers as p>

@@ -7,6 +7,7 @@
       function onLoadFunction() {
         console.log('onLoadFunction');
         isAgreementRequired(false);
+        onAllAgreementDropdownClick();
       }
 
       window.addEventListener('load', onLoadFunction);
@@ -115,7 +116,7 @@
             <span>${msg("register-content-all-agreement")}</span>
           </div>
           <div id="div-all-agreement-dropdown" class="all-agreement-dropdown dropdown-default"
-               onclick="onAllAgreementDropdownClick(event)">
+               onclick="onAllAgreementDropdownClick()">
           </div>
         </div>
         <div id="register-agreement-option-section"
@@ -162,7 +163,7 @@
           <span>${msg("survey_validation-require-accept")}</span>
         </div>
       </div>
-      <div class="survey_content_links margin-top-20">
+      <div id="agreement_next_section" class="survey_content_links update_profile_content_links">
         <div class="survey_content_button_group">
           <div id="register-button" class="survey_button">
             <span>${msg("register-button")}</span>

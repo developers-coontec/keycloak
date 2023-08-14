@@ -352,6 +352,9 @@ body {
   width: 100%;
   flex-wrap: wrap;
 }
+.survey_main .update_profile_content_links{
+  margin-top: 20px;
+}
 .survey_main .survey_content_button_group{
   display: flex;
   justify-content: flex-start;

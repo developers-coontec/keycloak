@@ -297,7 +297,7 @@
           document.getElementById('div-all-agreement-dropdown').classList.add("dropdown-default");
           document.getElementById('register-agreement-option-section').classList.add(
               "survey_content_hide");
-          document.getElementById('survey_login_social_links').classList.remove("margin-top-155");
+          document.getElementById('agreement_next_section').classList.remove("margin-top-155");
         } else {
           document.getElementById('all-agreement-dropdown').value = true;
           document.getElementById('div-all-agreement-dropdown').classList.remove(
@@ -305,7 +305,7 @@
           document.getElementById('div-all-agreement-dropdown').classList.add("dropdown-clicked");
           document.getElementById('register-agreement-option-section').classList.remove(
               "survey_content_hide");
-          document.getElementById('survey_login_social_links').classList.add("margin-top-155");
+          document.getElementById('agreement_next_section').classList.add("margin-top-155");
         }
         // console.log(document.getElementById('all-agreement-dropdown'));
       }
