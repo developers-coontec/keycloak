@@ -20,6 +20,7 @@
               <input tabindex="1" id="username" name="username" value="${(login.username!'')}"
                      type="text" autofocus
                      maxlength="300"
+                     onkeyup="enterKeyPressed('login-button')"
                      autocomplete="off" placeholder="${msg("survey_content_email-placeholder")}"/>
             </#if>
         </div>
@@ -31,6 +32,7 @@
         <div class="survey_content_input_text">
           <input tabindex="2" id="password" name="password" type="password" autocomplete="off"
                  maxlength="100"
+                 onkeyup="enterKeyPressed('login-button')"
                  placeholder="${msg("survey_content_password-placeholder")}"/>
         </div>
       </div>
@@ -111,7 +113,7 @@
       </div>
       <div class="survey_content_links">
         <div class="survey_content_button_group">
-          <div class="survey_button" onclick="clickSubmit('kc-form-login')">
+          <div id="login-button" class="survey_button" onclick="clickSubmit('kc-form-login')">
             <span>${msg("login-button")}</span>
           </div>
         </div>

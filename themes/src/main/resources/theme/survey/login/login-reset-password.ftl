@@ -35,7 +35,7 @@
       <div class="survey_content_title">
           ${msg("reset-password-content-title")}
       </div>
-      <div class="survey_content_subtitle">
+      <div class="survey_content_subtitle" style="margin-top: 40px;">
           ${msg("reset-password-content-subtitle")?no_esc}
       </div>
       <div class="survey_content_input_group ">
@@ -46,6 +46,7 @@
           <input id="email" name="username" type="text"
                  autocomplete="email"
                  maxlength="300"
+                 onkeyup="enterKeyPressed('submitDiv')"
                  autofocus onchange="emailOnChange(event.target.value)"
                  placeholder="${msg("survey_content_email-placeholder")}"/>
         </div>

@@ -126,6 +126,14 @@
         }
       }
 
+      function enterKeyPressed(clickElementId) {
+        console.log('enterKeyPressed begin', clickElementId)
+        if (window.event.keyCode == 13) {
+          console.log('enterKeyPressed pressed', clickElementId)
+          document.getElementById(clickElementId).click();
+        }
+      }
+
       function displayAgreementRequiredErrorMessage() {
         // console.log('displayAgreementRequiredErrorMessage');
         // document.getElementById('register-validation-accept-agreement').classList.remove("survey_content_hide");
