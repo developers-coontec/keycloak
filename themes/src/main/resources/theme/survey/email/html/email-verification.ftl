@@ -8,7 +8,7 @@
         type="text/css">
   <link rel="stylesheet" type="text/css"
         href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
-  <style type="text/css" th:inline="text">
+  <style type="text/css" inline="text">
     @import url("https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css");
 
     body {
@@ -29,7 +29,7 @@
 
 <body
     style="font-family: 'NanumSquare', 'Noto Sans KR', sans-serif; font-weight: 400; background: #F8F9FA;"
-    th:inline="text">
+    inline="text">
 <div class="email-content"
      style="display: block; margin-left: auto; margin-right: auto; width: 780px; min-width: 780px; max-width: 780px; background: #FFFFFF;">
   <table cellpadding="40" style="width: 780px; background: #FFFFFF;">
@@ -107,7 +107,7 @@
           <tr>
             <td style="width: 245px; height: 42px; background: #ffffff; border: none;"></td>
             <td style="width: 210px; height: 42px; background: #309EEE; border-radius: 3px; text-align: center; vertical-align: center;">
-              <a th:href="${mainButtonUrl}" target="_blank2"
+              <a href="${mainButtonUrl}" target="_blank2"
                  style="text-decoration: none;">
                   <span class="email-main-button-label"
                         style="font-weight: 700; font-size: 16px; vertical-align: center; line-height:normal; text-align: center; letter-spacing: -0.005em; color: #FFFFFF;">
