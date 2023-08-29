@@ -32,8 +32,8 @@
       </#if>
     <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <!-- Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NXD71PYX2E"></script>
     <script>
       console.log('window.location.host:' + window.location.host, navigator.userAgent);
       if (window.location.host === "dataapp.planesg.ai" ||
