@@ -6,6 +6,19 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>PlanESG</title>
+    <meta name="description" content="Description for PlanESG" />
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="theme-color" content="#000000" />
+    <meta property="og:title" content="PlanESG">
+    <!--  <meta property="og:image" content="https://esgapp.planesg.ai/content/images/esg_ad.png">-->
+    <!--  <meta property="og:image:width" content="700">-->
+    <!--  <meta property="og:image:height" content="350">-->
+    <meta property="og:url" content="https://dataapp.planesg.ai">
+    <meta property="og:site_name" content="PlanESG">
+    <meta property="og:type" content="website">
+
     <meta name="robots" content="noindex, nofollow">
 
       <#if properties.meta?has_content>
@@ -52,7 +65,6 @@
         a.appendChild(r);
       })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
-    <!-- End Google Tag Manager -->
 
     <script>
       function clickSubmit(formId) {
@@ -630,46 +642,6 @@
   </head>
 
   <body>
-  <script>
-    // (function() {
-    //   var w = window;
-    //   if (w.ChannelIO) {
-    //     return (window.console.error || window.console.log || function(){})('ChannelIO script included twice.');
-    //   }
-    //   var ch = function() {
-    //     ch.c(arguments);
-    //   };
-    //   ch.q = [];
-    //   ch.c = function(args) {
-    //     ch.q.push(args);
-    //   };
-    //   w.ChannelIO = ch;
-    //   function l() {
-    //     if (w.ChannelIOInitialized) {
-    //       return;
-    //     }
-    //     w.ChannelIOInitialized = true;
-    //     var s = document.createElement('script');
-    //     s.type = 'text/javascript';
-    //     s.async = true;
-    //     s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
-    //     s.charset = 'UTF-8';
-    //     var x = document.getElementsByTagName('script')[0];
-    //     x.parentNode.insertBefore(s, x);
-    //   }
-    //   if (document.readyState === 'complete') {
-    //     l();
-    //   } else if (window.attachEvent) {
-    //     window.attachEvent('onload', l);
-    //   } else {
-    //     window.addEventListener('DOMContentLoaded', l, false);
-    //     window.addEventListener('load', l, false);
-    //   }
-    // })();
-    // ChannelIO('boot', {
-    //   "pluginKey": "f6c60dea-3acd-447a-82b8-f07f48c45ca5"
-    // });
-  </script>
   <div class="survey_main">
 <#--    <div class="survey_content_top">-->
 <#--      <div class="survey_content_top_img" onclick="goToUrl('${url.homeUrl}')">-->
