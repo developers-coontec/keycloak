@@ -37,28 +37,19 @@
     <script>
       console.log('window.location.host:' + window.location.host, navigator.userAgent);
       if (window.location.host === "dataapp.planesg.ai" ||
+          window.location.host === "esgapp.planesg.ai" ||
+          window.location.host === "companyapp.planesg.ai" ||
           window.location.host === "auth.planesg.ai") {
 
-        // (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        //       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        //     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        //     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        // })(window,document,'script','dataLayer','GTM-123');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-        // var newScript = document.createElement("script");
-        // newScript.type = "text/javascript";
-        // newScript.setAttribute("async", "true");
-        // newScript.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=G-FQ0HPGWL4V");
-        // document.documentElement.firstChild.appendChild(newScript);
-        // window.dataLayer = window.dataLayer || [];
-        // function gtag(){dataLayer.push(arguments);}
-        // gtag('js', new Date());
-        //
-        // gtag('config', 'G-FQ0HPGWL4V');
+        gtag('config', 'G-NXD71PYX2E');
 
         (function(h,o,t,j,a,r){
           h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-          h._hjSettings={hjid:2782864,hjsv:6};
+          h._hjSettings={hjid:3379839,hjsv:6};
           a=o.getElementsByTagName('head')[0];
           r=o.createElement('script');r.async=1;
           r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
