@@ -6,8 +6,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>PlanESG</title>
-    <meta name="description" content="Description for PlanESG" />
+    <title>PlanESG Auth</title>
+    <meta name="description" content="Description for PlanESG Authentication" />
     <meta name="google" content="notranslate" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="theme-color" content="#000000" />
