@@ -48,24 +48,52 @@
     <!-- Google buttons -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NXD71PYX2E"></script>
     <script>
       console.log('window.location.host:' + window.location.host, navigator.userAgent);
 
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      var tagId = null;
+      if (window.location.host === "dataapp.meback.ai" ||
+          window.location.host === "esgapp.meback.ai" ||
+          window.location.host === "companyapp.meback.ai" ||
+          window.location.host === "auth.meback.ai") {
+        tagId = "G-NXD71PYX2E";
+      } else if (window.location.host === "datatest.meback.ai" ||
+          window.location.host === "esgtest.meback.ai" ||
+          window.location.host === "companytest.meback.ai" ||
+          window.location.host === "authtest.meback.ai") {
+        tagId = "G-KKXR5SXQ4R";
+      }
 
-      gtag('config', 'G-NXD71PYX2E');
+      if (tagId !== undefined && tagId !== null) {
+        var newScript = document.createElement("script");
+        newScript.type = "text/javascript";
+        newScript.setAttribute("async", "true");
+        newScript.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=" + tagId);
+        document.documentElement.firstChild.appendChild(newScript);
+        window.dataLayer = window.dataLayer || [];
 
-      (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:3379839,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+        function gtag() {dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', tagId);
+      }
+
+      if (window.location.host === "dataapp.meback.ai" ||
+          window.location.host === "esgapp.meback.ai" ||
+          window.location.host === "companyapp.meback.ai" ||
+          window.location.host === "auth.meback.ai") {
+        (function (h, o, t, j, a, r) {
+          h.hj = h.hj || function () {
+            (h.hj.q = h.hj.q || []).push(arguments)
+          };
+          h._hjSettings = {hjid: 3379839, hjsv: 6};
+          a = o.getElementsByTagName('head')[0];
+          r = o.createElement('script');
+          r.async = 1;
+          r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+          a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+      }
     </script>
 
     <script>
