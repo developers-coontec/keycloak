@@ -52,16 +52,22 @@
       console.log('window.location.host:' + window.location.host, navigator.userAgent);
 
       var tagId = null;
-      if (window.location.host === "dataapp.meback.ai" ||
-          window.location.host === "esgapp.meback.ai" ||
-          window.location.host === "companyapp.meback.ai" ||
-          window.location.host === "auth.meback.ai") {
+      if (window.location.host === "dataapp.planesg.ai" ||
+          window.location.host === "esgapp.planesg.ai" ||
+          window.location.host === "companyapp.planesg.ai" ||
+          window.location.host === "auth.planesg.ai") {
         tagId = "G-NXD71PYX2E";
-      } else if (window.location.host === "datatest.meback.ai" ||
-          window.location.host === "esgtest.meback.ai" ||
-          window.location.host === "companytest.meback.ai" ||
-          window.location.host === "authtest.meback.ai") {
+      } else if (window.location.host === "datatest.planesg.ai" ||
+          window.location.host === "esgtest.planesg.ai" ||
+          window.location.host === "companytest.planesg.ai" ||
+          window.location.host === "authtest.planesg.ai") {
         tagId = "G-16X9E3XHKZ";
+      } else if (window.location.host === "surveyapp.meback.ai" ||
+          window.location.host === "auth.meback.ai") {
+        tagId = "G-8N2S2C9MRC";
+      } else if (window.location.host === "surveytest.meback.ai" ||
+          window.location.host === "authtest.meback.ai") {
+        tagId = "G-KNG4052WD6";
       }
 
       if (tagId !== undefined && tagId !== null) {
@@ -78,10 +84,10 @@
         gtag('config', tagId);
       }
 
-      if (window.location.host === "dataapp.meback.ai" ||
-          window.location.host === "esgapp.meback.ai" ||
-          window.location.host === "companyapp.meback.ai" ||
-          window.location.host === "auth.meback.ai") {
+      if (window.location.host === "dataapp.planesg.ai" ||
+          window.location.host === "esgapp.planesg.ai" ||
+          window.location.host === "companyapp.planesg.ai" ||
+          window.location.host === "auth.planesg.ai") {
         (function (h, o, t, j, a, r) {
           h.hj = h.hj || function () {
             (h.hj.q = h.hj.q || []).push(arguments)
