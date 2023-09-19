@@ -56,7 +56,7 @@
           window.location.host === "esgapp.planesg.ai" ||
           window.location.host === "companyapp.planesg.ai" ||
           window.location.host === "auth.planesg.ai") {
-        tagId = "G-NXD71PYX2E";
+        tagId = "G-WQ4NK8X6B8";
       } else if (window.location.host === "datatest.planesg.ai" ||
           window.location.host === "esgtest.planesg.ai" ||
           window.location.host === "companytest.planesg.ai" ||
