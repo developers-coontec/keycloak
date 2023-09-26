@@ -57,6 +57,11 @@
           window.location.host === "companyapp.planesg.ai" ||
           window.location.host === "auth.planesg.ai") {
         tagId = "G-WQ4NK8X6B8";
+      } else if (window.location.host === "datademo.planesg.ai" ||
+          window.location.host === "esgdemo.planesg.ai" ||
+          window.location.host === "companydemo.planesg.ai" ||
+          window.location.host === "authdemo.planesg.ai") {
+        tagId = "G-PCYV8WVNSN";
       } else if (window.location.host === "datatest.planesg.ai" ||
           window.location.host === "esgtest.planesg.ai" ||
           window.location.host === "companytest.planesg.ai" ||
@@ -64,7 +69,7 @@
         tagId = "G-16X9E3XHKZ";
       } else if (window.location.host === "surveyapp.meback.ai" ||
           window.location.host === "auth.meback.ai") {
-        tagId = "G-8N2S2C9MRC";
+        tagId = "G-XSMKR926KY";
       } else if (window.location.host === "surveytest.meback.ai" ||
           window.location.host === "authtest.meback.ai") {
         tagId = "G-KNG4052WD6";
