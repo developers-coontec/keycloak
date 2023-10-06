@@ -7,10 +7,10 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>PlanESG Auth</title>
-    <meta name="description" content="Description for PlanESG Authentication" />
-    <meta name="google" content="notranslate" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Description for PlanESG Authentication"/>
+    <meta name="google" content="notranslate"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="theme-color" content="#000000"/>
     <meta property="og:title" content="PlanESG">
     <!--  <meta property="og:image" content="https://esgapp.planesg.ai/content/images/esg_ad.png">-->
     <!--  <meta property="og:image:width" content="700">-->
@@ -83,7 +83,10 @@
         document.documentElement.firstChild.appendChild(newScript);
         window.dataLayer = window.dataLayer || [];
 
-        function gtag() {dataLayer.push(arguments);}
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
 
         gtag('config', tagId);
@@ -684,43 +687,48 @@
 
   <body>
   <div class="survey_main">
-<#--    <div class="survey_content_top">-->
-<#--      <div class="survey_content_top_img" onclick="goToUrl('${url.homeUrl}')">-->
+      <#--    <div class="survey_content_top">-->
+      <#--      <div class="survey_content_top_img" onclick="goToUrl('${url.homeUrl}')">-->
 
-<#--      </div>-->
-<#--    </div>-->
+      <#--      </div>-->
+      <#--    </div>-->
     <div class="survey_content_top">
       <div class="survey_content_top_img" onclick="goToUrl('${url.homeUrl}')">
+        <img src="${url.resourcesPath}/img/logo.svg" alt=""Logo">
       </div>
     </div>
     <div class="survey_content_main">
-      <div class="survey_content_body">
-          <#if displayMessage && message?has_content && (message.type != 'warning' || !isAppInitiatedAction??)>
-            <div class="alert alert-${message.type}">
-                <#if message.type = 'success'><span
-                  class="${properties.kcFeedbackSuccessIcon!}"></span></#if>
-                <#if message.type = 'warning'><span
-                  class="${properties.kcFeedbackWarningIcon!}"></span></#if>
-                <#if message.type = 'error'><span
-                  class="${properties.kcFeedbackErrorIcon!}"></span></#if>
-                <#if message.type = 'info'><span
-                  class="${properties.kcFeedbackInfoIcon!}"></span></#if>
-              <span class="kc-feedback-text">${kcSanitize(message.summary)?no_esc}</span>
-            </div>
-          </#if>
-          <#nested "form">
+      <div class="survey_content_left">
       </div>
-      <div class="survey_content_bottom">
-        <div class="survey_content_bottom_copyright">
-          <span>${msg("survey_footer_copypright")}</span>
+      <div class="survey_content_right">
+        <div class="survey_content_body">
+            <#if displayMessage && message?has_content && (message.type != 'warning' || !isAppInitiatedAction??)>
+              <div class="alert alert-${message.type}">
+                  <#if message.type = 'success'><span
+                    class="${properties.kcFeedbackSuccessIcon!}"></span></#if>
+                  <#if message.type = 'warning'><span
+                    class="${properties.kcFeedbackWarningIcon!}"></span></#if>
+                  <#if message.type = 'error'><span
+                    class="${properties.kcFeedbackErrorIcon!}"></span></#if>
+                  <#if message.type = 'info'><span
+                    class="${properties.kcFeedbackInfoIcon!}"></span></#if>
+                <span class="kc-feedback-text">${kcSanitize(message.summary)?no_esc}</span>
+              </div>
+            </#if>
+            <#nested "form">
         </div>
-        <div class="survey_content_bottom_terms_use"
-             onclick="openNewWindows('https://www.planesg.ai/policy-service', 800, 1000)">
-          <span>${msg("survey_footer_terms_use")}</span>
-        </div>
-        <div class="survey_content_bottom_privacy_policy"
-             onclick="openNewWindows('https://www.planesg.ai/policy-privacy', 800, 1000)">
-          <span>${msg("survey_footer_privacy_policy")}</span>
+        <div class="survey_content_bottom">
+          <div class="survey_content_bottom_copyright">
+            <span>${msg("survey_footer_copypright")}</span>
+          </div>
+          <div class="survey_content_bottom_terms_use"
+               onclick="openNewWindows('https://www.planesg.ai/policy-service', 800, 1000)">
+            <span>${msg("survey_footer_terms_use")}</span>
+          </div>
+          <div class="survey_content_bottom_privacy_policy"
+               onclick="openNewWindows('https://www.planesg.ai/policy-privacy', 800, 1000)">
+            <span>${msg("survey_footer_privacy_policy")}</span>
+          </div>
         </div>
       </div>
     </div>
