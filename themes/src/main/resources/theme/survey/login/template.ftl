@@ -118,7 +118,26 @@
 
       function getSurveyHomeUrl() {
         var url = window.location.href;
-        if (url.includes("authtest.planesg.ai")) {
+        console.log(url);
+        if (url.includes("esgtest.planesg.ai")) {
+          return "https://esgtest.planesg.ai";
+        } else if (url.includes("datatest.planesg.ai")) {
+          return "https://datatest.planesg.ai";
+        } else if (url.includes("companytest.planesg.ai")) {
+          return "https://companytest.planesg.ai";
+        } else if (url.includes("esgdemo.planesg.ai")) {
+            return "https://esgdemo.planesg.ai";
+        } else if (url.includes("datademo.planesg.ai")) {
+            return "https://datademo.planesg.ai";
+        } else if (url.includes("companydemo.planesg.ai")) {
+            return "https://companydemo.planesg.ai";
+        } else if (url.includes("esgapp.planesg.ai")) {
+          return "https://esgapp.planesg.ai";
+        } else if (url.includes("dataapp.planesg.ai")) {
+          return "https://dataapp.planesg.ai";
+        } else if (url.includes("companyapp.planesg.ai")) {
+          return "https://companyapp.planesg.ai";
+        } else if (url.includes("authtest.planesg.ai")) {
           return "https://datatest.planesg.ai";
         } else if (url.includes("authdemo.planesg.ai")) {
           return "https://datademo.planesg.ai";
