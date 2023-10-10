@@ -166,6 +166,12 @@
   background-color: var(--white);
 }
 
+@media (max-width: 450px) {
+  .register-agreement-select-options {
+    margin-top: 10px;
+  }
+}
+
 .survey_main .register-agreement-select-options.survey_error {
   border-bottom: solid 1px #000000 !important;
 }
