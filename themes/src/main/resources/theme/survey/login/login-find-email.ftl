@@ -67,7 +67,7 @@
                  placeholder="${msg("survey_content_mobile-phone-number-placeholder")}"/>
         </div>
       </div>
-      <div class="survey_content_links margin-top-20">
+      <div class="survey_content_links ">
         <div class="survey_content_button_group">
           <div id="submitDiv" class="survey_button survey_content_disabled"
                onclick="validateAndSubmit('kc-find-email-form')">

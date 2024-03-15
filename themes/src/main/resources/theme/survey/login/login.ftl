@@ -36,6 +36,11 @@
                  placeholder="${msg("survey_content_password-placeholder")}"/>
         </div>
       </div>
+      <div class="survey_content_button_group">
+        <div id="login-button" class="survey_button" onclick="clickSubmit('kc-form-login')">
+          <span>${msg("login-button")}</span>
+        </div>
+      </div>
       <div class="survey_login_social_links">
           <#if realm.password && social.providers??>
             <div class="survey_login_social_link_group">
@@ -55,14 +60,12 @@
 
                         <div class="g_id_signin"
                              data-type="standard"
-                             data-shape="rectangular"
-<#--                             data-theme="outline"-->
-<#--                             data-theme="filled_blue"-->
-                             data-theme="filled_black"
-                             data-text="signin_with"
                              data-size="large"
-                             data-logo_alignment="left"
-                             data-width="360">
+                             data-theme="outline"
+                             data-text="sign_in_with"
+                             data-shape="rectangular"
+                             data-height="56"
+                             data-width="390">
                         </div>
                       </div>
                       <div class="survey_flex_br"></div>
@@ -112,22 +115,17 @@
           </#if>
       </div>
       <div class="survey_content_links">
-        <div class="survey_content_button_group">
-          <div id="login-button" class="survey_button" onclick="clickSubmit('kc-form-login')">
-            <span>${msg("login-button")}</span>
-          </div>
-        </div>
-        <div class="survey_content_link_group margin-top-32">
+        <div class="survey_content_link_group">
           <div class="survey_link_description">
             <span>${msg("login-content-forgot-id-or-password-msg")}</span>
           </div>
-<#--          <div class="survey_login_forgot_id survey_link_text margin-left-10"-->
-<#--               onclick="goToUrl('${url.loginFindEmailUrl}')">-->
-<#--            <span>${msg("login-content-forgot-id")}</span>-->
-<#--          </div>-->
-<#--          <div class="survey_content_or margin-left-10">-->
-<#--            <span>|</span>-->
-<#--          </div>-->
+            <#--          <div class="survey_login_forgot_id survey_link_text margin-left-10"-->
+            <#--               onclick="goToUrl('${url.loginFindEmailUrl}')">-->
+            <#--            <span>${msg("login-content-forgot-id")}</span>-->
+            <#--          </div>-->
+            <#--          <div class="survey_content_or margin-left-10">-->
+            <#--            <span>|</span>-->
+            <#--          </div>-->
           <div class="survey_login_forgot_password survey_link_text margin-left-10"
                onclick="goToUrl('${url.loginResetCredentialsUrl}')">
             <span>${msg("login-content-forgot-password")}</span>

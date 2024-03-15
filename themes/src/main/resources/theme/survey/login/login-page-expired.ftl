@@ -4,7 +4,7 @@
     <div class="survey_content_title">
         ${msg("expired-content-title")}
     </div>
-  <div class="survey_content_links margin-top-20">
+  <div class="survey_content_links ">
     <div class="survey_content_link_group">
         <div class="survey_link_text survey_content_ib-vt"
              onclick="goToUrl('${url.loginRestartFlowUrl}')">

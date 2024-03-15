@@ -107,12 +107,11 @@
 <#--            </#if>-->
 <#--        </div>-->
 <#--      </div>-->
-      <div id="register-agreement-section" class="register-agreement margin-top-20">
+      <div id="register-agreement-section" class="register-agreement ">
         <div class="register-agreement-select">
-          <div class="register-agreement-checkbox"
-          >
+          <div class="register-agreement-checkbox">
             <div id="all-agreement-checkbox"
-                 class="all-agreement-checkbox-checked-svg survey_content_hide"></div>
+                 class="all-agreement-checkbox-svg"></div>
           </div>
           <input id="allAgreement" name="allAgreement" type="hidden"/>
           <input id="all-agreement-dropdown" name="allAgreementDropdown" type="hidden"/>
@@ -124,41 +123,47 @@
           </div>
         </div>
         <div id="register-agreement-option-section"
-             class="register-agreement-select-options survey_content_hide">
+             class="register-agreement-select-options">
           <div class="register-agreement-select-section-row">
-            <div class="register-agreement-checkbox-small"
-            >
+            <div class="register-agreement-checkbox-small">
               <div id="service-agreement-checkbox"
-                   class="small-agreement-checkbox-checked-svg survey_content_hide"></div>
+                   class="small-agreement-checkbox-svg"></div>
             </div>
             <input id="serviceAgreement" name="serviceAgreement" type="hidden">
             <div class="register-agreement-text-small"
                  onclick="openNewWindows('https://www.planesg.ai/policy-service', 800, 1000)">
               <span>${msg("register-content-service-agreement")}</span>
             </div>
+            <div class="register-agreement-checkbox-small-right">
+              <div class="small-agreement-arrow-right-svg"></div>
+            </div>
           </div>
           <div class="register-agreement-select-section-row">
-            <div class="register-agreement-checkbox-small"
-            >
+            <div class="register-agreement-checkbox-small">
               <div id="privacy-agreement-checkbox"
-                   class="small-agreement-checkbox-checked-svg survey_content_hide"></div>
+                   class="small-agreement-checkbox-svg"></div>
             </div>
             <input id="privacyAgreement" name="privacyAgreement" type="hidden">
             <div class="register-agreement-text-small"
                  onclick="openNewWindows('https://www.planesg.ai/policy-privacy', 800, 1000)">
               <span>${msg("register-content-privacy-agreement")}</span>
             </div>
+            <div class="register-agreement-checkbox-small-right">
+              <div class="small-agreement-arrow-right-svg"></div>
+            </div>
           </div>
           <div class="register-agreement-select-section-row">
-            <div class="register-agreement-checkbox-small"
-            >
+            <div class="register-agreement-checkbox-small">
               <div id="marketing-agreement-checkbox"
-                   class="small-agreement-checkbox-checked-svg survey_content_hide"></div>
+                   class="small-agreement-checkbox-svg "></div>
             </div>
             <input id="marketingAgreement" name="marketingAgreement" type="hidden">
             <div class="register-agreement-text-small"
                  onclick="openNewWindows('https://www.planesg.ai/policy-marketing', 800, 1000)">
               <span>${msg("register-content-marketing-agreement")}</span>
+            </div>
+            <div class="register-agreement-checkbox-small-right">
+              <div class="small-agreement-arrow-right-svg"></div>
             </div>
           </div>
         </div>
@@ -185,12 +190,12 @@
 
                         <div class="g_id_signin"
                              data-type="standard"
-                             data-shape="rectangular"
-                             data-theme="filled_black"
-                             data-text="signup_with"
                              data-size="large"
-                             data-logo_alignment="left"
-                             data-width="360">
+                             data-theme="outline"
+                             data-text="sign_in_with"
+                             data-shape="rectangular"
+                             data-height="56"
+                             data-width="390">
                         </div>
                       </div>
                       <div class="survey_flex_br"></div>
@@ -239,12 +244,13 @@
             </div>
           </#if>
       </div>
-      <div class="survey_content_links">
-        <div class="survey_content_button_group">
-          <div id="register-button" class="survey_button ">
-            <span>${msg("register-button")}</span>
-          </div>
+      <div class="survey_content_button_group">
+        <div id="register-button" class="survey_button ">
+          <span>${msg("register-button")}</span>
         </div>
+      </div>
+      <div class="survey_content_links">
+
         <div class="survey_content_link_group margin-top-32">
           <div class="survey_link_description">
             <span>${msg("login-content-forgot-id-or-password-msg")}</span>

@@ -52,7 +52,7 @@
         </div>
       </div>
     </div>
-    <div class="survey_content_links margin-top-20">
+    <div class="survey_content_links ">
       <div class="survey_content_button_group">
         <div class="survey_button" onclick="clickSubmit('kc-passwd-update-form')">
           <span>${msg("update-password-button")}</span>

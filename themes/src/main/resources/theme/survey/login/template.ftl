@@ -237,17 +237,17 @@
             allAgreementUnchecked();
           }
         }
-        if (isValueTrue(localServiceAgreement) && isValueTrue(localPrivacyAgreement)) {
-          document.getElementById('register-agreement-section').classList.remove("survey_error");
-          document.getElementById('register-agreement-option-section').classList.remove(
-              "survey_error");
+        // if (isValueTrue(localServiceAgreement) && isValueTrue(localPrivacyAgreement)) {
+          // document.getElementById('register-agreement-section').classList.remove("survey_error");
+          // document.getElementById('register-agreement-option-section').classList.remove(
+          //     "survey_error");
           // hideAgreementRequiredErrorMessage();
-        } else {
-          document.getElementById('register-agreement-section').classList.add("survey_error");
-          document.getElementById('register-agreement-option-section').classList.add(
-              "survey_error");
+        // } else {
+          // document.getElementById('register-agreement-section').classList.add("survey_error");
+          // document.getElementById('register-agreement-option-section').classList.add(
+          //     "survey_error");
           // displayAgreementRequiredErrorMessage();
-        }
+        // }
       }
 
       function validatePassword(inputElement) {
@@ -326,13 +326,15 @@
       function allAgreementChecked() {
         // console.log('allAgreementChecked');
         document.getElementById('allAgreement').value = true;
-        document.getElementById('all-agreement-checkbox').classList.remove("survey_content_hide");
+        document.getElementById('all-agreement-checkbox').classList.remove("all-agreement-checkbox-svg");
+        document.getElementById('all-agreement-checkbox').classList.add("all-agreement-checkbox-checked-svg");
       }
 
       function allAgreementUnchecked() {
         // console.log('allAgreementUnchecked');
         document.getElementById('allAgreement').value = false;
-        document.getElementById('all-agreement-checkbox').classList.add("survey_content_hide");
+        document.getElementById('all-agreement-checkbox').classList.remove("all-agreement-checkbox-checked-svg");
+        document.getElementById('all-agreement-checkbox').classList.add("all-agreement-checkbox-svg");
       }
 
       function onAllAgreementClick(inputValue) {
@@ -366,7 +368,7 @@
           document.getElementById('div-all-agreement-dropdown').classList.add("dropdown-default");
           document.getElementById('register-agreement-option-section').classList.add(
               "survey_content_hide");
-          document.getElementById('agreement_next_section').classList.remove("margin-top-155");
+          // document.getElementById('agreement_next_section').classList.remove("margin-top-155");
         } else {
           document.getElementById('all-agreement-dropdown').value = true;
           document.getElementById('div-all-agreement-dropdown').classList.remove(
@@ -374,7 +376,7 @@
           document.getElementById('div-all-agreement-dropdown').classList.add("dropdown-clicked");
           document.getElementById('register-agreement-option-section').classList.remove(
               "survey_content_hide");
-          document.getElementById('agreement_next_section').classList.add("margin-top-155");
+          // document.getElementById('agreement_next_section').classList.add("margin-top-155");
         }
         // console.log(document.getElementById('all-agreement-dropdown'));
       }
@@ -388,12 +390,16 @@
         }
         if (isValueTrue(checkedValue)) {
           document.getElementById('serviceAgreement').value = false;
+          document.getElementById('service-agreement-checkbox').classList.remove(
+              "small-agreement-checkbox-checked-svg");
           document.getElementById('service-agreement-checkbox').classList.add(
-              "survey_content_hide");
+              "small-agreement-checkbox-svg");
         } else {
           document.getElementById('serviceAgreement').value = true;
           document.getElementById('service-agreement-checkbox').classList.remove(
-              "survey_content_hide");
+              "small-agreement-checkbox-svg");
+          document.getElementById('service-agreement-checkbox').classList.add(
+              "small-agreement-checkbox-checked-svg");
         }
         // console.log(document.getElementById('service-agreement-checkbox'));
         isAgreementRequired(updateAllAgreement, inputValidateAllFields);
@@ -408,12 +414,16 @@
         }
         if (isValueTrue(checkedValue)) {
           document.getElementById('privacyAgreement').value = false;
+          document.getElementById('privacy-agreement-checkbox').classList.remove(
+              "small-agreement-checkbox-checked-svg");
           document.getElementById('privacy-agreement-checkbox').classList.add(
-              "survey_content_hide");
+              "small-agreement-checkbox-svg");
         } else {
           document.getElementById('privacyAgreement').value = true;
           document.getElementById('privacy-agreement-checkbox').classList.remove(
-              "survey_content_hide");
+              "small-agreement-checkbox-svg");
+          document.getElementById('privacy-agreement-checkbox').classList.add(
+              "small-agreement-checkbox-checked-svg");
         }
         // console.log(document.getElementById('privacy-agreement-checkbox'));
         isAgreementRequired(updateAllAgreement, inputValidateAllFields);
@@ -428,12 +438,16 @@
         }
         if (isValueTrue(checkedValue)) {
           document.getElementById('marketingAgreement').value = false;
+          document.getElementById('marketing-agreement-checkbox').classList.remove(
+              "small-agreement-checkbox-checked-svg");
           document.getElementById('marketing-agreement-checkbox').classList.add(
-              "survey_content_hide");
+              "small-agreement-checkbox-svg");
         } else {
           document.getElementById('marketingAgreement').value = true;
           document.getElementById('marketing-agreement-checkbox').classList.remove(
-              "survey_content_hide");
+              "small-agreement-checkbox-svg");
+          document.getElementById('marketing-agreement-checkbox').classList.add(
+              "small-agreement-checkbox-checked-svg");
         }
         // console.log(document.getElementById('marketing-agreement-checkbox'));
         isAgreementRequired(updateAllAgreement, inputValidateAllFields);

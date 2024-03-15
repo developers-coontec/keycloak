@@ -11,7 +11,7 @@
             ${msg("id-not-found")}
         </#if>
     </div>
-    <div class="survey_content_links margin-top-20">
+    <div class="survey_content_links ">
         <#if email?? >
           <div class="survey_content_button_group">
             <div id="resetPassword" class="survey_button"
