@@ -271,7 +271,7 @@
           <div class="survey_link_description">
             <span>${msg("register-login-msg")}</span>
           </div>
-          <div class="register-login  margin-left-10" onclick="goToUrl('${url.loginUrl}')">
+          <div class="register-login survey_link_text margin-left-10" onclick="goToUrl('${url.loginUrl}')">
             <span>${msg("register-login-link")}</span>
           </div>
         </div>
