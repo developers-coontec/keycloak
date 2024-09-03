@@ -494,7 +494,7 @@
         let isValid6 = true;  // ref Code
         let isValid7 = false; // service
         let isValid8 = false; // privacy
-        let isValid9 = true;  // marketing
+        let isValid9 = false;  // marketing
 
         function checkValid() {
           const registerButton = $('#register-button')[0];
@@ -689,7 +689,7 @@
           const checkedValue = isValueTrue(document.getElementById('allAgreement').value);
           isValid7 = checkedValue;
           isValid8 = checkedValue;
-          isValid9 = true;
+          isValid9 = checkedValue;
           checkValid();
         });
 
@@ -706,7 +706,7 @@
               break;
             case 'marketingAgreement':
               onMarketingAgreementClick(undefined, true, true);
-              isValid9 = true;
+              isValid9 = isValueTrue(inputElement.value);
               break;
             default:
               break;
