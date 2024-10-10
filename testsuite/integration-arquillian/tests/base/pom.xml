@@ -28,7 +28,7 @@
     <artifactId>integration-arquillian-tests-base</artifactId>
 
     <name>Base TestSuite</name>
-    
+
     <description></description>
 
     <properties>
@@ -45,7 +45,7 @@
         <systemrules.version>1.19.0</systemrules.version>
         <common.resources>${basedir}/../../servers/auth-server/jboss/common</common.resources>
     </properties>
-    
+
     <dependencies>
         <dependency>
             <groupId>org.keycloak</groupId>
@@ -144,7 +144,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    
+
     <build>
         <testResources>
             <testResource>
@@ -190,7 +190,7 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>                        
+            </plugin>
 
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -305,19 +305,19 @@
                             <goPath>${project.build.directory}/gopath</goPath>
                         </configuration>
                     </execution>
-                    <execution>
-                        <id>get-kcinit</id>
-                        <goals>
-                            <goal>get</goal>
-                        </goals>
-                        <configuration>
-                            <packages>
-                                <package>github.com/keycloak/kcinit</package>
-                            </packages>
-                            <goPath>${project.build.directory}/gopath</goPath>
-                            <tag>0.5</tag>
-                        </configuration>
-                    </execution>
+<!--                    <execution>-->
+<!--                        <id>get-kcinit</id>-->
+<!--                        <goals>-->
+<!--                            <goal>get</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <packages>-->
+<!--                                <package>github.com/keycloak/kcinit</package>-->
+<!--                            </packages>-->
+<!--                            <goPath>${project.build.directory}/gopath</goPath>-->
+<!--                            <tag>0.5</tag>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
                 </executions>
             </plugin>
             <plugin>
@@ -757,7 +757,7 @@
                     <exclusions>
                         <exclusion>
                             <groupId>org.jboss.modules</groupId>
-                            <artifactId>jboss-modules</artifactId>  
+                            <artifactId>jboss-modules</artifactId>
                         </exclusion>
                     </exclusions>
                 </dependency>

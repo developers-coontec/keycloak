@@ -245,11 +245,12 @@
             <url>https://repository.jboss.org/nexus/content/groups/public/</url>
         </repository>
     </repositories>
+
     <distributionManagement>
         <repository>
-            <id>jboss-mixed-repository</id>
-            <name>JBoss Mixed Repository</name>
-            <url>https://maven.planesg.ai/repository/maven-mixed/</url>
+            <id>jboss-releases-repository</id>
+            <name>JBoss Releases Repository</name>
+            <url>https://maven.planesg.ai/repository/maven-releases/</url>
         </repository>
     </distributionManagement>
 
@@ -1733,7 +1734,7 @@
                     <version>${nexus.staging.plugin.version}</version>
                     <extensions>true</extensions>
                     <configuration>
-                        <nexusUrl>https://repository.jboss.org/nexus</nexusUrl>
+                        <nexusUrl>https://maven.planesg.ai/repository/maven-releases</nexusUrl>
                         <serverId>jboss-releases-repository</serverId>
                     </configuration>
                 </plugin>
