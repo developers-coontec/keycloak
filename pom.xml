@@ -249,7 +249,7 @@
         <repository>
             <id>jboss-mixed-repository</id>
             <name>JBoss Mixed Repository</name>
-            <url>https://maven.meback.ai/repository/maven-mixed/</url>
+            <url>https://maven.planesg.ai/repository/maven-mixed/</url>
         </repository>
     </distributionManagement>
 
