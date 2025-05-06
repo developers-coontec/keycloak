@@ -53,7 +53,7 @@
                              data-client_id="${p.clientId}"
                              data-context="signin"
                              data-ux_mode="redirect"
-<#--                             data-login_uri="${p.loginUrl}"-->
+                                <#--                             data-login_uri="${p.loginUrl}"-->
                              data-callback="login_callback"
                              data-auto_prompt="false">
                         </div>
@@ -71,34 +71,34 @@
                       <div class="survey_flex_br"></div>
                     </#if>
                 </#list>
-<#--                <#list social.providers as p>-->
-<#--                    <#if p.alias == "kakao">-->
-<#--                      <div class="survey_login_social_link survey_login_social_link_${p.alias}"-->
-<#--                           onclick="goToUrl('${p.loginUrl}')">-->
-<#--                        <div-->
-<#--                            class="survey_login_social_link_img survey_login_social_link_${p.alias}-svg">-->
-<#--                        </div>-->
-<#--                        <div class="survey_login_social_link_text">-->
-<#--                          <span>${msg("login-social-${p.alias}")}</span>-->
-<#--                        </div>-->
-<#--                      </div>-->
-<#--                      <div class="survey_flex_br"></div>-->
-<#--                    </#if>-->
-<#--                </#list>-->
-<#--                <#list social.providers as p>-->
-<#--                    <#if p.alias == "naver">-->
-<#--                      <div class="survey_login_social_link survey_login_social_link_${p.alias}"-->
-<#--                           onclick="goToUrl('${p.loginUrl}')">-->
-<#--                        <div-->
-<#--                            class="survey_login_social_link_img survey_login_social_link_${p.alias}-svg">-->
-<#--                        </div>-->
-<#--                        <div class="survey_login_social_link_text">-->
-<#--                          <span>${msg("login-social-${p.alias}")}</span>-->
-<#--                        </div>-->
-<#--                      </div>-->
-<#--                      <div class="survey_flex_br"></div>-->
-<#--                    </#if>-->
-<#--                </#list>-->
+                <#--                <#list social.providers as p>-->
+                <#--                    <#if p.alias == "kakao">-->
+                <#--                      <div class="survey_login_social_link survey_login_social_link_${p.alias}"-->
+                <#--                           onclick="goToUrl('${p.loginUrl}')">-->
+                <#--                        <div-->
+                <#--                            class="survey_login_social_link_img survey_login_social_link_${p.alias}-svg">-->
+                <#--                        </div>-->
+                <#--                        <div class="survey_login_social_link_text">-->
+                <#--                          <span>${msg("login-social-${p.alias}")}</span>-->
+                <#--                        </div>-->
+                <#--                      </div>-->
+                <#--                      <div class="survey_flex_br"></div>-->
+                <#--                    </#if>-->
+                <#--                </#list>-->
+                <#--                <#list social.providers as p>-->
+                <#--                    <#if p.alias == "naver">-->
+                <#--                      <div class="survey_login_social_link survey_login_social_link_${p.alias}"-->
+                <#--                           onclick="goToUrl('${p.loginUrl}')">-->
+                <#--                        <div-->
+                <#--                            class="survey_login_social_link_img survey_login_social_link_${p.alias}-svg">-->
+                <#--                        </div>-->
+                <#--                        <div class="survey_login_social_link_text">-->
+                <#--                          <span>${msg("login-social-${p.alias}")}</span>-->
+                <#--                        </div>-->
+                <#--                      </div>-->
+                <#--                      <div class="survey_flex_br"></div>-->
+                <#--                    </#if>-->
+                <#--                </#list>-->
                 <#--                <#list social.providers as p>-->
                 <#--                    <#if p.alias == "facebook">-->
                 <#--                      <div class="survey_login_social_link survey_login_social_link_${p.alias}" onclick="goToUrl('${p.loginUrl}')">-->
@@ -140,6 +140,22 @@
             <span>${msg("login-register-link")}</span>
           </div>
         </div>
+          <#if realm.internationalizationEnabled  && locale.supported?size gt 1>
+            <div class="survey_content_locale" >
+              <div id="kc-locale-wrapper">
+                <div id="kc-locale-dropdown" >
+                  <a href="#" id="kc-current-locale-link">${locale.current}</a>
+                  <ul>
+                      <#list locale.supported as l>
+                        <li>
+                          <a href="${l.url}">${l.label}</a>
+                        </li>
+                      </#list>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </#if>
       </div>
     </div>
   </form>

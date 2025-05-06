@@ -61,7 +61,7 @@
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.24), 0 0 1px 0 rgba(0, 0, 0, 0.12);
 }
 
-.survey_login_social_link_img{
+.survey_login_social_link_img {
   width: 18px;
   height: 18px;
   object-fit: contain;
@@ -130,9 +130,58 @@
   justify-content: flex-start;
   align-items: center;
 }
+
 .survey_login_register span {
   /*border-bottom: solid 1px #ff7057;*/
 }
-.survey_login_register:hover{
+
+.survey_login_register:hover {
   cursor: pointer;
 }
+
+.survey_content_locale {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.survey_content_locale #kc-container-wrapper {
+  position: absolute;
+  width: 100%;
+}
+
+.survey_content_locale ul {
+  background-color: #FFF;
+  display: none;
+  top: 20px;
+  min-width: 100px;
+  padding: 10px;
+  list-style-type: none;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.survey_content_locale:hover ul {
+  display: block;
+}
+
+.survey_content_locale li {
+  font-size: 14px;
+  font-weight: normal;
+  padding: 5px;
+}
+
+#kc-locale-dropdown a {
+  color: #6A6E73;
+}
+a#kc-current-locale-link::before {
+  content: "\2c5";
+  margin-right: 4px;
+}
+
+
+
+
