@@ -8,6 +8,12 @@
   margin-left: 10px;
 }
 
+.register-content-label-email-description {
+  font-size: 12px;
+  margin-left: 10px;
+  color: red;
+}
+
 .survey_content_register .register-agreement {
   display: flex;
   justify-content: flex-start;

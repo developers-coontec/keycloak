@@ -27,6 +27,11 @@
                  maxlength="300"
                  placeholder="${msg("survey_content_email-placeholder")}"/>
         </div>
+        <div class="survey_flex_br"></div>
+        <div class="survey_content_input_description">
+            <span
+                class="register-content-label-email-description">${msg("register-content-email-description")}</span>
+        </div>
       </div>
       <div class="survey_content_input_group">
         <div class="survey_content_input_label">
