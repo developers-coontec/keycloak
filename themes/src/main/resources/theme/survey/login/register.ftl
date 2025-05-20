@@ -194,6 +194,7 @@
                         </div>
 
                         <div class="g_id_signin"
+                             data-locale="${locale.currentLanguageTag}"
                              data-type="standard"
                              data-size="large"
                              data-theme="outline"

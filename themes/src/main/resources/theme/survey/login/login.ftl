@@ -57,8 +57,8 @@
                              data-callback="login_callback"
                              data-auto_prompt="false">
                         </div>
-
                         <div class="g_id_signin"
+                             data-locale="${locale.currentLanguageTag}"
                              data-type="standard"
                              data-size="large"
                              data-theme="outline"
@@ -141,9 +141,9 @@
           </div>
         </div>
           <#if realm.internationalizationEnabled  && locale.supported?size gt 1>
-            <div class="survey_content_locale" >
+            <div class="survey_content_locale">
               <div id="kc-locale-wrapper">
-                <div id="kc-locale-dropdown" >
+                <div id="kc-locale-dropdown">
                   <a href="#" id="kc-current-locale-link">${locale.current}</a>
                   <ul>
                       <#list locale.supported as l>

@@ -46,7 +46,7 @@
     <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Google buttons -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://accounts.google.com/gsi/client?hl=${locale.currentLanguageTag}" async defer></script>
     <!-- Google tag (gtag.js) -->
     <script>
       console.log('window.location.host:' + window.location.host, navigator.userAgent);
