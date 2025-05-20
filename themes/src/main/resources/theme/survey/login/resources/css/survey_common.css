@@ -780,8 +780,8 @@ body {
   vertical-align: top;
   position: relative;
   float: right;
-  margin-top: -29px;
-  margin-right: 20px;
+  margin-top: -25px;
+  margin-left: 260px;
 }
 
 .survey_main .survey_content .survey_password-strength-text {
@@ -794,7 +794,7 @@ body {
   line-height: 1.17;
   letter-spacing: normal;
   text-align: right;
-  color: #ffffff;
+  color: var(--dark_1);
 }
 
 .survey_main .survey_content .survey_password-strength-value {
