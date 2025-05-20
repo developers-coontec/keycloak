@@ -41,8 +41,8 @@
               <a href="${homeUrl}" class="email-header-logo" target="_blank"
                  style="text-decoration: none; width: 110px; margin-right: auto">
                 <img class="logo logo-margin"
-                     style="width: 110px; height: 22px; object-fit: contain;"
-                     src="https://plan-esg-resources.s3.ap-northeast-2.amazonaws.com/images/logo.png"/>
+                     style="width: 150px; height: 41px; object-fit: contain;"
+                     src="https://kr.object.ncloudstorage.com/plan-esg-resources/images/logo.png"/>
               </a>
             </td>
             <td style="width: 150px; text-align: right;">
@@ -106,7 +106,7 @@
         <table cellspacing="0" cellpadding="7" style="width: 700px;">
           <tr>
             <td style="width: 245px; height: 42px; background: #ffffff; border: none;"></td>
-            <td style="width: 210px; height: 42px; background: #309EEE; border-radius: 3px; text-align: center; vertical-align: center;">
+            <td style="width: 210px; height: 42px; background: #15A451; border-radius: 3px; text-align: center; vertical-align: center;">
               <a href="${mainButtonUrl}" target="_blank2"
                  style="text-decoration: none;">
                   <span class="email-main-button-label"
