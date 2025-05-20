@@ -669,6 +669,10 @@ body {
   color: var(--dark_2) !important;
 }
 
+.survey_main .survey_content_disabled:hover{
+  cursor: default !important;
+}
+
 
 
 .survey_main .survey_link_text {
@@ -781,7 +785,7 @@ body {
   position: relative;
   float: right;
   margin-top: -25px;
-  margin-left: 260px;
+  margin-left: 240px;
 }
 
 .survey_main .survey_content .survey_password-strength-text {
