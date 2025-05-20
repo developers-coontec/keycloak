@@ -139,7 +139,8 @@
                  onclick="openNewWindows('https://www.planesg.ai/policy-service', 800, 1000)">
               <span>${msg("register-content-service-agreement")}</span>
             </div>
-            <div class="register-agreement-checkbox-small-right">
+            <div class="register-agreement-checkbox-small-right"
+                 onclick="openNewWindows('https://www.planesg.ai/policy-service', 800, 1000)">
               <div class="small-agreement-arrow-right-svg"></div>
             </div>
           </div>
@@ -153,7 +154,8 @@
                  onclick="openNewWindows('https://www.planesg.ai/policy-privacy', 800, 1000)">
               <span>${msg("register-content-privacy-agreement")}</span>
             </div>
-            <div class="register-agreement-checkbox-small-right">
+            <div class="register-agreement-checkbox-small-right"
+                 onclick="openNewWindows('https://www.planesg.ai/policy-privacy', 800, 1000)">
               <div class="small-agreement-arrow-right-svg"></div>
             </div>
           </div>
@@ -167,7 +169,8 @@
                  onclick="openNewWindows('https://www.planesg.ai/policy-marketing', 800, 1000)">
               <span>${msg("register-content-marketing-agreement")}</span>
             </div>
-            <div class="register-agreement-checkbox-small-right">
+            <div class="register-agreement-checkbox-small-right"
+                 onclick="openNewWindows('https://www.planesg.ai/policy-marketing', 800, 1000)">
               <div class="small-agreement-arrow-right-svg"></div>
             </div>
           </div>

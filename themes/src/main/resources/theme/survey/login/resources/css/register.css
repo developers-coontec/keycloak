@@ -125,7 +125,8 @@
   color: #333333;
   margin: 5px 10px 0 0;
 }
-.register-agreement-text-small:hover {
+.register-agreement-text-small:hover,
+.register-agreement-checkbox-small-right:hover {
   cursor: pointer;
 }
 
