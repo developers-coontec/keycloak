@@ -126,7 +126,7 @@ body {
 
 .survey_main .alert {
   padding: 0;
-  top: 195px;
+  top: 183px;
   position: absolute; /* or absolute */
   display: flex;
   justify-content: flex-start;
@@ -157,19 +157,19 @@ body {
 }
 
 .survey_main .alert-error {
-  background-color: #ffffff !important;
+  background-color: inherit !important;
   border: none !important;
   color: var(--red) !important;
 }
 
 .survey_main .alert-success {
-  background-color: #ffffff !important;
+  background-color: inherit !important;
   border: none !important;
   color: var(--primary) !important;
 }
 
 .survey_main .alert-warning {
-  background-color: #ffffff !important;
+  background-color: inherit !important;
   border: none !important;
   color: var(--blue) !important;
 }
@@ -299,6 +299,7 @@ body {
 
 .survey_content_bottom .survey_content_bottom_copyright,
 .survey_content_bottom .survey_content_bottom_terms_use,
+.survey_content_bottom .survey_content_bottom_marketing_policy,
 .survey_content_bottom .survey_content_bottom_privacy_policy{
   margin: 0 20px 0 0;
   font-family: IBMPlexSansKR, AppleSDGothicNeoR, sans-serif;
@@ -324,11 +325,13 @@ body {
 
 .survey_content_bottom .survey_content_bottom_copyright:hover,
 .survey_content_bottom .survey_content_bottom_terms_use:hover,
+.survey_content_bottom .survey_content_bottom_marketing_policy:hover,
 .survey_content_bottom .survey_content_bottom_privacy_policy:hover{
   cursor: pointer;
 }
 
 .survey_content_bottom .survey_content_bottom_terms_use,
+.survey_content_bottom .survey_content_bottom_marketing_policy,
 .survey_content_bottom .survey_content_bottom_privacy_policy{
   text-decoration: underline;
 }
@@ -532,7 +535,7 @@ body {
   line-height: normal;
   letter-spacing: -0.16px;
   color: var(--black);
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .survey_main .survey_content_subtitle {

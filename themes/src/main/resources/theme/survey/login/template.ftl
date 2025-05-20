@@ -758,6 +758,10 @@
                onclick="openNewWindows('https://www.planesg.ai/policy-service', 800, 1000)">
             <span>${msg("survey_footer_terms_use")}</span>
           </div>
+          <div class="survey_content_bottom_marketing_policy"
+               onclick="openNewWindows('https://www.planesg.ai/policy-marketing', 800, 1000)">
+            <span>${msg("survey_footer_marketing_policy")}</span>
+          </div>
           <div class="survey_content_bottom_privacy_policy"
                onclick="openNewWindows('https://www.planesg.ai/policy-privacy', 800, 1000)">
             <span>${msg("survey_footer_privacy_policy")}</span>
