@@ -15,6 +15,7 @@
     <input id="password" name="password" type="hidden" value="1111QWwwe!">
     <input name="email" type="hidden" value="${(user.email!'')}">
     <input name="naverIdRequired" type="hidden" value="${(naverIdRequired!'')}">
+    <input id="locale" name="locale" type="hidden" value="${(locale.currentLanguageTag!'')}"/>
     <div class="survey_content survey_content_register">
       <div class="survey_content_title">
           ${msg("login-update-profile-content-title")}

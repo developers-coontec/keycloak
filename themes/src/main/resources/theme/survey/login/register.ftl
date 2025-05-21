@@ -12,6 +12,7 @@
 
       window.addEventListener('load', onLoadFunction);
     </script>
+    <input id="locale" name="locale" type="hidden" value="${(locale.currentLanguageTag!'')}"/>
     <div class="survey_content survey_content_register">
       <div class="survey_content_title">
           ${msg("register-content-title")}
