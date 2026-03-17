@@ -732,6 +732,9 @@
     </div>
     <div class="survey_content_main">
       <div class="survey_content_left">
+        <div class="survey_content_left_img" >
+          <img src="${url.resourcesPath}/img/logo-left.svg">
+        </div>
       </div>
       <div class="survey_content_right">
         <div class="survey_content_body">

@@ -1,6 +1,6 @@
 :root {
-  --primary: #15A451;
-  --primary_button: #86F0B4;
+  --primary: #ED8B00;
+  --primary_button: #ED8B00;
   --bg: #F2F2F2;
   --white: #ffffff;
   --dark_1: #303542;
@@ -204,15 +204,15 @@ body {
 
 .survey_main .survey_content_top .survey_content_top_img {
   height: auto;
-  margin-left: 40px;
-  width: 150px;
+  margin-left: 30px;
+  width: 250px;
   object-fit: contain;
   cursor: pointer;
   display: inline-block;
 }
 
 .survey_main .survey_content_top .survey_content_top_img img{
-  width: 150px;
+  width: 100%;
 }
 
 .survey_main .survey_content_main{
@@ -234,7 +234,7 @@ body {
   display: flex;
   justify-content: flex-start;
   align-content: center;
-  align-items: center;
+  align-items: baseline;
   height: 100%;
   background-color: var(--primary);
 }
@@ -249,6 +249,11 @@ body {
   .survey_main .survey_content_left {
     width: 300px;
   }
+}
+
+
+.survey_main .survey_content_main .survey_content_left .survey_content_left_img img {
+  width: 100%;
 }
 
 .survey_main .survey_content_right{
@@ -500,7 +505,7 @@ body {
   line-height: 28px; /* 175% */
   letter-spacing: normal;
   text-align: center;
-  color: var(--black);
+  color: var(--white);
 }
 
 
