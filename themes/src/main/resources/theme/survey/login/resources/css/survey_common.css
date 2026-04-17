@@ -293,19 +293,22 @@ body {
   .survey_main .survey_content_bottom {
     padding: 20px 20px;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
 }
 
 @media (min-width: 450px) {
   .survey_main .survey_content_bottom {
     padding: 40px 60px;
+    justify-content: space-between;
   }
 }
 
 .survey_content_bottom .survey_content_bottom_copyright,
 .survey_content_bottom .survey_content_bottom_terms_use,
 .survey_content_bottom .survey_content_bottom_marketing_policy,
-.survey_content_bottom .survey_content_bottom_privacy_policy{
+.survey_content_bottom .survey_content_bottom_privacy_policy,
+.survey_content_bottom .survey_content_bottom_desc1 {
   margin: 0 20px 0 0;
   font-family: IBMPlexSansKR, AppleSDGothicNeoR, sans-serif;
   font-style: normal;
