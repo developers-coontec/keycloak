@@ -726,7 +726,7 @@
       <#--      </div>-->
       <#--    </div>-->
     <div class="survey_content_top">
-      <div class="survey_content_top_img" onclick="goToUrl('${url.homeUrl}')">
+      <div class="survey_content_top_img" >
         <img src="${url.resourcesPath}/img/logo.svg" alt=""Logo">
       </div>
     </div>
